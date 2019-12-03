@@ -1,246 +1,373 @@
-<!DOCTYPE HTML>
-<html class="no-js" lang="zh-CN">
+<!DOCTYPE html>
+<html lang="cn">
 <head>
-    <!--[if lte IE 9]>
-<meta http-equiv="refresh" content="0;url=http://tohnee123.github.io/warn.html">
-<![endif]-->
-<meta charset="utf-8">
-<meta http-equiv="X-DNS-Prefetch-Control" content="on">
-<link rel="dns-prefetch" href="http://tohnee123.github.io">
-<link rel="dns-prefetch" href="//www.google-analytics.com">
-<link rel="prefetch" href="http://tohnee123.github.io">
-<link rel="prefetch" href="//www.google-analytics.com">
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.0.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
 
 
-<link rel="prerender" href="http://tohnee123.github.io">
-
-<meta http-equiv="X-UA-Compatible" content="IE=Edge">
-<meta name="renderer" content="webkit">
-<meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
-<meta http-equiv="mobile-agent" content="format=html5; url=http://tohnee123.github.io">
-<meta name="author" content="James Liu">
-<link rel="stylesheet" href="/css/JSimple.css">
-
-<link rel="shortcut icon" href="/images/favicon.png">
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
 
 
-<title>linux_01 - 我的学习之路</title>
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    hostname: new URL('http://tohnee123.github.io').hostname,
+    root: '/',
+    scheme: 'Gemini',
+    version: '7.6.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: '',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}
+  };
+</script>
 
-<meta name="keywords" content="">
+  <meta name="description" content="这个是我第一次开始使用Github来发布博客。为什么没有显示呢？第四版 x&#x3D;\frac{-b\pm\sqrt{b^2-4ac}}{2a}\frac{1}{1+\frac{1}{2}}">
+<meta property="og:type" content="article">
+<meta property="og:title" content="linux_01">
+<meta property="og:url" content="http:&#x2F;&#x2F;tohnee123.github.io&#x2F;2019&#x2F;12&#x2F;02&#x2F;linux-01&#x2F;index.html">
+<meta property="og:site_name" content="我的学习之路">
+<meta property="og:description" content="这个是我第一次开始使用Github来发布博客。为什么没有显示呢？第四版 x&#x3D;\frac{-b\pm\sqrt{b^2-4ac}}{2a}\frac{1}{1+\frac{1}{2}}">
+<meta property="og:locale" content="cn">
+<meta property="og:updated_time" content="2019-12-03T16:02:45.147Z">
+<meta name="twitter:card" content="summary">
 
-<meta name="description " content="">
-
-    <script type="text/x-mathjax-config">
-        MathJax.Hub.Config({
-            tex2jax: {
-                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
-                processEscapes: true
-            }
-        });
-    </script>
+<link rel="canonical" href="http://tohnee123.github.io/2019/12/02/linux-01/">
 
 
-    
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
 
-    
+  <title>linux_01 | 我的学习之路</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
 
 <link rel="alternate" href="/atom.xml" title="我的学习之路" type="application/atom+xml">
 </head>
-<body>
-<div id="nav">
-    <nav class="nav-menu">
-        <a class="site-name current" href="/" title="说">说</a>
-        <a class="site-index current" href="/"><i class="fa fa-home"></i><span>首页</span></a>
-        <a href="/archives" title="归档"><i class="fa fa-archives"></i><span>归档</span></a>
-        <a href="/tags" title="标签"><i class="fa fa-tags"></i><span>标签</span></a>
-        <!-- custom single page of menus -->
-        
-        
-        <a href="/help" title="帮助">
-            <i class="fa fa-question-circle"></i>
-            <span>帮助</span>
-        </a>
-        
-    </nav>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">我的学习之路</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
 </div>
 
-<div class="nav-user">
-    <a class="btn-search" href="#"><i class="fa fa-search"></i></a>
-    <a class="btn-read-mode" href="#"><i class="fa fa-sun-o"></i></a>
-    <a class="btn-sns-qr" href="javascript:" target="_blank" rel="noopener"><i class="fa fa-telegram"></i></a>
-</div>
 
-<div id="wrapper" class="clearfix">
-    <div id="body">
-        <div class="main" id="main">
-            <div id="cover">
-    <div class="cover-img"></div>
-    <div class="cover-info">
-        
-        <h1 class="cover-siteName">说IT</h1>
-        <h3 class="cover-siteTitle">用代码摇滚这个世界</h3>
-        <p class="cover-siteDesc">一个关注技术与人文的IT博客</p>
-        <div class="cover-sns">
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives</a>
+
+  </li>
+  </ul>
+
+</nav>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
             
-    &nbsp;&nbsp;<div class="btn btn-telegram">
-        <a href="http://t.me/kunyintang" target="_blank" title="telegram" ref="friend">
-            <i class="fa fa-telegram"></i>
-        </a>
-    </div>
 
-    &nbsp;&nbsp;<div class="btn btn-instagram">
-        <a href="https://www.instagram.com/mtangsir/" target="_blank" title="instagram" ref="friend">
-            <i class="fa fa-instagram"></i>
-        </a>
-    </div>
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="cn">
+    <link itemprop="mainEntityOfPage" href="http://tohnee123.github.io/2019/12/02/linux-01/">
 
-    &nbsp;&nbsp;<div class="btn btn-twitter">
-        <a href="https://twitter.com/tangkunyin" target="_blank" title="twitter" ref="friend">
-            <i class="fa fa-twitter"></i>
-        </a>
-    </div>
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="James Liu">
+      <meta itemprop="description" content="">
+    </span>
 
-    &nbsp;&nbsp;<div class="btn btn-github">
-        <a href="https://github.com/tangkunyin" target="_blank" title="github" ref="friend">
-            <i class="fa fa-github"></i>
-        </a>
-    </div>
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="我的学习之路">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          linux_01
+        </h1>
 
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2019-12-03 10:18:25" itemprop="dateCreated datePublished" datetime="2019-12-03T10:18:25+08:00">2019-12-03</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2019-12-04 00:02:45" itemprop="dateModified" datetime="2019-12-04T00:02:45+08:00">2019-12-04</time>
+              </span>
+
+          
 
         </div>
-    </div>
-</div>
+      </header>
 
-            <div class="page-title">
-    <ul>
-        <li><a href="/">最近</a></li>
-        
-        
-        
-        <li class="page-search">
-    <form id="search" class="search-form">
-        <input type="text"
-               readonly="readonly"
-               id="local-search-input-tip"
-               placeholder="读物检索~" />
-        <button type="button" disabled="disabled" class="search-form-submit"><i class="fa fa-search"></i></button>
-    </form>
-</li>
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
-    </ul>
-</div>
-<div class="main-inner">
-    <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-        <div class="post-header">
-            <div class="post-author clearfix">
-                <a class="avatar fleft" href="https://shuoit.net"
-                   target="_blank">
-                    <img width="48" src="/images/favicon.png" alt="avatar"/>
-                </a>
-                <p><span class="label">作者</span>
-                    <a href="https://shuoit.net"
-                       target="_blank">纠结伦</a>
-                    <span title="最后编辑于&nbsp;2019-12-03">2019-12-03</span>
-                </p>
-                <p>一个搬🧱的劳斯基😁️️</p>
-            </div>
-            <h2 class="post-title">linux_01</h2>
-            <div class="post-meta">
-                本文共计94个字 |
-                您是第&nbsp;<span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span>位看到它们的小伙伴
-            </div>
-        </div>
-        <div class="post-content markdown-body">
-            <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
+      
+        <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
 
 
 <p>这个是我第一次开始使用Github来发布博客。<br>为什么没有显示呢？<br>第四版</p>
 <script type="math/tex; mode=display">x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}</script><script type="math/tex; mode=display">\frac{1}{1+\frac{1}{2}}</script>
-            
-                
+    </div>
 
-            
-        </div>
-        <div class="post-tool">
-            <a class="btn-thumbs-up" href="javascript:void(0);" target="_blank" rel="noopener" data-cid="52" title="95">
-                <i class="fa fa-thumbs-up" aria-hidden="true"></i> 打赏
-            </a>
-        </div>
-        
-        <div class="post-tags">标签：
-            
-        </div>
-        
-    </article>
-    
-        <p style="text-align: center">本文代表个人观点，内容仅供参考。若有不恰当之处，望不吝赐教！</p>
     
     
     
 
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item"></div>
+      <div class="post-nav-item">
+    <a href="/2019/12/02/text/" rel="next" title="text">
+      text <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">James Liu</p>
+  <div class="site-description" itemprop="description"></div>
 </div>
-<script src="/js/busuanzi.pure.mini.js"></script>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">3</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+  </nav>
+</div>
 
 
-        </div><!-- end #main-->
-    </div><!-- end #body -->
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
     <footer class="footer">
-    <div class="footer-inner" style="text-align: center">
-        <p>
-            <a href="/about"  title="关于">关于</a>&nbsp;&nbsp<em>·</em>&nbsp;&nbsp
-            <!-- 自定义链接 -->
-            <a href="/help" title="帮助" >帮助</a>&nbsp;&nbsp<em>·</em>&nbsp;&nbsp
-            <a href="/links" title="友链">友链</a>&nbsp;&nbsp<em>·</em>&nbsp;&nbsp
-            <a href="/sitemap.xml" title="地图">地图</a>
-        </p>
-        <p>
-            本站已建立&nbsp<a href="/timeline" id="siteBuildingTime"></a>&nbsp天，<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="licence">采用知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议创作</a><br/>
-            ©2017-<span id="cpYear"></span> 基于&nbsp<a href="http://hexo.io" target="_blank" rel="nofollow">Hexo</a>
-            ，主题采用&nbsp&nbsp<a href="https://github.com/tangkunyin/hexo-theme-jsimple" target="_blank" rel="bookmark">JSimple</a>
-            ，作者&nbsp<a href="https://shuoit.net" target="_blank" rel="friend">纠结伦</a>
-            ，Hosted by <a href="https://pages.github.com/" target="_blank" rel="nofollow">GitHub Pages</a>
-        </p>
-    </div>
-</footer>
-<script src="/js/SimpleCore.js"></script>
+      <div class="footer-inner">
+        
 
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">James Liu</span>
 </div>
-<!-- search pop -->
-<div class="popup search-popup local-search-popup">
-    <div class="local-search-header clearfix">
-        <span class="search-icon">
-            <i class="fa fa-search"></i>
-        </span>
-        <span class="popup-btn-close">
-            <i class="fa fa-times-circle"></i>
-        </span>
-        <div class="local-search-input-wrapper">
-            <input id="local-search-input"
-                   spellcheck="false"
-                   type="text"
-                   autocomplete="off"
-                   placeholder="请输入查询关键词"/>
-        </div>
-    </div>
-    <div id="local-search-result"></div>
-</div>
-<div class="fixed-btn">
-    <a class="btn-gotop" href="javascript:" target="_blank" rel="noopener"> <i class="fa fa-angle-up"></i></a>
-</div>
-<script>
-    $(function () {
-        var jsi_config = {
-            buildingTime: '01/20/2018',
-            current: $('.post-tags').length > 0 ? 'post' : 'archive',
-            snsQRCode: '/images/sns-qrcode.png',
-            donateImg: '/images/donate-qr.png',
-            localSearch: { dbPath: '' },
-            readMode: 'day'
-        };
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> v4.0.0
+  </div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">Theme – <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.6.0
+  </div>
+
         
-        SimpleCore.init(jsi_config);
+
+
+
+
+
+
+
+
         
-    });
-</script>
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script>
+<script src="/js/schemes/pisces.js"></script>
+<script src="/js/next-boot.js"></script>
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
 </body>
 </html>
