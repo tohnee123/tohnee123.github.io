@@ -58,18 +58,16 @@
     <link href="http://tohnee123.github.io/2019/12/02/linux-01/"/>
     <id>http://tohnee123.github.io/2019/12/02/linux-01/</id>
     <published>2019-12-03T02:18:25.000Z</published>
-    <updated>2019-12-03T16:02:45.147Z</updated>
+    <updated>2019-12-03T21:34:24.749Z</updated>
     
-    <content type="html"><![CDATA[<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script><p>这个是我第一次开始使用Github来发布博客。<br>为什么没有显示呢？<br>第四版</p><script type="math/tex; mode=display">x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}</script><script type="math/tex; mode=display">\frac{1}{1+\frac{1}{2}}</script>]]></content>
+    <content type="html"><![CDATA[<p>[toc]</p><h3 id="我是标题一"><a href="#我是标题一" class="headerlink" title="我是标题一"></a>我是标题一</h3><h3 id="我是标题二"><a href="#我是标题二" class="headerlink" title="我是标题二"></a>我是标题二</h3><h4 id="我是子标题"><a href="#我是子标题" class="headerlink" title="我是子标题"></a>我是子标题</h4><h3 id="我是标题三"><a href="#我是标题三" class="headerlink" title="我是标题三"></a>我是标题三</h3>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;script type=&quot;text/javascript&quot; src=&quot;http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default&quot;&gt;&lt;/script&gt;
-
-
-&lt;p&gt;这个是我第一次开始使用Github来发布博客。&lt;
+        &lt;p&gt;[toc]&lt;/p&gt;
+&lt;h3 id=&quot;我是标题一&quot;&gt;&lt;a href=&quot;#我是标题一&quot; class=&quot;headerlink&quot; title=&quot;我是标题一&quot;&gt;&lt;/a&gt;我是标题一&lt;/h3&gt;&lt;h3 id=&quot;我是标题二&quot;&gt;&lt;a href=&quot;#我是标题二&quot; class=&quot;headerlin
       
     
     </summary>
