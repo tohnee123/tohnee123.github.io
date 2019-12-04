@@ -45,14 +45,14 @@
   };
 </script>
 
-  <meta name="description" content="目标这一部分，我们的主要目标如下：  安装 Node.js、Hexo 和 Next 主题。这样我们就拥有了一个阶段性成果。  资源操作重点步骤 安装Node.js 利用 npm 安装 Hexo 安装 Next 主题What is LaTeX?  关注的内容关注的特别问题">
+  <meta name="description" content="目标这一部分，我们的主要目标如下：  安装 Node.js、Hexo 和 Next 主题。这样我们就拥有了一个阶段性成果。  资源操作重点步骤 安装Node.js 利用 npm 安装 Hexo 安装 Next 主题  关注的内容关注的特别问题 安装Node.js。我安装的时候，是从 node.js 网站上直接下载 OSX 版本的二进制文件直接安装的。在网上还有另外两种办法，一种是通过 homebr">
 <meta property="og:type" content="article">
 <meta property="og:title" content="如何建立一个类似这样的网站（二）">
 <meta property="og:url" content="http:&#x2F;&#x2F;tohnee123.github.io&#x2F;2019&#x2F;12&#x2F;06&#x2F;howtobuildthisblog02-00003&#x2F;index.html">
 <meta property="og:site_name" content="我的学习之路">
-<meta property="og:description" content="目标这一部分，我们的主要目标如下：  安装 Node.js、Hexo 和 Next 主题。这样我们就拥有了一个阶段性成果。  资源操作重点步骤 安装Node.js 利用 npm 安装 Hexo 安装 Next 主题What is LaTeX?  关注的内容关注的特别问题">
+<meta property="og:description" content="目标这一部分，我们的主要目标如下：  安装 Node.js、Hexo 和 Next 主题。这样我们就拥有了一个阶段性成果。  资源操作重点步骤 安装Node.js 利用 npm 安装 Hexo 安装 Next 主题  关注的内容关注的特别问题 安装Node.js。我安装的时候，是从 node.js 网站上直接下载 OSX 版本的二进制文件直接安装的。在网上还有另外两种办法，一种是通过 homebr">
 <meta property="og:locale" content="cn">
-<meta property="og:updated_time" content="2019-12-04T04:36:00.991Z">
+<meta property="og:updated_time" content="2019-12-04T05:06:47.910Z">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="http://tohnee123.github.io/2019/12/06/howtobuildthisblog02-00003/">
@@ -199,10 +199,24 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-12-04 12:36:00" itemprop="dateModified" datetime="2019-12-04T12:36:00+08:00">2019-12-04</time>
+                <time title="Modified: 2019-12-04 13:06:47" itemprop="dateModified" datetime="2019-12-04T13:06:47+08:00">2019-12-04</time>
               </span>
 
           
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/2019/12/06/howtobuildthisblog02-00003/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2019/12/06/howtobuildthisblog02-00003/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
 
         </div>
       </header>
@@ -220,9 +234,13 @@
 <h2 id="资源"><a href="#资源" class="headerlink" title="资源"></a>资源</h2><h2 id="操作"><a href="#操作" class="headerlink" title="操作"></a>操作</h2><h3 id="重点步骤"><a href="#重点步骤" class="headerlink" title="重点步骤"></a>重点步骤</h3><ol>
 <li>安装Node.js</li>
 <li>利用 npm 安装 Hexo</li>
-<li>安装 Next 主题<br><a href="#资源">What is LaTeX?</a></li>
+<li>安装 Next 主题</li>
 </ol>
-<h3 id="关注的内容"><a href="#关注的内容" class="headerlink" title="关注的内容"></a>关注的内容</h3><h3 id="关注的特别问题"><a href="#关注的特别问题" class="headerlink" title="关注的特别问题"></a>关注的特别问题</h3>
+<h3 id="关注的内容"><a href="#关注的内容" class="headerlink" title="关注的内容"></a>关注的内容</h3><h3 id="关注的特别问题"><a href="#关注的特别问题" class="headerlink" title="关注的特别问题"></a>关注的特别问题</h3><ul>
+<li>安装Node.js。我安装的时候，是从 node.js 网站上直接下载 OSX 版本的二进制文件直接安装的。在网上还有另外两种办法，一种是通过 homebrew，一种是通过 crul，这两种办法我没有试过，也不知道通过多种渠道安装不同版本的 node.js 会有什么后果。</li>
+<li></li>
+</ul>
+
     </div>
 
     
@@ -254,6 +272,7 @@
 
           </div>
           
+    <div class="comments" id="comments"></div>
 
         </div>
           
@@ -378,6 +397,33 @@
   
 
   
+
+
+<script>
+NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+  var GUEST = ['nick', 'mail', 'link'];
+  var guest = 'nick,mail,link';
+  guest = guest.split(',').filter(item => {
+    return GUEST.includes(item);
+  });
+  new Valine({
+    el: '#comments',
+    verify: false,
+    notify: false,
+    appId: 'qBFJg4U8q8woIVNBaBINpXhH-9Nh9j0Va',
+    appKey: 'Onx7HYcPWM9r9IK48y5OTcq7',
+    placeholder: "Just go go",
+    avatar: 'mm',
+    meta: guest,
+    pageSize: '10' || 10,
+    visitor: false,
+    lang: '' || 'zh-cn',
+    path: location.pathname,
+    recordIP: false,
+    serverURLs: ''
+  });
+}, window.Valine);
+</script>
 
 </body>
 </html>

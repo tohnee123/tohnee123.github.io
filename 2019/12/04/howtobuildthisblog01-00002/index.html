@@ -53,7 +53,7 @@
 <meta property="og:site_name" content="我的学习之路">
 <meta property="og:description" content="源起很多年以前，我就想建立一个类似这样的博客网站。大致有如下的要求：  管理方便，能够让人从 Internet 访问，最好对手机的支持友好。 费用低廉，我愿意付一定的费用来满足我这个小小的心愿。 内容迁移容易，因为这些内容再糟糕，也是自己一个个字码起来的，如果要主机不得不搬家的话，内容也比较容易迁移。我最希望是可以在本地进行内容的编写，然后上传到网站上。这个以前大部分博客网站支持的都不好，都要在网">
 <meta property="og:locale" content="cn">
-<meta property="og:updated_time" content="2019-12-04T04:37:26.093Z">
+<meta property="og:updated_time" content="2019-12-04T05:50:06.664Z">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="http://tohnee123.github.io/2019/12/04/howtobuildthisblog01-00002/">
@@ -194,10 +194,24 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2019-12-04 21:18:08 / Modified: 12:37:26" itemprop="dateCreated datePublished" datetime="2019-12-04T21:18:08+08:00">2019-12-04</time>
+              <time title="Created: 2019-12-04 21:18:08 / Modified: 13:50:06" itemprop="dateCreated datePublished" datetime="2019-12-04T21:18:08+08:00">2019-12-04</time>
             </span>
 
           
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/2019/12/04/howtobuildthisblog01-00002/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2019/12/04/howtobuildthisblog01-00002/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
 
         </div>
       </header>
@@ -218,6 +232,7 @@
 <li>最好可以支持留言板功能，方便讨论问题。</li>
 </ul>
 <p>回想一下，以前要找到这样一个博客网站，实在是不太容易。直到 Github + Hexo + Markdown + 云服务的出现，实现了上面所有的想法，而且还支持文章目录跳转的功能。而这些功能还都是免费的。真是太棒了！</p>
+<a id="more"></a>
 <h2 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h2><p>包括我在内，很多人在学习一个新东西的时候，最怕别人给了一大堆资料，然后我们开始依葫芦画瓢。做到一半的时候发现面对的情况和资料中的内容对不上号了，没人告诉我该怎么做下去，然后开始网上查资料。先是用百度，后是用 Bing，摸索、困惑、愤怒，最后放弃。所以我打算把这个任务分成几个不同的步骤，既方便自己的理解和记忆，也希望可以帮助其他人。这个也是我之后其他博客内容写作的主要思路。整个网站的实现包括以下几个步骤：</p>
 <ul>
 <li>建议一个属于自己的 Github 账号，并在 Github 上建立一个特殊的库。在自己的电脑上配置一些关于 git 的参数。</li>
@@ -295,6 +310,7 @@
 
           </div>
           
+    <div class="comments" id="comments"></div>
 
         </div>
           
@@ -419,6 +435,33 @@
   
 
   
+
+
+<script>
+NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+  var GUEST = ['nick', 'mail', 'link'];
+  var guest = 'nick,mail,link';
+  guest = guest.split(',').filter(item => {
+    return GUEST.includes(item);
+  });
+  new Valine({
+    el: '#comments',
+    verify: false,
+    notify: false,
+    appId: 'qBFJg4U8q8woIVNBaBINpXhH-9Nh9j0Va',
+    appKey: 'Onx7HYcPWM9r9IK48y5OTcq7',
+    placeholder: "Just go go",
+    avatar: 'mm',
+    meta: guest,
+    pageSize: '10' || 10,
+    visitor: false,
+    lang: '' || 'zh-cn',
+    path: location.pathname,
+    recordIP: false,
+    serverURLs: ''
+  });
+}, window.Valine);
+</script>
 
 </body>
 </html>
