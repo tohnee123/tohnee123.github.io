@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="cn">
+<html lang="zh-Hans">
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
@@ -26,7 +26,7 @@
     exturl: false,
     sidebar: {"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},
     copycode: {"enable":false,"show_result":false,"style":null},
-    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":true},
     bookmark: {"enable":false,"color":"#222","save":"auto"},
     fancybox: false,
     mediumzoom: false,
@@ -39,8 +39,8 @@
       hits: {"per_page":10},
       labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
     },
-    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
-    path: '',
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: 'search.xml',
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}
   };
 </script>
@@ -49,14 +49,14 @@
 <meta name="keywords" content="notes, markdown, github, aliyun">
 <meta property="og:type" content="article">
 <meta property="og:title" content="重新出发">
-<meta property="og:url" content="http:&#x2F;&#x2F;tohnee123.github.io&#x2F;2019&#x2F;12&#x2F;03&#x2F;howtobuildadocsite-00001&#x2F;index.html">
+<meta property="og:url" content="http:&#x2F;&#x2F;tohnee123.github.io&#x2F;2019&#x2F;12&#x2F;04&#x2F;howtobuildadocsite-00001&#x2F;index.html">
 <meta property="og:site_name" content="我的学习之路">
 <meta property="og:description" content="对于一个快50岁的人来说，其实学什么东西似乎都显得有点晚。记得30岁那年的春节，我站在武汉的马路上和自己说，要抓紧时间多学习一些东西。可是时间已经流逝了近20年，我自己却没有成长起来。所有人都知道，人和人最大的差别其实不在智商，而在于坚持。可是由于受到自身性格的影响，虽然道理懂，却一直也没有付诸行动。时光流逝，应该是我人生中很大的遗憾。这些年来，我的生活一直很动荡。路是我自己选的，如果我没有选择走">
-<meta property="og:locale" content="cn">
-<meta property="og:updated_time" content="2019-12-04T05:52:03.398Z">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-12-04T19:08:28.665Z">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://tohnee123.github.io/2019/12/03/howtobuildadocsite-00001/">
+<link rel="canonical" href="http://tohnee123.github.io/2019/12/04/howtobuildadocsite-00001/">
 
 
 <script id="page-configurations">
@@ -122,7 +122,7 @@
   </div>
 
   <div class="site-nav-toggle">
-    <div class="toggle" aria-label="Toggle navigation bar">
+    <div class="toggle" aria-label="切换导航栏">
       <span class="toggle-line toggle-line-first"></span>
       <span class="toggle-line toggle-line-middle"></span>
       <span class="toggle-line toggle-line-last"></span>
@@ -136,17 +136,42 @@
   <ul id="menu" class="menu">
         <li class="menu-item menu-item-home">
 
-    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>Home</a>
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
 
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives</a>
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
 
   </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
   </ul>
 
 </nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="none"
+           placeholder="搜索..." spellcheck="false"
+           type="text" id="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
+
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
 </div>
     </header>
 
@@ -169,8 +194,8 @@
       
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="cn">
-    <link itemprop="mainEntityOfPage" href="http://tohnee123.github.io/2019/12/03/howtobuildadocsite-00001/">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://tohnee123.github.io/2019/12/04/howtobuildadocsite-00001/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -191,33 +216,33 @@
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
-              <span class="post-meta-item-text">Posted on</span>
+              <span class="post-meta-item-text">发表于</span>
 
-              <time title="Created: 2019-12-03 17:19:04" itemprop="dateCreated datePublished" datetime="2019-12-03T17:19:04+08:00">2019-12-03</time>
+              <time title="创建时间：2019-12-04 17:19:04" itemprop="dateCreated datePublished" datetime="2019-12-04T17:19:04+08:00">2019-12-04</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-12-04 13:52:03" itemprop="dateModified" datetime="2019-12-04T13:52:03+08:00">2019-12-04</time>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-12-05 03:08:28" itemprop="dateModified" datetime="2019-12-05T03:08:28+08:00">2019-12-05</time>
               </span>
 
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="fa fa-comment-o"></i>
-      </span>
-      <span class="post-meta-item-text">Valine: </span>
-    
-    <a title="valine" href="/2019/12/03/howtobuildadocsite-00001/#comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2019/12/03/howtobuildadocsite-00001/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>3.3k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>11 分钟</span>
+            </span>
 
         </div>
       </header>
@@ -247,6 +272,7 @@
 <li>Linux。学习计算机技术，不知道 Linux 是无法想象的。我希望能够达到 Linux 运维的要求。</li>
 <li>Shell 和正则表达式。在很多时候，使用编程语言去解决问题，有点像是拿大炮打蚊子，所以还是需要对 Shell 熟练掌握。正则表达式在编程上有着大量的应用场景，好好掌握似乎是必须的选择。</li>
 <li>数据结构与算法。数据结构和算法是计算机的基础，这两门课我自己在大学就没有学好，深以为憾。希望现在有机会能够掌握。</li>
+<li>计算机方面的应用层基础协议。主要是 http 协议和</li>
 <li>CCIE，我曾经两次考过 CCNP，可是都没有一鼓作气完成 CCIE。所以 CCIE 的证书成为了我心中的那棵草。如果我之后上班，可能对网络也需要有较深的了解，看时间和缘分吧。</li>
 </ul>
 <h2 id="基本的配套工具"><a href="#基本的配套工具" class="headerlink" title="基本的配套工具"></a>基本的配套工具</h2><ul>
@@ -292,8 +318,8 @@
     <div class="post-nav">
       <div class="post-nav-item"></div>
       <div class="post-nav-item">
-    <a href="/2019/12/03/hello-world/" rel="next" title="Hello World">
-      Hello World <i class="fa fa-chevron-right"></i>
+    <a href="/2019/12/10/howtobuildthisblog01-00002/" rel="next" title="如何建立一个类似这样的网站（一）">
+      如何建立一个类似这样的网站（一） <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -308,7 +334,6 @@
 
           </div>
           
-    <div class="comments" id="comments"></div>
 
         </div>
           
@@ -324,10 +349,10 @@
 
       <ul class="sidebar-nav motion-element">
         <li class="sidebar-nav-toc">
-          Table of Contents
+          文章目录
         </li>
         <li class="sidebar-nav-overview">
-          Overview
+          站点概览
         </li>
       </ul>
 
@@ -347,13 +372,19 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">4</span>
-          <span class="site-state-item-name">posts</span>
+          <span class="site-state-item-count">5</span>
+          <span class="site-state-item-name">日志</span>
         </a>
       </div>
-      <div class="site-state-item site-state-tags">
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
         <span class="site-state-item-count">2</span>
-        <span class="site-state-item-name">tags</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
 </div>
@@ -382,11 +413,23 @@
     <i class="fa fa-user"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">James Liu</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+      <span class="post-meta-item-text">站点总字数：</span>
+    <span title="站点总字数">9k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
+    <span title="站点阅读时长">30 分钟</span>
 </div>
-  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> v4.0.0
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v4.0.0
   </div>
   <span class="post-meta-divider">|</span>
-  <div class="theme-info">Theme – <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.6.0
+  <div class="theme-info">主题 – <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.6.0
   </div>
 
         
@@ -404,6 +447,8 @@
   </div>
 
   
+  
+  <script color='0,0,255' opacity='0.5' zIndex='-1' count='99' src="/lib/canvas-nest/canvas-nest.min.js"></script>
   <script src="/lib/anime.min.js"></script>
   <script src="/lib/velocity/velocity.min.js"></script>
   <script src="/lib/velocity/velocity.ui.min.js"></script>
@@ -418,6 +463,8 @@
 
 
 
+  <script src="/js/local-search.js"></script>
+
 
 
 
@@ -433,33 +480,6 @@
   
 
   
-
-
-<script>
-NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
-  var GUEST = ['nick', 'mail', 'link'];
-  var guest = 'nick,mail,link';
-  guest = guest.split(',').filter(item => {
-    return GUEST.includes(item);
-  });
-  new Valine({
-    el: '#comments',
-    verify: false,
-    notify: false,
-    appId: 'qBFJg4U8q8woIVNBaBINpXhH-9Nh9j0Va',
-    appKey: 'Onx7HYcPWM9r9IK48y5OTcq7',
-    placeholder: "Just go go",
-    avatar: 'mm',
-    meta: guest,
-    pageSize: '10' || 10,
-    visitor: false,
-    lang: '' || 'zh-cn',
-    path: location.pathname,
-    recordIP: false,
-    serverURLs: ''
-  });
-}, window.Valine);
-</script>
 
 </body>
 </html>

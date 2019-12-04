@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="cn">
+<html lang="zh-Hans">
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
@@ -26,7 +26,7 @@
     exturl: false,
     sidebar: {"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},
     copycode: {"enable":false,"show_result":false,"style":null},
-    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":true},
     bookmark: {"enable":false,"color":"#222","save":"auto"},
     fancybox: false,
     mediumzoom: false,
@@ -39,8 +39,8 @@
       hits: {"per_page":10},
       labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
     },
-    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
-    path: '',
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: 'search.xml',
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}
   };
 </script>
@@ -49,14 +49,14 @@
 <meta name="keywords" content="github, hexo, clouds">
 <meta property="og:type" content="article">
 <meta property="og:title" content="如何建立一个类似这样的网站（一）">
-<meta property="og:url" content="http:&#x2F;&#x2F;tohnee123.github.io&#x2F;2019&#x2F;12&#x2F;04&#x2F;howtobuildthisblog01-00002&#x2F;index.html">
+<meta property="og:url" content="http:&#x2F;&#x2F;tohnee123.github.io&#x2F;2019&#x2F;12&#x2F;10&#x2F;howtobuildthisblog01-00002&#x2F;index.html">
 <meta property="og:site_name" content="我的学习之路">
 <meta property="og:description" content="源起很多年以前，我就想建立一个类似这样的博客网站。大致有如下的要求：  管理方便，能够让人从 Internet 访问，最好对手机的支持友好。 费用低廉，我愿意付一定的费用来满足我这个小小的心愿。 内容迁移容易，因为这些内容再糟糕，也是自己一个个字码起来的，如果要主机不得不搬家的话，内容也比较容易迁移。我最希望是可以在本地进行内容的编写，然后上传到网站上。这个以前大部分博客网站支持的都不好，都要在网">
-<meta property="og:locale" content="cn">
-<meta property="og:updated_time" content="2019-12-04T05:50:06.664Z">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-12-04T19:45:30.097Z">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://tohnee123.github.io/2019/12/04/howtobuildthisblog01-00002/">
+<link rel="canonical" href="http://tohnee123.github.io/2019/12/10/howtobuildthisblog01-00002/">
 
 
 <script id="page-configurations">
@@ -122,7 +122,7 @@
   </div>
 
   <div class="site-nav-toggle">
-    <div class="toggle" aria-label="Toggle navigation bar">
+    <div class="toggle" aria-label="切换导航栏">
       <span class="toggle-line toggle-line-first"></span>
       <span class="toggle-line toggle-line-middle"></span>
       <span class="toggle-line toggle-line-last"></span>
@@ -136,17 +136,42 @@
   <ul id="menu" class="menu">
         <li class="menu-item menu-item-home">
 
-    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>Home</a>
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
 
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives</a>
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
 
   </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
   </ul>
 
 </nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="none"
+           placeholder="搜索..." spellcheck="false"
+           type="text" id="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
+
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
 </div>
     </header>
 
@@ -169,8 +194,8 @@
       
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="cn">
-    <link itemprop="mainEntityOfPage" href="http://tohnee123.github.io/2019/12/04/howtobuildthisblog01-00002/">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://tohnee123.github.io/2019/12/10/howtobuildthisblog01-00002/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -191,27 +216,33 @@
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
+              <span class="post-meta-item-text">发表于</span>
 
-              <time title="Created: 2019-12-04 21:18:08 / Modified: 13:50:06" itemprop="dateCreated datePublished" datetime="2019-12-04T21:18:08+08:00">2019-12-04</time>
+              <time title="创建时间：2019-12-10 21:18:08" itemprop="dateCreated datePublished" datetime="2019-12-10T21:18:08+08:00">2019-12-10</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-12-05 03:45:30" itemprop="dateModified" datetime="2019-12-05T03:45:30+08:00">2019-12-05</time>
+              </span>
 
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="fa fa-comment-o"></i>
-      </span>
-      <span class="post-meta-item-text">Valine: </span>
-    
-    <a title="valine" href="/2019/12/04/howtobuildthisblog01-00002/#comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2019/12/04/howtobuildthisblog01-00002/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>2.7k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>9 分钟</span>
+            </span>
 
         </div>
       </header>
@@ -233,14 +264,6 @@
 </ul>
 <p>回想一下，以前要找到这样一个博客网站，实在是不太容易。直到 Github + Hexo + Markdown + 云服务的出现，实现了上面所有的想法，而且还支持文章目录跳转的功能。而这些功能还都是免费的。真是太棒了！</p>
 <a id="more"></a>
-<h2 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h2><p>包括我在内，很多人在学习一个新东西的时候，最怕别人给了一大堆资料，然后我们开始依葫芦画瓢。做到一半的时候发现面对的情况和资料中的内容对不上号了，没人告诉我该怎么做下去，然后开始网上查资料。先是用百度，后是用 Bing，摸索、困惑、愤怒，最后放弃。所以我打算把这个任务分成几个不同的步骤，既方便自己的理解和记忆，也希望可以帮助其他人。这个也是我之后其他博客内容写作的主要思路。整个网站的实现包括以下几个步骤：</p>
-<ul>
-<li>建议一个属于自己的 Github 账号，并在 Github 上建立一个特殊的库。在自己的电脑上配置一些关于 git 的参数。</li>
-<li>安装 Node.js、Hexo 和 Next 主题。这样我们就拥有了一个阶段性成果。</li>
-<li>根据自己的需要，配置 Next 主题的基本内容</li>
-<li>根据我们的需求配置一些其他的高阶属性。比如进行在主页上进行缩略显示、增加搜索功能和支持留言板等等。</li>
-<li>如何更改主题，如何在多个网站上同步内容</li>
-</ul>
 <h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>当我搭建这个博客网站的时候，相关的知识我大约知道如下内容：</p>
 <ul>
 <li>有一个自己的 email 地址。</li>
@@ -249,6 +272,14 @@
 <li>Hexo 从来没有听说过。</li>
 <li>ssh 用过，也是敲指令的水平。背后的机理只是感觉好像和公、私钥相关，其他细节一概不知。</li>
 <li>会用 Bilibili 看视频。</li>
+</ul>
+<h2 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h2><p>包括我在内，很多人在学习一个新东西的时候，最怕别人给了一大堆资料，然后我们开始依葫芦画瓢。做到一半的时候发现面对的情况和资料中的内容对不上号了，没人告诉我该怎么做下去，然后开始网上查资料。先是用百度，后是用 Bing，摸索、困惑、愤怒，最后放弃。所以我打算把这个任务分成几个不同的步骤，既方便自己的理解和记忆，也希望可以帮助其他人。这个也是我之后其他博客内容写作的主要思路。整个网站的实现包括以下几个步骤：</p>
+<ul>
+<li>建议一个属于自己的 Github 账号，并在 Github 上建立一个特殊的库。在自己的电脑上配置一些关于 git 的参数。</li>
+<li>安装 Node.js、Hexo 和 Next 主题。这样我们就拥有了一个阶段性成果。</li>
+<li>根据自己的需要，配置 Next 主题的基本内容</li>
+<li>根据我们的需求配置一些其他的高阶属性。比如进行在主页上进行缩略显示、增加搜索功能和支持留言板等等。</li>
+<li>如何更改主题，如何在多个网站上同步内容</li>
 </ul>
 <h2 id="资源"><a href="#资源" class="headerlink" title="资源"></a>资源</h2><p>网络上有大把使用 Github 和 Hexo 设置一个博客站点的介绍，我这里就不打算再花时间重新再写一遍。所以关于大致的安装步骤，请点击以下的链接。这些链接都是我在设置这个站点的时候使用的，或者后来看过的。我觉得我可以理解的话，大家比我聪明，一定也可以理解的。我也会尽量说明说明这些资料大家要特别注意的地方。</p>
 <ul>
@@ -290,11 +321,11 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2019/12/03/hello-world/" rel="prev" title="Hello World">
-      <i class="fa fa-chevron-left"></i> Hello World
+    <a href="/2019/12/04/howtobuildadocsite-00001/" rel="prev" title="重新出发">
+      <i class="fa fa-chevron-left"></i> 重新出发
     </a></div>
       <div class="post-nav-item">
-    <a href="/2019/12/06/howtobuildthisblog02-00003/" rel="next" title="如何建立一个类似这样的网站（二）">
+    <a href="/2019/12/15/howtobuildthisblog02-00003/" rel="next" title="如何建立一个类似这样的网站（二）">
       如何建立一个类似这样的网站（二） <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
@@ -310,7 +341,6 @@
 
           </div>
           
-    <div class="comments" id="comments"></div>
 
         </div>
           
@@ -326,16 +356,16 @@
 
       <ul class="sidebar-nav motion-element">
         <li class="sidebar-nav-toc">
-          Table of Contents
+          文章目录
         </li>
         <li class="sidebar-nav-overview">
-          Overview
+          站点概览
         </li>
       </ul>
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#源起"><span class="nav-number">1.</span> <span class="nav-text">源起</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#目标"><span class="nav-number">2.</span> <span class="nav-text">目标</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#背景"><span class="nav-number">3.</span> <span class="nav-text">背景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#资源"><span class="nav-number">4.</span> <span class="nav-text">资源</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#操作"><span class="nav-number">5.</span> <span class="nav-text">操作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#重点步骤"><span class="nav-number">5.1.</span> <span class="nav-text">重点步骤</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#关注的内容"><span class="nav-number">5.2.</span> <span class="nav-text">关注的内容</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#关注的特别问题"><span class="nav-number">5.3.</span> <span class="nav-text">关注的特别问题</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#源起"><span class="nav-number">1.</span> <span class="nav-text">源起</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#背景"><span class="nav-number">2.</span> <span class="nav-text">背景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#目标"><span class="nav-number">3.</span> <span class="nav-text">目标</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#资源"><span class="nav-number">4.</span> <span class="nav-text">资源</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#操作"><span class="nav-number">5.</span> <span class="nav-text">操作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#重点步骤"><span class="nav-number">5.1.</span> <span class="nav-text">重点步骤</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#关注的内容"><span class="nav-number">5.2.</span> <span class="nav-text">关注的内容</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#关注的特别问题"><span class="nav-number">5.3.</span> <span class="nav-text">关注的特别问题</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -349,13 +379,19 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">4</span>
-          <span class="site-state-item-name">posts</span>
+          <span class="site-state-item-count">5</span>
+          <span class="site-state-item-name">日志</span>
         </a>
       </div>
-      <div class="site-state-item site-state-tags">
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
         <span class="site-state-item-count">2</span>
-        <span class="site-state-item-name">tags</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
 </div>
@@ -384,11 +420,23 @@
     <i class="fa fa-user"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">James Liu</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+      <span class="post-meta-item-text">站点总字数：</span>
+    <span title="站点总字数">9k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
+    <span title="站点阅读时长">30 分钟</span>
 </div>
-  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> v4.0.0
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v4.0.0
   </div>
   <span class="post-meta-divider">|</span>
-  <div class="theme-info">Theme – <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.6.0
+  <div class="theme-info">主题 – <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.6.0
   </div>
 
         
@@ -406,6 +454,8 @@
   </div>
 
   
+  
+  <script color='0,0,255' opacity='0.5' zIndex='-1' count='99' src="/lib/canvas-nest/canvas-nest.min.js"></script>
   <script src="/lib/anime.min.js"></script>
   <script src="/lib/velocity/velocity.min.js"></script>
   <script src="/lib/velocity/velocity.ui.min.js"></script>
@@ -420,6 +470,8 @@
 
 
 
+  <script src="/js/local-search.js"></script>
+
 
 
 
@@ -435,33 +487,6 @@
   
 
   
-
-
-<script>
-NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
-  var GUEST = ['nick', 'mail', 'link'];
-  var guest = 'nick,mail,link';
-  guest = guest.split(',').filter(item => {
-    return GUEST.includes(item);
-  });
-  new Valine({
-    el: '#comments',
-    verify: false,
-    notify: false,
-    appId: 'qBFJg4U8q8woIVNBaBINpXhH-9Nh9j0Va',
-    appKey: 'Onx7HYcPWM9r9IK48y5OTcq7',
-    placeholder: "Just go go",
-    avatar: 'mm',
-    meta: guest,
-    pageSize: '10' || 10,
-    visitor: false,
-    lang: '' || 'zh-cn',
-    path: location.pathname,
-    recordIP: false,
-    serverURLs: ''
-  });
-}, window.Valine);
-</script>
 
 </body>
 </html>
