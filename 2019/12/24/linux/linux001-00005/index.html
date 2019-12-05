@@ -45,14 +45,18 @@
   };
 </script>
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="我的学习之路">
-<meta property="og:url" content="http:&#x2F;&#x2F;tohnee123.github.io&#x2F;tags&#x2F;linux&#x2F;index.html">
+  <meta name="description" content="Linux 我应该是努力过多次，始终只是皮毛。这次还是打算全面的了解 Linux 的运维技术和最新的技术趋势。采用的 os 版本是 centos 7.x。 目录结构和分区我们在一个新的硬盘上安装 Linux，一般会做如下考虑：  一个 &#x2F;boot 区，一般 200M 左右，安装 Linux 的 Kernel 文件。单独一个区，在系统出现问题的时候会比较好解决 一个 swap 分区，一般是内存的2倍">
+<meta name="keywords" content="linux">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Linux 学习笔记（一）">
+<meta property="og:url" content="http:&#x2F;&#x2F;tohnee123.github.io&#x2F;2019&#x2F;12&#x2F;24&#x2F;linux&#x2F;linux001-00005&#x2F;index.html">
 <meta property="og:site_name" content="我的学习之路">
+<meta property="og:description" content="Linux 我应该是努力过多次，始终只是皮毛。这次还是打算全面的了解 Linux 的运维技术和最新的技术趋势。采用的 os 版本是 centos 7.x。 目录结构和分区我们在一个新的硬盘上安装 Linux，一般会做如下考虑：  一个 &#x2F;boot 区，一般 200M 左右，安装 Linux 的 Kernel 文件。单独一个区，在系统出现问题的时候会比较好解决 一个 swap 分区，一般是内存的2倍">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-12-05T13:14:38.653Z">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://tohnee123.github.io/tags/linux/">
+<link rel="canonical" href="http://tohnee123.github.io/2019/12/24/linux/linux001-00005/">
 
 
 <script id="page-configurations">
@@ -60,13 +64,13 @@
   CONFIG.page = {
     sidebar: "",
     isHome: false,
-    isPost: false,
+    isPost: true,
     isPage: false,
     isArchive: false
   };
 </script>
 
-  <title>标签: linux | 我的学习之路</title>
+  <title>Linux 学习笔记（一） | 我的学习之路</title>
   
 
 
@@ -196,50 +200,147 @@
           <div class="content">
             
 
+  <div class="posts-expand">
+      
   
   
-  
-  <div class="post-block">
-    <div class="posts-collapse">
-      <div class="collection-title">
-        <h1 class="collection-header">linux
-          <small>标签</small>
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://tohnee123.github.io/2019/12/24/linux/linux001-00005/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="James Liu">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="我的学习之路">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Linux 学习笔记（一）
         </h1>
-      </div>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-12-25 10:31:43" itemprop="dateCreated datePublished" datetime="2019-12-25T10:31:43+08:00">2019-12-25</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-12-05 21:14:38" itemprop="dateModified" datetime="2019-12-05T21:14:38+08:00">2019-12-05</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/os/" itemprop="url" rel="index">
+                    <span itemprop="name">os</span>
+                  </a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>1k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>3 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-    <div class="collection-year">
-      <h1 class="collection-header">2019</h1>
+        <p>Linux 我应该是努力过多次，始终只是皮毛。这次还是打算全面的了解 Linux 的运维技术和最新的技术趋势。采用的 os 版本是 centos 7.x。</p>
+<h2 id="目录结构和分区"><a href="#目录结构和分区" class="headerlink" title="目录结构和分区"></a>目录结构和分区</h2><p>我们在一个新的硬盘上安装 Linux，一般会做如下考虑：</p>
+<ul>
+<li>一个 /boot 区，一般 200M 左右，安装 Linux 的 Kernel 文件。单独一个区，在系统出现问题的时候会比较好解决</li>
+<li>一个 swap 分区，一般是内存的2倍以上</li>
+<li>一个 / 分区，一般 10G 以上</li>
+<li>剩下的可以给 /data，作为数据分区</li>
+</ul>
+<p>对于 MBR 分区来说，一个硬盘最多只能有四个主分区或者扩展分区（扩展分区最多一个），一个扩展分区上可以有若干个逻辑分区</p>
+<ul>
+<li>对于 Linux 来说，一个 SATA 硬盘，前面四个分区是供主分区和扩展分区使用，分别为 /dev/sda1 ~ /dev/sda4。逻辑分区从 /dev/sda5 开始</li>
+</ul>
+<a id="more"></a>
+<h2 id="Linux-常用简单命令集"><a href="#Linux-常用简单命令集" class="headerlink" title="Linux 常用简单命令集"></a>Linux 常用简单命令集</h2><pre><code class="lang-bash"># free -h        //以 M 为单位看系统内存
+# lsblk            //系统的分区情况
+# lscpu            //看 CPU 的情况
+# cat /proc/meminfo            //获得和内存相关的信息
+# cat /etc/centos-release   //安装的 centos 版本
+# lsb_relase -a                //安装的 centos 版本
+# uname -r                     //内核的版本
+# tty                              //当前终端名
+# who      //当前登陆本服务器所有的终端名
+# whoami    //我是谁，简略信息
+# who am i     //我是谁更详细的信息，包括登陆的终端名和 IP 地址
+# echo $SHELL   //当前运行的 Shell
+# cat /etc/shells    //当前系统支持的所有 Shell，对于/usr/sbin/nologin shell，主要是给应用程序使用。不可以登陆
+# echo $PS1
+# PS1=&quot;[\u@\h]$&quot;    //去掉 working directory
+# PS1=&quot;\[\e[1;5;41;33m\][\u@\h \w]\\$\[\e[0m\]&quot;     //对于生产环境建议用特别的提示标识，5表示闪烁
+# which &lt;command&gt;
+# whereis &lt;command&gt;     //和该命令相关的一些文档信息
+# hash           //当前被缓存的命令路径
+# alias cdnet = &quot;cd /etc/sysconfig/network-scripts/&quot;     //别名一般保存在用户家目录中的 .bashrc 中
+# unalias &lt;别名&gt;      //取消别名
+# . .bashrc     //使修改后的 .bashrc 立即生效，等同于 source .bashrc
+</code></pre>
+
     </div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+    
+    
+    
 
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2019-12-25T10:31:43+08:00"
-              content="2019-12-25">
-          12-25
-        </time>
-      </div>
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/linux/" rel="tag"># linux</a>
+          </div>
 
-      <h2 class="post-title">
-          <a class="post-title-link" href="/2019/12/24/linux/linux001-00005/" itemprop="url">
-            <span itemprop="name">Linux 学习笔记（一）</span>
-          </a>
-      </h2>
+        
 
-    </header>
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2019/12/19/howtobuildthisblog03-00004/" rel="prev" title="如何建立一个类似这样的网站（三）">
+      <i class="fa fa-chevron-left"></i> 如何建立一个类似这样的网站（三）
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
   </article>
+  
+  
+  
 
-    </div>
   </div>
-  
-  
-  
-
-  
-
 
 
           </div>
@@ -268,6 +369,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#目录结构和分区"><span class="nav-number">1.</span> <span class="nav-text">目录结构和分区</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Linux-常用简单命令集"><span class="nav-number">2.</span> <span class="nav-text">Linux 常用简单命令集</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
