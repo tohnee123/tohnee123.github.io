@@ -46,9 +46,9 @@
 </script>
 
   <meta property="og:type" content="website">
-<meta property="og:title" content="我的学习之路">
+<meta property="og:title" content="不积硅步&lt;br&gt;无以至千里">
 <meta property="og:url" content="http:&#x2F;&#x2F;tohnee123.github.io&#x2F;index.html">
-<meta property="og:site_name" content="我的学习之路">
+<meta property="og:site_name" content="不积硅步&lt;br&gt;无以至千里">
 <meta property="og:locale" content="zh-Hans">
 <meta name="twitter:card" content="summary">
 
@@ -65,24 +65,8 @@
     isArchive: false
   };
 </script>
-<script>
-  function GetUrlRelativePath() {
-    var url = document.location.toString(); //获取当前链接
-    var arrUrl = url.split("//");
-    var start = arrUrl[1].indexOf("/");
-    var relUrl = arrUrl[1].substring(start); //截取从start开始到结尾的所有字符
-    if(relUrl.indexOf("?") != -1){
-      relUrl = relUrl.split("?")[0];
-    }
-      return relUrl;
-  }
-  var relUrl = GetUrlRelativePath()
-  if (relUrl.indexOf('/books/')>=0) {  //判断是否为豆瓣读书页面
-    document.write('<meta name="referrer" content="never" />');
-  }
-</script>
 
-  <title>我的学习之路</title>
+  <title>不积硅步<br>无以至千里</title>
   
 
 
@@ -113,7 +97,7 @@
   </style>
 </noscript>
 
-<link rel="alternate" href="/atom.xml" title="我的学习之路" type="application/atom+xml">
+<link rel="alternate" href="/atom.xml" title="不积硅步<br>无以至千里" type="application/atom+xml">
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
@@ -127,7 +111,7 @@
     <div>
       <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">我的学习之路</span>
+        <span class="site-title">不积硅步<br>无以至千里</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
@@ -226,7 +210,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="我的学习之路">
+      <meta itemprop="name" content="不积硅步<br>无以至千里">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
@@ -248,7 +232,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-12-05 21:14:38" itemprop="dateModified" datetime="2019-12-05T21:14:38+08:00">2019-12-05</time>
+                <time title="修改时间：2019-12-06 02:46:31" itemprop="dateModified" datetime="2019-12-06T02:46:31+08:00">2019-12-06</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -268,14 +252,14 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>1k</span>
+              <span>1.1k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="fa fa-clock-o"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>3 分钟</span>
+              <span>4 分钟</span>
             </span>
 
         </div>
@@ -288,16 +272,9 @@
 
       
           <p>Linux 我应该是努力过多次，始终只是皮毛。这次还是打算全面的了解 Linux 的运维技术和最新的技术趋势。采用的 os 版本是 centos 7.x。</p>
-<h2 id="目录结构和分区"><a href="#目录结构和分区" class="headerlink" title="目录结构和分区"></a>目录结构和分区</h2><p>我们在一个新的硬盘上安装 Linux，一般会做如下考虑：</p>
+<h2 id="目录结构和分区"><a href="#目录结构和分区" class="headerlink" title="目录结构和分区"></a>目录结构和分区</h2><p>如果一个硬盘采用 MBR 分区，这个硬盘最多只能有四个主分区或者扩展分区（扩展分区最多一个），一个扩展分区上可以有若干个逻辑分区</p>
 <ul>
-<li>一个 /boot 区，一般 200M 左右，安装 Linux 的 Kernel 文件。单独一个区，在系统出现问题的时候会比较好解决</li>
-<li>一个 swap 分区，一般是内存的2倍以上</li>
-<li>一个 / 分区，一般 10G 以上</li>
-<li>剩下的可以给 /data，作为数据分区</li>
-</ul>
-<p>对于 MBR 分区来说，一个硬盘最多只能有四个主分区或者扩展分区（扩展分区最多一个），一个扩展分区上可以有若干个逻辑分区</p>
-<ul>
-<li>对于 Linux 来说，一个 SATA 硬盘，前面四个分区是供主分区和扩展分区使用，分别为 /dev/sda1 ~ /dev/sda4。逻辑分区从 /dev/sda5 开始</li>
+<li>对于 Linux 来说，一个 SATA 硬盘，前面四个分区是供主分区和扩展分区使用，分别为 /dev/sda1 ~ /dev/sda4。逻辑分区从 /dev/sda5 开始。</li>
 </ul>
           <!--noindex-->
             <div class="post-button">
@@ -334,7 +311,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="我的学习之路">
+      <meta itemprop="name" content="不积硅步<br>无以至千里">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
@@ -356,7 +333,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-12-05 23:18:59" itemprop="dateModified" datetime="2019-12-05T23:18:59+08:00">2019-12-05</time>
+                <time title="修改时间：2019-12-06 02:54:52" itemprop="dateModified" datetime="2019-12-06T02:54:52+08:00">2019-12-06</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -364,8 +341,8 @@
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/applications/" itemprop="url" rel="index">
-                    <span itemprop="name">applications</span>
+                  <a href="/categories/%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F/" itemprop="url" rel="index">
+                    <span itemprop="name">应用程序</span>
                   </a>
                 </span>
             </span>
@@ -404,19 +381,6 @@
 </ul>
 </li>
 </ul>
-<h3 id="功能上的优化"><a href="#功能上的优化" class="headerlink" title="功能上的优化"></a>功能上的优化</h3><ul>
-<li>将主页展示的内容进行缩减</li>
-<li>在主页上隐藏指定的文章</li>
-<li>鼠标指针在非工作区有趣的图形</li>
-<li>每篇文章增加字数统计和阅读时间估计</li>
-<li>配置搜索（search）功能</li>
-<li>加入豆瓣的页面</li>
-</ul>
-<h3 id="形式上的优化"><a href="#形式上的优化" class="headerlink" title="形式上的优化"></a>形式上的优化</h3><h3 id="其他说明"><a href="#其他说明" class="headerlink" title="其他说明"></a>其他说明</h3><ul>
-<li>这篇文章只包括了我所感兴趣的 Hexo 设置，在网络上还有很多其他朋友的设置，有兴趣的可以到处看看</li>
-<li>很多设置有不止一种方法，我采用的办法不见得最好，但是保证在我的博客上是工作的</li>
-<li>Hexo 和 Next 也在不断发展，部分配置文件也在不断变化之中。我的 Hexo 版本是4.0，Next 的版本是7.6.0</li>
-</ul>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2019/12/19/howtobuildthisblog03-00004/#more" rel="contents">
@@ -452,7 +416,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="我的学习之路">
+      <meta itemprop="name" content="不积硅步<br>无以至千里">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
@@ -553,7 +517,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="我的学习之路">
+      <meta itemprop="name" content="不积硅步<br>无以至千里">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
@@ -639,6 +603,113 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://tohnee123.github.io/2019/12/04/blogruleupdates-00006/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="James Liu">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="不积硅步<br>无以至千里">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/12/04/blogruleupdates-00006/" class="post-title-link" itemprop="url">这个博客的一些惯例、约定和更新</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-12-05 11:56:40" itemprop="dateCreated datePublished" datetime="2019-12-05T11:56:40+08:00">2019-12-05</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-12-06 02:54:01" itemprop="dateModified" datetime="2019-12-06T02:54:01+08:00">2019-12-06</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E9%9A%8F%E7%AC%94/" itemprop="url" rel="index">
+                    <span itemprop="name">随笔</span>
+                  </a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>798</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>3 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>为了更好的使用这个博客作为我学习的工具，有如下的一些惯例和约定。</p>
+<h2 id="有效的标签、类别"><a href="#有效的标签、类别" class="headerlink" title="有效的标签、类别"></a>有效的标签、类别</h2><h3 id="可用的标签"><a href="#可用的标签" class="headerlink" title="可用的标签"></a>可用的标签</h3><ul>
+<li>博客，云服务，Github；</li>
+<li>Linux，Python，CSS，Javascript，Hexo，AI；</li>
+<li>线性代数，微积分，概率论；</li>
+<li>更新，计划；</li>
+</ul>
+<h3 id="可用的分类"><a href="#可用的分类" class="headerlink" title="可用的分类"></a>可用的分类</h3><ul>
+<li>操作系统，服务软件，开发语言，应用程序，基础知识；</li>
+<li>随笔。</li>
+</ul>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2019/12/04/blogruleupdates-00006/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-Hans">
     <link itemprop="mainEntityOfPage" href="http://tohnee123.github.io/2019/12/04/howtobuildadocsite-00001/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -648,7 +719,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="我的学习之路">
+      <meta itemprop="name" content="不积硅步<br>无以至千里">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
@@ -768,18 +839,18 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">5</span>
+          <span class="site-state-item-count">6</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
-        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-count">4</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
-        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-count">9</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -814,13 +885,13 @@
       <i class="fa fa-area-chart"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">10k</span>
+    <span title="站点总字数">11k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">34 分钟</span>
+    <span title="站点阅读时长">37 分钟</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v4.0.0
   </div>
