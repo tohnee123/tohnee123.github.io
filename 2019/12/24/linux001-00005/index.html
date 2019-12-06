@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.0.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    hostname: new URL('http://tohnee123.github.io').hostname,
+    root: '/',
+    scheme: 'Gemini',
+    version: '7.6.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":true},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: 'search.xml',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}
+  };
+</script>
+
+  <meta name="description" content="Linux 我应该是努力过多次，始终只是皮毛。这次还是打算全面的了解 Linux 的运维技术和最新的技术趋势。采用的 os 版本是 centos 7.x。 目录结构和分区如果一个硬盘采用 MBR 分区，这个硬盘最多只能有四个主分区或者扩展分区（扩展分区最多一个），一个扩展分区上可以有若干个逻辑分区  对于 Linux 来说，一个 SATA 硬盘，前面四个分区是供主分区和扩展分区使用，分别为 &#x2F;de">
+<meta name="keywords" content="Linux">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Linux 学习笔记（一）">
+<meta property="og:url" content="http:&#x2F;&#x2F;tohnee123.github.io&#x2F;2019&#x2F;12&#x2F;24&#x2F;linux001-00005&#x2F;index.html">
+<meta property="og:site_name" content="不积硅步&lt;br&gt;无以至千里">
+<meta property="og:description" content="Linux 我应该是努力过多次，始终只是皮毛。这次还是打算全面的了解 Linux 的运维技术和最新的技术趋势。采用的 os 版本是 centos 7.x。 目录结构和分区如果一个硬盘采用 MBR 分区，这个硬盘最多只能有四个主分区或者扩展分区（扩展分区最多一个），一个扩展分区上可以有若干个逻辑分区  对于 Linux 来说，一个 SATA 硬盘，前面四个分区是供主分区和扩展分区使用，分别为 &#x2F;de">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-12-06T02:45:01.932Z">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://tohnee123.github.io/2019/12/24/linux001-00005/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>Linux 学习笔记（一） | 不积硅步<br>无以至千里</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="不积硅步<br>无以至千里" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">不积硅步<br>无以至千里</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-movies">
+
+    <a href="/movies/" rel="section"><i class="fa fa-fw fa-video-camera"></i>电影</a>
+
+  </li>
+        <li class="menu-item menu-item-books">
+
+    <a href="/books/" rel="section"><i class="fa fa-fw fa-book"></i>读书</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+
+</nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="none"
+           placeholder="搜索..." spellcheck="false"
+           type="text" id="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
+
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://tohnee123.github.io/2019/12/24/linux001-00005/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="James Liu">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="不积硅步<br>无以至千里">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Linux 学习笔记（一）
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-12-25 10:31:43" itemprop="dateCreated datePublished" datetime="2019-12-25T10:31:43+08:00">2019-12-25</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-12-06 10:45:01" itemprop="dateModified" datetime="2019-12-06T10:45:01+08:00">2019-12-06</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" itemprop="url" rel="index">
+                    <span itemprop="name">操作系统</span>
+                  </a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>2.2k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>7 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>Linux 我应该是努力过多次，始终只是皮毛。这次还是打算全面的了解 Linux 的运维技术和最新的技术趋势。采用的 os 版本是 centos 7.x。</p>
+<h2 id="目录结构和分区"><a href="#目录结构和分区" class="headerlink" title="目录结构和分区"></a>目录结构和分区</h2><p>如果一个硬盘采用 MBR 分区，这个硬盘最多只能有四个主分区或者扩展分区（扩展分区最多一个），一个扩展分区上可以有若干个逻辑分区</p>
+<ul>
+<li>对于 Linux 来说，一个 SATA 硬盘，前面四个分区是供主分区和扩展分区使用，分别为 /dev/sda1 ~ /dev/sda4。逻辑分区从 /dev/sda5 开始。</li>
+</ul>
+<a id="more"></a>
+<p>我们在一个新的硬盘上安装 Linux，一般会做如下考虑：</p>
+<ul>
+<li>一个 /boot 区，一般 200M 左右，安装 Linux 的 Kernel 文件。单独一个区，在系统出现问题的时候会比较好解决；</li>
+<li>一个 swap 分区，一般是内存的2倍以上，不大于 8G；</li>
+<li>一个 / 分区，一般 10G 以上；</li>
+<li>剩下的可以给 /data，作为数据分区。</li>
+</ul>
+<h2 id="Linux-的硬件设置"><a href="#Linux-的硬件设置" class="headerlink" title="Linux 的硬件设置"></a>Linux 的硬件设置</h2><h3 id="时间设置"><a href="#时间设置" class="headerlink" title="时间设置"></a>时间设置</h3><ul>
+<li>Linux 有两个时间，一个是 BIOS 中，一个是操作系统的时间，这两个时间可以一致，也有可能不一致。其中<code>clock</code>指令用于修改 BIOS 硬件时间，<code>date</code>指令用于修改操作系统时间；</li>
+<li>和 ntp 服务器同步时间，<code># ntpdate &lt;ntp server ip&gt;</code>；</li>
+<li>centos 6.x ~ 7.x 配置 <code>/etc/ntp.conf</code>，添加<code>server x.x.x.x iburst</code>。然后启动 ntp 的服务；<ul>
+<li>6.x: <code># service ntpd start</code>；</li>
+<li>7.x: <code># systemctl start ntpd</code>；</li>
+</ul>
+</li>
+<li>centos 7.x 也可以配置 <code>/etc/chrony.conf</code>；</li>
+<li>时区的配置信息在<code>/etc/localtime</code>文件中<ul>
+<li>7.x: <code># localectl list-locales</code>，列出所有支持的语言和时区配置；<code># localectl status</code>，列出当前的设置</li>
+</ul>
+</li>
+</ul>
+<h3 id="网卡设置"><a href="#网卡设置" class="headerlink" title="网卡设置"></a>网卡设置</h3><ol>
+<li>centos 7.x 更改了网卡缺省的名字，如果修改网卡名称符合以前的命名规则，需要修改<code>grub.cfg</code>这个文件的设置。<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="comment"># vim /boot/grub2/grub.cfg</span></span></pre></td></tr></table></figure>
+寻找 menuentry 下的 linux16，增加<code>net.ifnames=0</code>，重新启动。</li>
+</ol>
+<h2 id="用户管理"><a href="#用户管理" class="headerlink" title="用户管理"></a>用户管理</h2><h2 id="目录权限"><a href="#目录权限" class="headerlink" title="目录权限"></a>目录权限</h2><h2 id="软件包安装"><a href="#软件包安装" class="headerlink" title="软件包安装"></a>软件包安装</h2><h2 id="Linux-常用简单命令集"><a href="#Linux-常用简单命令集" class="headerlink" title="Linux 常用简单命令集"></a>Linux 常用简单命令集</h2><h3 id="查看系统状态"><a href="#查看系统状态" class="headerlink" title="查看系统状态"></a>查看系统状态</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">// 查看硬件状态</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="comment"># free -h				// 以 M 为单位看系统内存</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"><span class="comment"># lsblk					// 系统的分区情况和外置设备的挂载状况</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"><span class="comment"># lscpu					// 看 CPU 的情况</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line"><span class="comment"># cat /proc/meminfo			// 获得和内存相关的信息</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">// 查看操作系统</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line"><span class="comment"># cat /etc/centos-release   		// 安装的 centos 版本</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line"><span class="comment"># lsb_relase -a    			// 安装的 centos 版本</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line"><span class="comment"># uname -r        			// 内核的版本</span></span></pre></td></tr></table></figure>
+<h3 id="与-shell-相关"><a href="#与-shell-相关" class="headerlink" title="与 shell 相关"></a>与 shell 相关</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="comment"># tty      				// 当前终端名</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="comment"># who     				// 当前登陆本服务器所有的终端名</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"><span class="comment"># whoami   			 	// 我是谁，简略信息</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"><span class="comment"># who am i   				// 我是谁更详细的信息，包括登陆的终端名和 IP 地址</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line"><span class="comment"># echo $SHELL 		 		// 当前运行的 Shell</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line"><span class="comment"># cat /etc/shells 			// 当前系统支持的所有 Shell，对于/usr/sbin/nologin shell，主要是给应用程序使用。不可以登陆</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line"><span class="comment"># echo $PS1				// 命令提示符设置</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line"><span class="comment"># PS1="[\u@\h]$"    			//去掉 working directory</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line"><span class="comment"># PS1="\[\e[1;5;41;33m\][\u@\h \w]\\$\[\e[0m\]"    	// 对于生产环境建议用特别的提示标识，5表示闪烁</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line"><span class="comment"># which &lt;command&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line"><span class="comment"># whereis &lt;command&gt;     		// 和该命令相关的一些文档信息</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">14</span></pre></td><td class="code"><pre><span class="line"><span class="comment"># hash          			//当前被缓存的命令路径</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">15</span></pre></td><td class="code"><pre><span class="line"><span class="comment"># alias cdnet = "cd /etc/sysconfig/network-scripts/"   // 别名一般保存在用户家目录中的 .bashrc 中</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">16</span></pre></td><td class="code"><pre><span class="line"><span class="comment"># unalias &lt;别名&gt;     		 	// 取消别名</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">17</span></pre></td><td class="code"><pre><span class="line"><span class="comment"># . .bashrc    				// 使修改后的 .bashrc 立即生效，等同于 source .bashrc</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">18</span></pre></td><td class="code"><pre><span class="line"><span class="comment"># enable       				// 显示当前 shell 的内部命令列表</span></span></pre></td></tr></table></figure>
+<h3 id="系统配置"><a href="#系统配置" class="headerlink" title="系统配置"></a>系统配置</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">// 时区、时间语言和地区有关指令</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="comment"># clock -w				// copy 操作系统的时间</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"><span class="comment"># clock -s				// write 时间到操作系统</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"><span class="comment"># date mmddhhmmyyyy.ss			// 设置操作系统的时间</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line"><span class="comment"># ntpdate &lt;ip&gt;				// 同步时间</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line"><span class="comment"># localectl list-locales		// 列出支持的所有地区设置</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line"><span class="comment"># localectl status			// 语言设置</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line"><span class="comment"># timedatectl list-timezones		// 支持的时区</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line"><span class="comment"># timedatectl status			// 当前时区</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line"><span class="comment"># timedatectl set-timezone &lt;时区名&gt;	// 设置时区</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line"><span class="comment"># cal					// 本月日历</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line"><span class="comment"># cal -y				// 本年日历</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">14</span></pre></td><td class="code"><pre><span class="line">// 查看网卡信息</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">15</span></pre></td><td class="code"><pre><span class="line"><span class="comment"># ifconfig    				// 看网卡地址</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">16</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">17</span></pre></td><td class="code"><pre><span class="line">// 关机</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">18</span></pre></td><td class="code"><pre><span class="line"><span class="comment"># poweroff				// 关机</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">19</span></pre></td><td class="code"><pre><span class="line"><span class="comment"># halt					// 关机</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">20</span></pre></td><td class="code"><pre><span class="line"><span class="comment"># shutdown -r +3			// 关机或者重启，可以指定时间。本例中，3 分钟后重启</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">21</span></pre></td><td class="code"><pre><span class="line"><span class="comment"># shutdown -c				// 取消指定时间的关机</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">22</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">23</span></pre></td><td class="code"><pre><span class="line">// 安装下载软件</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">24</span></pre></td><td class="code"><pre><span class="line"><span class="comment"># rpm -ivh &lt;package name&gt;		// 安装已下载的 rpm 包</span></span></pre></td></tr></table></figure>
+<h3 id="用户管理-1"><a href="#用户管理-1" class="headerlink" title="用户管理"></a>用户管理</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="comment"># w 					// 查看当前有哪些用户登陆到本机，以及正在执行的操作</span></span></pre></td></tr></table></figure>
+<h3 id=""><a href="#" class="headerlink" title=" "></a> </h3>
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Linux/" rel="tag"># Linux</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2019/12/19/misc-howtobuildthisblog03-00004/" rel="prev" title="如何建立一个类似这样的网站（三）">
+      <i class="fa fa-chevron-left"></i> 如何建立一个类似这样的网站（三）
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2019/12/30/linux002-00008/" rel="next" title="Linux 学习笔记（二）">
+      Linux 学习笔记（二） <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#目录结构和分区"><span class="nav-number">1.</span> <span class="nav-text">目录结构和分区</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Linux-的硬件设置"><span class="nav-number">2.</span> <span class="nav-text">Linux 的硬件设置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#时间设置"><span class="nav-number">2.1.</span> <span class="nav-text">时间设置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#网卡设置"><span class="nav-number">2.2.</span> <span class="nav-text">网卡设置</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#用户管理"><span class="nav-number">3.</span> <span class="nav-text">用户管理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#目录权限"><span class="nav-number">4.</span> <span class="nav-text">目录权限</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#软件包安装"><span class="nav-number">5.</span> <span class="nav-text">软件包安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Linux-常用简单命令集"><span class="nav-number">6.</span> <span class="nav-text">Linux 常用简单命令集</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#查看系统状态"><span class="nav-number">6.1.</span> <span class="nav-text">查看系统状态</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#与-shell-相关"><span class="nav-number">6.2.</span> <span class="nav-text">与 shell 相关</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#系统配置"><span class="nav-number">6.3.</span> <span class="nav-text">系统配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#用户管理-1"><span class="nav-number">6.4.</span> <span class="nav-text">用户管理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#null"><span class="nav-number">6.5.</span> <span class="nav-text"> </span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">James Liu</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">9</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">10</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">James Liu</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+      <span class="post-meta-item-text">站点总字数：</span>
+    <span title="站点总字数">14k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
+    <span title="站点阅读时长">48 分钟</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v4.0.0
+  </div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">主题 – <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.6.0
+  </div>
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+  
+  <script color='0,0,255' opacity='0.5' zIndex='-1' count='99' src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script>
+<script src="/js/schemes/pisces.js"></script>
+<script src="/js/next-boot.js"></script>
+
+
+
+  
+
+
+
+
+  <script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

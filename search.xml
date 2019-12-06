@@ -1,8 +1,123 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>JavaScript 学习笔记（一）</title>
+    <url>/2020/01/19/Javascript01-00007/</url>
+    <content><![CDATA[<p>JavaScript 是一种前端的开发语言，当然发展到现在也被用做后端的开发，比如借助于 Node.js。由于现在大量的前端框架会基于 JavaScript 和 Node.js，所以 JavaScript 的了解也是非常重要的。</p>
+<a id="more"></a>
+<h2 id="Javascript"><a href="#Javascript" class="headerlink" title="Javascript"></a>Javascript</h2><h2 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h2><h3 id="JavaScript-数据类型"><a href="#JavaScript-数据类型" class="headerlink" title="JavaScript 数据类型"></a>JavaScript 数据类型</h3><ul>
+<li>number、string、boolean、undefined、object</li>
+<li>number：NaN 也是数字值</li>
+</ul>
+<h3 id="数据类型的转换"><a href="#数据类型的转换" class="headerlink" title="数据类型的转换"></a>数据类型的转换</h3><h4 id="转成数字类型"><a href="#转成数字类型" class="headerlink" title="转成数字类型"></a>转成数字类型</h4><ul>
+<li>字符串如果是纯数字，则转换成 number；</li>
+<li>字符串如果包含字符，则转换成 NaN；</li>
+<li>布尔值<code>true</code>转换成 1，<code>false</code>转换成 0；</li>
+<li>undefined 转换成 0；</li>
+<li>对于任意类型的值，可以使用 Number 函数，也可以在被转换的值前面添上 <code>+</code>。</li>
+</ul>
+<h4 id="转成布尔类型"><a href="#转成布尔类型" class="headerlink" title="转成布尔类型"></a>转成布尔类型</h4><ul>
+<li>字符串转布尔值，除了空字符串外，其余都是<code>true</code>；</li>
+<li>数值转布尔值，除了 <code>0</code> 和 <code>NaN</code>，其余都是<code>true</code>；</li>
+<li>null 和 undefined 转布尔值，都是 <code>false</code>；</li>
+<li>对象转布尔值，都是<code>true</code>；</li>
+<li>对任意类型的值，进行两次<code>!</code>操作。</li>
+</ul>
+<h3 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h3><p>运算符也称为操作符，对一个和多个值进行运算并取得运算结果，常见 JavaScript 运算符如下：</p>
+<h4 id="typeof"><a href="#typeof" class="headerlink" title="typeof"></a><code>typeof</code></h4><p>获得变量的类型，返回值是一个 string 类型的值。</p>
+<h4 id="算数运算符"><a href="#算数运算符" class="headerlink" title="算数运算符"></a>算数运算符</h4><p>算数运算符共有 5 种：<code>+, -, *, /, %（取余/取模）</code>。</p>
+<ul>
+<li>null 转换为数字为 0；</li>
+<li>2 + NaN = NaN；</li>
+<li>两个字符串相加，两个字符串进行拼接；</li>
+<li>任何值和字符串做加法，都是进行字符串的拼接；</li>
+<li>两个数字字符串进行其他运算，运行对应数字的四则运算（只有加法进行字符串的拼接）；  <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">c = <span class="number">1</span> + <span class="number">2</span> + <span class="string">'3'</span>;</span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="built_in">console</span>(c);				<span class="comment">// 结果是 “33”</span></span></pre></td></tr></table></figure></li>
+<li>/: 取余。</li>
+</ul>
+<h4 id="一元运算符"><a href="#一元运算符" class="headerlink" title="一元运算符"></a>一元运算符</h4><ul>
+<li>一元运算符共有 2 种：<code>+, -（取反）</code>；</li>
+<li>一元运算符会把值转换为 number 类型，然后再进行运算；</li>
+<li>一元运算符的作用，把字符串类型的值，转成数字值。<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="string">"5"</span>;</span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> +a);			<span class="comment">// 输出为 number</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="string">"abcd"</span>;</span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(+a);			<span class="comment">// 输出为 NaN</span></span></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="自增自减运算符"><a href="#自增自减运算符" class="headerlink" title="自增自减运算符"></a>自增自减运算符</h4><p>自增自减运算符共有两种：<code>++, --</code>。</p>
+<ul>
+<li>++a 和 a++ 的主要区别主要在赋值语句中（表达式的值不一样），++a 先自增再赋值；a++ 先赋值再自增；  <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> c = <span class="number">10</span>;</span></pre></td></tr><tr><td class="code"><pre><span class="line">c++;</span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(c++)      			<span class="comment">// 输出 11</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> d = <span class="number">20</span>;</span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> result = d++ + ++d + d;		<span class="comment">// result = 64</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> d = <span class="number">20</span>;		</span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> d = d++;				<span class="comment">// d = 20; 等价于 e = d++; d = e</span></span></pre></td></tr></table></figure></li>
+<li>—a 和 a—，自减。</li>
+</ul>
+<h4 id="逻辑运算符"><a href="#逻辑运算符" class="headerlink" title="逻辑运算符"></a>逻辑运算符</h4><p>逻辑运算符共有三种：<code>!, &amp;&amp;, ||</code>。</p>
+<ul>
+<li><code>!</code>，对一个布尔值取反操作，不等于 0 的数值都为<code>true</code>；</li>
+<li><code>&amp;&amp;</code>，两个值都为<code>true</code>，返回值为<code>true</code>，否则返回值为<code>false</code>;<ul>
+<li>如果第一个值为<code>false</code>，不会计算第二个值。</li>
+</ul>
+</li>
+<li><code>||</code>，两个值都为<code>false</code>，返回值为<code>false</code>，否则返回为<code>true</code>；<ul>
+<li>如果第一个值为<code>true</code>，不会计算第二个值。</li>
+</ul>
+</li>
+<li>对于非布尔值的逻辑与运算，系统先将其转换为布尔值，再进行运算，并且返回原值；<ul>
+<li>如果两个值都是<code>true</code>，则返回后面的值；</li>
+<li>如果两个值都是<code>false</code>，则返回前面的值；</li>
+<li>这个情况是和短路计算的规则有关。</li>
+</ul>
+</li>
+<li>对于非布尔值的逻辑或运算，系统先将其转换为布尔值，再进行运算，并且返回原值。<ul>
+<li>如果两个值都是<code>false</code>，则返回后面的值；</li>
+<li>其余情况，返回第一个<code>true</code>的值；</li>
+<li>同样是和短路计算的规则有关。</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">-2</span>;</span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(!a);			<span class="comment">// 输出为 false</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> result = <span class="number">2</span> &amp;&amp; <span class="number">1</span>;</span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(result);			<span class="comment">// 对于 true，输出值为 1（返回后面的值）</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">result = <span class="number">0</span> &amp;&amp; <span class="number">1</span>；</span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(result);			<span class="comment">// 对于 false，输出值为 0</span></span></pre></td></tr></table></figure>
+<h4 id="赋值运算符"><a href="#赋值运算符" class="headerlink" title="赋值运算符"></a>赋值运算符</h4><ul>
+<li><code>=</code>右侧的值赋值给左侧的变量；</li>
+<li><code>+=</code>左侧变量的值和右侧的值相加，赋值给左侧的变量；</li>
+<li><code>-=</code>左侧变量的值和右侧的值相减，赋值给左侧的变量；</li>
+<li><code>*=</code>、<code>/=</code>、<code>%=</code>和另外两个类似。</li>
+</ul>
+<h4 id="关系运算符"><a href="#关系运算符" class="headerlink" title="关系运算符"></a>关系运算符</h4><p>通过关系运算符比较两个值的大小，关系成立，返回<code>true</code>，不成立返回<code>false</code>。</p>
+<ul>
+<li><code>&gt;</code>、<code>&gt;=</code>、<code>&lt;</code>、<code>&lt;=</code>，四个关系运算符；</li>
+<li>如果一侧是数值，另一侧是字符（<code>1 &gt; &quot;0&quot;</code>），会把非数值转换为数值，返回比较结果；</li>
+<li>如果两侧都是字符串，不会将其转换数值进行比较，而是分别比较字符串中字符的 unicode 编码。在电子商务的应用中，要特别小心。因为用户输入的都是字符串，如果两个字符串比较就很容易出错。解决方案是利用一元运算符或者 Number 函数把 string 转换为 number 类型；</li>
+<li>任何值（包括<code>NaN</code>）和<code>NaN</code> 做任何比较，都返回<code>false</code>；</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> result = <span class="number">-1</span> &gt;= <span class="string">"0"</span>;</span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(result);			<span class="comment">// 返回 false</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="literal">NaN</span> &gt;= <span class="literal">NaN</span>)			<span class="comment">// 返回 false</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="string">"11"</span> &lt; <span class="string">"5"</span>)			<span class="comment">// 返回 true</span></span></pre></td></tr></table></figure>
+<h4 id="相等运算符"><a href="#相等运算符" class="headerlink" title="相等运算符"></a>相等运算符</h4><h4 id="条件运算符"><a href="#条件运算符" class="headerlink" title="条件运算符"></a>条件运算符</h4><h4 id="运算优先级"><a href="#运算优先级" class="headerlink" title="运算优先级"></a>运算优先级</h4><h3 id="条件语句"><a href="#条件语句" class="headerlink" title="条件语句"></a>条件语句</h3><h3 id="循环语句"><a href="#循环语句" class="headerlink" title="循环语句"></a>循环语句</h3><h3 id="常见基本函数"><a href="#常见基本函数" class="headerlink" title="常见基本函数"></a>常见基本函数</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">c = <span class="built_in">String</span>(c);				<span class="comment">// 将 c 转换为字符串</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">c = <span class="built_in">Number</span>(c);				<span class="comment">// 将 c 转换为数字</span></span></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>开发语言</category>
+      </categories>
+      <tags>
+        <tag>JavaScript</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Linux 学习笔记（三）</title>
+    <url>/2020/01/03/linux003-00009/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>操作系统</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Linux 学习笔记（二）</title>
+    <url>/2019/12/30/linux002-00008/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>操作系统</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Linux 学习笔记（一）</title>
-    <url>/2019/12/24/linux/linux001-00005/</url>
+    <url>/2019/12/24/linux001-00005/</url>
     <content><![CDATA[<p>Linux 我应该是努力过多次，始终只是皮毛。这次还是打算全面的了解 Linux 的运维技术和最新的技术趋势。采用的 os 版本是 centos 7.x。</p>
 <h2 id="目录结构和分区"><a href="#目录结构和分区" class="headerlink" title="目录结构和分区"></a>目录结构和分区</h2><p>如果一个硬盘采用 MBR 分区，这个硬盘最多只能有四个主分区或者扩展分区（扩展分区最多一个），一个扩展分区上可以有若干个逻辑分区</p>
 <ul>
@@ -16,12 +131,31 @@
 <li>一个 / 分区，一般 10G 以上；</li>
 <li>剩下的可以给 /data，作为数据分区。</li>
 </ul>
-<h2 id="Linux-常用简单命令集"><a href="#Linux-常用简单命令集" class="headerlink" title="Linux 常用简单命令集"></a>Linux 常用简单命令集</h2><h3 id="查看系统状态"><a href="#查看系统状态" class="headerlink" title="查看系统状态"></a>查看系统状态</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># free -h				// 以 M 为单位看系统内存</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment"># lsblk					// 系统的分区情况</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment"># lscpu					// 看 CPU 的情况</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment"># cat /proc/meminfo			// 获得和内存相关的信息</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment"># cat /etc/centos-release   		// 安装的 centos 版本</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment"># lsb_relase -a    			// 安装的 centos 版本</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment"># uname -r        			// 内核的版本</span></span></pre></td></tr></table></figure>
+<h2 id="Linux-的硬件设置"><a href="#Linux-的硬件设置" class="headerlink" title="Linux 的硬件设置"></a>Linux 的硬件设置</h2><h3 id="时间设置"><a href="#时间设置" class="headerlink" title="时间设置"></a>时间设置</h3><ul>
+<li>Linux 有两个时间，一个是 BIOS 中，一个是操作系统的时间，这两个时间可以一致，也有可能不一致。其中<code>clock</code>指令用于修改 BIOS 硬件时间，<code>date</code>指令用于修改操作系统时间；</li>
+<li>和 ntp 服务器同步时间，<code># ntpdate &lt;ntp server ip&gt;</code>；</li>
+<li>centos 6.x ~ 7.x 配置 <code>/etc/ntp.conf</code>，添加<code>server x.x.x.x iburst</code>。然后启动 ntp 的服务；<ul>
+<li>6.x: <code># service ntpd start</code>；</li>
+<li>7.x: <code># systemctl start ntpd</code>；</li>
+</ul>
+</li>
+<li>centos 7.x 也可以配置 <code>/etc/chrony.conf</code>；</li>
+<li>时区的配置信息在<code>/etc/localtime</code>文件中<ul>
+<li>7.x: <code># localectl list-locales</code>，列出所有支持的语言和时区配置；<code># localectl status</code>，列出当前的设置</li>
+</ul>
+</li>
+</ul>
+<h3 id="网卡设置"><a href="#网卡设置" class="headerlink" title="网卡设置"></a>网卡设置</h3><ol>
+<li>centos 7.x 更改了网卡缺省的名字，如果修改网卡名称符合以前的命名规则，需要修改<code>grub.cfg</code>这个文件的设置。<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># vim /boot/grub2/grub.cfg</span></span></pre></td></tr></table></figure>
+寻找 menuentry 下的 linux16，增加<code>net.ifnames=0</code>，重新启动。</li>
+</ol>
+<h2 id="用户管理"><a href="#用户管理" class="headerlink" title="用户管理"></a>用户管理</h2><h2 id="目录权限"><a href="#目录权限" class="headerlink" title="目录权限"></a>目录权限</h2><h2 id="软件包安装"><a href="#软件包安装" class="headerlink" title="软件包安装"></a>软件包安装</h2><h2 id="Linux-常用简单命令集"><a href="#Linux-常用简单命令集" class="headerlink" title="Linux 常用简单命令集"></a>Linux 常用简单命令集</h2><h3 id="查看系统状态"><a href="#查看系统状态" class="headerlink" title="查看系统状态"></a>查看系统状态</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">// 查看硬件状态</span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment"># free -h				// 以 M 为单位看系统内存</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment"># lsblk					// 系统的分区情况和外置设备的挂载状况</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment"># lscpu					// 看 CPU 的情况</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment"># cat /proc/meminfo			// 获得和内存相关的信息</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line">// 查看操作系统</span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment"># cat /etc/centos-release   		// 安装的 centos 版本</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment"># lsb_relase -a    			// 安装的 centos 版本</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment"># uname -r        			// 内核的版本</span></span></pre></td></tr></table></figure>
 <h3 id="与-shell-相关"><a href="#与-shell-相关" class="headerlink" title="与 shell 相关"></a>与 shell 相关</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># tty      				// 当前终端名</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment"># who     				// 当前登陆本服务器所有的终端名</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment"># whoami   			 	// 我是谁，简略信息</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment"># who am i   				// 我是谁更详细的信息，包括登陆的终端名和 IP 地址</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment"># echo $SHELL 		 		// 当前运行的 Shell</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment"># cat /etc/shells 			// 当前系统支持的所有 Shell，对于/usr/sbin/nologin shell，主要是给应用程序使用。不可以登陆</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment"># echo $PS1				// 命令提示符设置</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment"># PS1="[\u@\h]$"    			//去掉 working directory</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment"># PS1="\[\e[1;5;41;33m\][\u@\h \w]\\$\[\e[0m\]"    	// 对于生产环境建议用特别的提示标识，5表示闪烁</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment"># which &lt;command&gt;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment"># whereis &lt;command&gt;     		// 和该命令相关的一些文档信息</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment"># hash          			//当前被缓存的命令路径</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment"># alias cdnet = "cd /etc/sysconfig/network-scripts/"   // 别名一般保存在用户家目录中的 .bashrc 中</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment"># unalias &lt;别名&gt;     		 	// 取消别名</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment"># . .bashrc    				// 使修改后的 .bashrc 立即生效，等同于 source .bashrc</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment"># enable       				// 显示当前 shell 的内部命令列表</span></span></pre></td></tr></table></figure>
-<h3 id="系统配置"><a href="#系统配置" class="headerlink" title="系统配置"></a>系统配置</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># ifconfig    				// 看网卡地址</span></span></pre></td></tr></table></figure>
-<h3 id="用户管理"><a href="#用户管理" class="headerlink" title="用户管理"></a>用户管理</h3>]]></content>
+<h3 id="系统配置"><a href="#系统配置" class="headerlink" title="系统配置"></a>系统配置</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">// 时区、时间语言和地区有关指令</span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment"># clock -w				// copy 操作系统的时间</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment"># clock -s				// write 时间到操作系统</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment"># date mmddhhmmyyyy.ss			// 设置操作系统的时间</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment"># ntpdate &lt;ip&gt;				// 同步时间</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment"># localectl list-locales		// 列出支持的所有地区设置</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment"># localectl status			// 语言设置</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment"># timedatectl list-timezones		// 支持的时区</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment"># timedatectl status			// 当前时区</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment"># timedatectl set-timezone &lt;时区名&gt;	// 设置时区</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment"># cal					// 本月日历</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment"># cal -y				// 本年日历</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line">// 查看网卡信息</span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment"># ifconfig    				// 看网卡地址</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line">// 关机</span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment"># poweroff				// 关机</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment"># halt					// 关机</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment"># shutdown -r +3			// 关机或者重启，可以指定时间。本例中，3 分钟后重启</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment"># shutdown -c				// 取消指定时间的关机</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line">// 安装下载软件</span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment"># rpm -ivh &lt;package name&gt;		// 安装已下载的 rpm 包</span></span></pre></td></tr></table></figure>
+<h3 id="用户管理-1"><a href="#用户管理-1" class="headerlink" title="用户管理"></a>用户管理</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># w 					// 查看当前有哪些用户登陆到本机，以及正在执行的操作</span></span></pre></td></tr></table></figure>
+<h3 id=""><a href="#" class="headerlink" title=" "></a> </h3>]]></content>
       <categories>
-        <category>os</category>
+        <category>操作系统</category>
       </categories>
       <tags>
         <tag>Linux</tag>
@@ -29,7 +163,7 @@
   </entry>
   <entry>
     <title>如何建立一个类似这样的网站（三）</title>
-    <url>/2019/12/19/howtobuildthisblog03-00004/</url>
+    <url>/2019/12/19/misc-howtobuildthisblog03-00004/</url>
     <content><![CDATA[<h2 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h2><p>这一部分，我们的主要目标如下：</p>
 <ul>
 <li>对已经安装好的博客系统进行必要的优化工作<ul>
@@ -79,7 +213,7 @@
   </entry>
   <entry>
     <title>如何建立一个类似这样的网站（二）</title>
-    <url>/2019/12/15/howtobuildthisblog02-00003/</url>
+    <url>/2019/12/15/misc-howtobuildthisblog02-00003/</url>
     <content><![CDATA[<h2 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h2><p>这一部分，我们的主要目标如下：</p>
 <ul>
 <li>安装 Node.js、Hexo 和 Next 主题。这样我们就拥有了一个阶段性成果。</li>
@@ -116,7 +250,7 @@
 </ul>
 ]]></content>
       <categories>
-        <category>applications</category>
+        <category>应用程序</category>
       </categories>
       <tags>
         <tag>github, hexo, clouds</tag>
@@ -124,7 +258,7 @@
   </entry>
   <entry>
     <title>如何建立一个类似这样的网站（一）</title>
-    <url>/2019/12/10/howtobuildthisblog01-00002/</url>
+    <url>/2019/12/10/misc-howtobuildthisblog01-00002/</url>
     <content><![CDATA[<h2 id="源起"><a href="#源起" class="headerlink" title="源起"></a>源起</h2><p>很多年以前，我就想建立一个类似这样的博客网站。大致有如下的要求：</p>
 <ul>
 <li>管理方便，能够让人从 Internet 访问，最好对手机的支持友好。</li>
@@ -189,7 +323,7 @@
     <content><![CDATA[<p>为了更好的使用这个博客作为我学习的工具，有如下的一些惯例和约定。</p>
 <h2 id="有效的标签、类别"><a href="#有效的标签、类别" class="headerlink" title="有效的标签、类别"></a>有效的标签、类别</h2><h3 id="可用的标签"><a href="#可用的标签" class="headerlink" title="可用的标签"></a>可用的标签</h3><ul>
 <li>博客，云服务，Github；</li>
-<li>Linux，Python，CSS，Javascript，Hexo，AI；</li>
+<li>Linux，Python，CSS，JavaScript，Hexo，AI；</li>
 <li>线性代数，微积分，概率论；</li>
 <li>更新，计划；</li>
 </ul>
@@ -226,6 +360,7 @@
 <li>博客增加留言板的功能</li>
 <li>修订本博客的建站指南</li>
 <li>增加新的 Linux、Javascript、CSS 的内容</li>
+<li>决定采用哪个留言系统</li>
 </ol>
 ]]></content>
       <categories>
@@ -240,7 +375,7 @@
   </entry>
   <entry>
     <title>重新出发</title>
-    <url>/2019/12/04/howtobuildadocsite-00001/</url>
+    <url>/2019/12/04/misc-howtobuildadocsite-00001/</url>
     <content><![CDATA[<p>对于一个快50岁的人来说，其实学什么东西似乎都显得有点晚。记得30岁那年的春节，我站在武汉的马路上和自己说，要抓紧时间多学习一些东西。可是时间已经流逝了近20年，我自己却没有成长起来。所有人都知道，人和人最大的差别其实不在智商，而在于坚持。可是由于受到自身性格的影响，虽然道理懂，却一直也没有付诸行动。时光流逝，应该是我人生中很大的遗憾。这些年来，我的生活一直很动荡。路是我自己选的，如果我没有选择走这条路，我一定会很遗憾，所以我不后悔我的选择。但是这些年来，总是要顾及生活的需要，心情一直无法沉淀下来，甚至也对自己的梦想没有了追求，成了一个得过且过的人。这几个月一直孤身在外，没有办法照顾家人，也不能尽子女的责任，心中有愧。当我准备完材料，在这三个星期算是有了那么一些时间，再来规划一下我未来生活该怎么走。</p>
 <p>人总是要有一些追求的，目前的状态身体尚可，等待工作，一口饭还能吃的上。对于这个社会的未来，我是悲观的，在这个慢慢走向黑暗的社会里，总是要做一些事情来支持自己继续走下去。于是我又回想起30岁时曾经的追求，重新出发，去寻找自己未完成的梦想。我是喜欢技术的，回顾这几年，从喜欢技术，慢慢喜欢人文，又回到了技术之中，我感觉更加从容。对于未来，我对自己定义为一个技术爱好者，研究这些一个目的是消磨时间，另外也希望可以帮助身边正在成长的新的一代。他们担负着比我们更加沉重的未来。</p>
 <p>现在的条件，除了自己的脑袋变笨了，其他的条件比过去都要好。搞不明白的内容，现在可以在百度上搜素，能够解决大部分的问题；文字看不下去，我们可以去 bilibili 上看视频；还是搞不掂，还有各种各样的微信群和培训机构，使得我们足不出户解决大量的技术问题。硬件条件也比以前要好，无论是云服务还是 github，无论是开发工具还是硬件设备。对于学习来说，这个年代是没有外部理由学不好的，剩下就是自己的努力和坚持。</p>
@@ -286,7 +421,7 @@
 <ul>
 <li>基础知识：线性代数的巩固。</li>
 <li>电脑技术方面：Python、Web 前端（HTML、CSS 和 JavaScript）、Linux 的使用三个方面。另外，也通过这个博客，把 Hexo、Github 和 Markdown 这些知识进行总结和掌握。</li>
-<li>英语：真是不好意思说。<br>这个博客的一个主要目的是为了加深我对知识的理解和记忆，更像是我个人的笔记本。所以很多内容是我我个人知识的汇总，也会有很多其他网站的引用和重复。如果有哪些网站的拥有者觉得我引用他们的内容不合适，也请通过 email 告知。另外我也会借助其他的网络服务，在未来提供留言板功能，欢迎大家共同学习，一起进步。</li>
+<li>英语：真是不好意思说。<br>这个博客的主要目的是为了加深我对知识的理解和记忆，更像是我个人的笔记本。所以很多内容是我我个人知识的汇总，也会有很多其他网站的引用和重复。如果有哪些网站的拥有者觉得我引用他们的内容不合适，也请通过 email 告知。另外我也会借助其他的网络服务，在未来提供留言板功能，欢迎大家共同学习，一起进步。</li>
 </ul>
 ]]></content>
       <tags>
