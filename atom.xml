@@ -106,8 +106,8 @@
   
   <entry>
     <title>如何建立一个类似这样的网站（三）</title>
-    <link href="http://tohnee123.github.io/2019/12/19/misc-howtobuildthisblog03-00004/"/>
-    <id>http://tohnee123.github.io/2019/12/19/misc-howtobuildthisblog03-00004/</id>
+    <link href="http://tohnee123.github.io/2019/12/19/web-howtobuildthisblog03-00004/"/>
+    <id>http://tohnee123.github.io/2019/12/19/web-howtobuildthisblog03-00004/</id>
     <published>2019-12-20T02:31:04.000Z</published>
     <updated>2019-12-06T12:12:00.357Z</updated>
     
@@ -141,8 +141,8 @@
   
   <entry>
     <title>如何建立一个类似这样的网站（二）</title>
-    <link href="http://tohnee123.github.io/2019/12/15/misc-howtobuildthisblog02-00003/"/>
-    <id>http://tohnee123.github.io/2019/12/15/misc-howtobuildthisblog02-00003/</id>
+    <link href="http://tohnee123.github.io/2019/12/15/web-howtobuildthisblog02-00003/"/>
+    <id>http://tohnee123.github.io/2019/12/15/web-howtobuildthisblog02-00003/</id>
     <published>2019-12-15T15:20:32.000Z</published>
     <updated>2019-12-06T12:29:57.096Z</updated>
     
@@ -172,8 +172,8 @@
   
   <entry>
     <title>如何建立一个类似这样的网站（一）</title>
-    <link href="http://tohnee123.github.io/2019/12/10/misc-howtobuildthisblog01-00002/"/>
-    <id>http://tohnee123.github.io/2019/12/10/misc-howtobuildthisblog01-00002/</id>
+    <link href="http://tohnee123.github.io/2019/12/10/web-howtobuildthisblog01-00002/"/>
+    <id>http://tohnee123.github.io/2019/12/10/web-howtobuildthisblog01-00002/</id>
     <published>2019-12-10T13:18:08.000Z</published>
     <updated>2019-12-05T15:15:25.241Z</updated>
     
@@ -201,6 +201,54 @@
       <category term="github" scheme="http://tohnee123.github.io/tags/github/"/>
     
       <category term="hexo" scheme="http://tohnee123.github.io/tags/hexo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>每周和女儿视频交流的提纲（2019.12.14）</title>
+    <link href="http://tohnee123.github.io/2019/12/07/family-daugtherweekly-001-00011/"/>
+    <id>http://tohnee123.github.io/2019/12/07/family-daugtherweekly-001-00011/</id>
+    <published>2019-12-07T05:29:56.000Z</published>
+    <updated>2019-12-07T18:40:55.213Z</updated>
+    
+    <content type="html"><![CDATA[<div id="hexo-blog-encrypt" data-wpm="Oh, this is an invalid password. Check and try again, please." data-whm="OOPS, these decrypted content may changed, but you can still have a look.">  <div class="hbe-input-container">  <input type="password" id="hbePass" placeholder="" />    <label for="hbePass">请输入密码，查看文章。</label>    <div class="bottom-line"></div>  </div>  <script id="hbeData" type="hbeData" data-hmacdigest="bb2d3d01217a1d6e6448c65b285b7df45b45a5ad5068da53087d048c25c455f2">d37753a07aad5849b54114671e0ce454b2f3bf1489ca09ea0f149d2153969c5a29505e26cc6a4f50b9b6a85b2cd9a20a7bcfe44db03273576e319c951933293a9bc35ac5b2c49834209c00043983121077a2f3885bf0d935d71a9438b9269c8a3df877523beb7f91727b7edd3c41c9405afe03c776bfcc9cb90f3aa46f972ec99fbe9013d6818c48cf7feca69b74863cfa15f97b93d94042f9f784a54a5da1772241a0df0a62994526e3bc7381cc67d490860f094af9d584222eaa21c9f3d2db004ec21bd99333a0a5933907b6a265fc55744fbea200f970b8cb888716ff1faa37cf2d65fcd244446944c4d097868adb12c58f7942f9f24007a118680de458cab3e3a6c34bbeae7aa11171f370e32854ecc92d680025d44667e06e03812b53c19043ffc837ce60354628e0b5982e7ef96be103558c0f04141b13242b99cc3d093218943649e2dd2f903461b0756cbbe1</script></div><script src="/lib/blog-encrypt.js"></script><link href="/css/blog-encrypt.css" rel="stylesheet" type="text/css">]]></content>
+    
+    <summary type="html">
+    
+      非常抱歉，这篇文章暂时无法公开。
+    
+    </summary>
+    
+    
+      <category term="家庭" scheme="http://tohnee123.github.io/categories/%E5%AE%B6%E5%BA%AD/"/>
+    
+    
+      <category term="女儿" scheme="http://tohnee123.github.io/tags/%E5%A5%B3%E5%84%BF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>我的时间安排</title>
+    <link href="http://tohnee123.github.io/2019/12/06/misc-timeschedule-00010/"/>
+    <id>http://tohnee123.github.io/2019/12/06/misc-timeschedule-00010/</id>
+    <published>2019-12-07T02:58:19.000Z</published>
+    <updated>2019-12-07T16:03:42.007Z</updated>
+    
+    <content type="html"><![CDATA[<p>最近这段时间确实是学的有一点紧，外面又在下雪，没有出去运动。一直呆在房间里面看书。现在的脖子已经没有办法运动了，要有一些改变了。每天大概我有 16 个小时的自由支配时间，安排如下：</p><ul><li>工作、看书时间：10 小时</li><li>出去活动时间：1 小时</li><li>电影、娱乐、家庭沟通时间：2 小时</li><li>看书时间：1 小时</li><li>做饭时间：2 小时</li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;最近这段时间确实是学的有一点紧，外面又在下雪，没有出去运动。一直呆在房间里面看书。现在的脖子已经没有办法运动了，要有一些改变了。每天大概我有 16 个小时的自由支配时间，安排如下：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;工作、看书时间：10 小时&lt;/li&gt;
+&lt;li&gt;出去活动时间：1 小
+      
+    
+    </summary>
+    
+    
     
   </entry>
   
@@ -245,8 +293,8 @@
   
   <entry>
     <title>重新出发</title>
-    <link href="http://tohnee123.github.io/2019/12/04/misc-howtobuildadocsite-00001/"/>
-    <id>http://tohnee123.github.io/2019/12/04/misc-howtobuildadocsite-00001/</id>
+    <link href="http://tohnee123.github.io/2019/12/04/web-howtobuildadocsite-00001/"/>
+    <id>http://tohnee123.github.io/2019/12/04/web-howtobuildadocsite-00001/</id>
     <published>2019-12-04T09:19:04.000Z</published>
     <updated>2019-12-05T22:20:36.494Z</updated>
     
