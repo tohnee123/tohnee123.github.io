@@ -1,6 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>web_css_01_00015</title>
+    <url>/2020/02/10/web-css-01-00015/</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
+    <title>web_html_01_00014</title>
+    <url>/2020/02/02/web-html-01-00014/</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
     <title>Markdown 学习笔记</title>
     <url>/2020/01/30/web-markdown-00013/</url>
     <content><![CDATA[]]></content>
@@ -281,11 +291,21 @@
 <li>数组是一个对象，用不同的元素存储一些值，数组使用数字作为索引来操作元素（对象属性）；</li>
 <li>数组的性能比普通对象要好，所以我们经常使用数组来来存储数据；</li>
 <li>数组的索引从 0 开始；</li>
+<li>数组中的元素可以是任意的数据类型；</li>
 </ul>
 <h4 id="数组语法"><a href="#数组语法" class="headerlink" title="数组语法"></a>数组语法</h4><ul>
-<li>声明数组、给数组元素赋值和获得数组元素的值；<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 方法 1：构造数组</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = <span class="keyword">new</span> <span class="built_in">Array</span>();</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line">arr[<span class="number">0</span>] = <span class="string">"hello"</span>;</span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(arr[<span class="number">0</span>]);</span></pre></td></tr></table></figure></li>
-<li>获取数组的长度<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 方法 1：构造数组</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = <span class="keyword">new</span> <span class="built_in">Array</span>();</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line">arr[<span class="number">0</span>] = <span class="string">"hello"</span>;</span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(arr[<span class="number">0</span>]);</span></pre></td></tr></table></figure>
+<li>声明数组、给数组元素赋值和获得数组元素的值；<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 方法 1：构造数组</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = <span class="keyword">new</span> <span class="built_in">Array</span>();</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line">arr[<span class="number">0</span>] = <span class="string">"hello"</span>;</span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(arr[<span class="number">0</span>]);</span></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 方法 2：构造数组</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [];				<span class="comment">// 和 new Array() 一样</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line">arr[<span class="number">0</span>] = <span class="string">"hello"</span>;</span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(arr[<span class="number">0</span>]);</span></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 方法 3：使用值创建数组</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>];		<span class="comment">// 创建 5 个元素</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = <span class="keyword">new</span> <span class="built_in">Array</span>(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>)		<span class="comment">// 创建 5 个元素</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = <span class="keyword">new</span> <span class="built_in">Array</span>(<span class="number">10</span>)			<span class="comment">// 创造 10 个元素空数组</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line">arr[<span class="number">0</span>] = <span class="string">"hello"</span>;</span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(arr[<span class="number">0</span>]);</span></pre></td></tr></table></figure>
 </li>
+</ul>
+<h4 id="数组的属性"><a href="#数组的属性" class="headerlink" title="数组的属性"></a>数组的属性</h4><ul>
+<li>获取数组的长度<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 方法 1：构造数组</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = <span class="keyword">new</span> <span class="built_in">Array</span>();</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line">arr[<span class="number">0</span>] = <span class="string">"hello"</span>;</span></pre></td></tr><tr><td class="code"><pre><span class="line">arr[<span class="number">1</span>] = <span class="string">"javascript"</span>;</span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> length = arr.length;     <span class="comment">// length 为 2</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">arr[arr.length] = <span class="string">"The third array element"</span>		<span class="comment">// 对数组最后一个元素赋值</span></span></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="数组的方法"><a href="#数组的方法" class="headerlink" title="数组的方法"></a>数组的方法</h4><ul>
+<li>push 方法</li>
+<li></li>
 </ul>
 <h3 id="正则表达式"><a href="#正则表达式" class="headerlink" title="正则表达式"></a>正则表达式</h3>]]></content>
       <categories>
@@ -419,7 +439,7 @@
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">encrypt:</span></pre></td></tr><tr><td class="code"><pre><span class="line">  enable: true</span></pre></td></tr><tr><td class="code"><pre><span class="line">  abstract: 这是一篇加密文章，内容可能涉及个人情感、家庭交流或者其他不适宜公开的内容。</span></pre></td></tr><tr><td class="code"><pre><span class="line">  message: 请输入密码，查看文章。</span></pre></td></tr></table></figure>
 </li>
 <li><p>在需要加密文章的 md 文件头部加入</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">---</span></pre></td></tr><tr><td class="code"><pre><span class="line">title: 每周和女儿交流的提纲（2019.12.14）</span></pre></td></tr><tr><td class="code"><pre><span class="line">date: 2019-12-08 13:29:56</span></pre></td></tr><tr><td class="code"><pre><span class="line">tags: [&#39;女儿&#39;]</span></pre></td></tr><tr><td class="code"><pre><span class="line">categories: [&#39;家庭&#39;]</span></pre></td></tr><tr><td class="code"><pre><span class="line">password: 设置的密码</span></pre></td></tr><tr><td class="code"><pre><span class="line">abstract: </span></pre></td></tr><tr><td class="code"><pre><span class="line">---</span></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">---</span></pre></td></tr><tr><td class="code"><pre><span class="line">title: 每周和女儿交流的提纲（2019.12.14）</span></pre></td></tr><tr><td class="code"><pre><span class="line">date: 2019-12-08 13:29:56</span></pre></td></tr><tr><td class="code"><pre><span class="line">tags: [&#39;女儿&#39;]</span></pre></td></tr><tr><td class="code"><pre><span class="line">categories: [&#39;家庭&#39;]</span></pre></td></tr><tr><td class="code"><pre><span class="line">password: 设置的密码</span></pre></td></tr><tr><td class="code"><pre><span class="line">abstract: 可以定义本片文章的摘要</span></pre></td></tr><tr><td class="code"><pre><span class="line">message: 可以定义本篇文章的提示</span></pre></td></tr><tr><td class="code"><pre><span class="line">---</span></pre></td></tr></table></figure>
 </li>
 </ul>
 <h3 id="形式上的优化-1"><a href="#形式上的优化-1" class="headerlink" title="形式上的优化"></a>形式上的优化</h3><h3 id="具体功能的配置"><a href="#具体功能的配置" class="headerlink" title="具体功能的配置"></a>具体功能的配置</h3>]]></content>
@@ -470,20 +490,34 @@
 <li>利用 npm 安装 Hexo</li>
 <li>安装 Next 主题</li>
 </ol>
-<h3 id="配置-Hexo-和-Next"><a href="#配置-Hexo-和-Next" class="headerlink" title="配置 Hexo 和 Next"></a>配置 Hexo 和 Next</h3><ol>
-<li>更改 Hexo 的默认主题。我不喜欢 Hexo 自带的主题，选择了现在国内比较流行的 Next 主题，版本是 Next 7.6.0。这个版本配置文件有一些更改，但是大部分前面提供的资源大部分还是可以用在这个版本上。</li>
-<li>可以直接从 Github 上安装 Next 7.6.0。安装命令如下：<code>git clone --branch v6.0.0 https://github.com/theme-next/hexo-theme-next themes/next</code>。指令要在主目录下键入。</li>
-<li>修改博客主目录下的 <code>_config.yml</code> 文件内容。<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">language: zh-Hans</span></pre></td></tr><tr><td class="code"><pre><span class="line">timezone: Asia&#x2F;Shanghai</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line">url: http:&#x2F;&#x2F;tohnee123.github.io</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line">theme: next</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line">deploy:</span></pre></td></tr><tr><td class="code"><pre><span class="line">  type: &#39;git&#39;</span></pre></td></tr><tr><td class="code"><pre><span class="line">  repo: git@github.com:tohnee123&#x2F;tohnee123.github.io.git</span></pre></td></tr><tr><td class="code"><pre><span class="line">  branch: master</span></pre></td></tr></table></figure></li>
-<li>将 <code>themes/next/languages</code> 目录下的<code>zh-CN.yml</code> 更名为 <code>zh-Hans.yml</code></li>
-<li>更改 Next 的主题的基本配置<br> 另一个需要配置 Next 目录下的 <code>_config.yml</code>。我个人比较喜欢 Gemini 风格</li>
-<li>增加标签和类别页面。默认情况下这两个是没有页面链接的，所以需要按照资源3的建议增加。<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># hexo new page tags</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">---</span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment"># 编辑tags/index.md</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">title: 标签</span></pre></td></tr><tr><td class="code"><pre><span class="line">date: 2019-06-29 11:35:42 <span class="comment">#时间随意</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="built_in">type</span>: <span class="string">"tags"</span> <span class="comment">#类型一定要为tags</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">comments: <span class="literal">false</span> <span class="comment">#提示找个页面不需要评论,后续评论插件那里会详细介绍</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">---</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment"># hexo new page categories</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment"># 编辑categories/index.md</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">---</span></pre></td></tr><tr><td class="code"><pre><span class="line">title: 文章分类</span></pre></td></tr><tr><td class="code"><pre><span class="line">date: 2018-10-15 00:03:57</span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="built_in">type</span>: <span class="string">"categories"</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">comments: <span class="literal">false</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">---</span></pre></td></tr></table></figure>
+<h3 id="配置-Hexo"><a href="#配置-Hexo" class="headerlink" title="配置 Hexo"></a>配置 Hexo</h3><ol>
+<li>更改 Hexo 的默认主题。我不喜欢 Hexo 自带的主题，选择了现在比较流行的 Next 主题，版本是 Next 7.6.0。这个版本配置文件有一些更改，但是大部分前面提供的资源内容还是可以用在这个版本上；</li>
+<li>可以直接从 Github 上安装 Next 7.6.0。安装命令如下：<code>git clone --branch v6.0.0 https://github.com/theme-next/hexo-theme-next themes/next</code>。指令要在主目录下键入；</li>
+<li>修改博客主目录下的 <code>_config.yml</code> 文件内容。<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">language: zh-Hans</span></pre></td></tr><tr><td class="code"><pre><span class="line">timezone: Asia&#x2F;Shanghai</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line">url: http:&#x2F;&#x2F;tohnee123.github.io</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line">theme: next</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line">deploy:</span></pre></td></tr><tr><td class="code"><pre><span class="line">  type: &#39;git&#39;</span></pre></td></tr><tr><td class="code"><pre><span class="line">  repo: git@github.com:tohnee123&#x2F;tohnee123.github.io.git</span></pre></td></tr><tr><td class="code"><pre><span class="line">  branch: master</span></pre></td></tr></table></figure>
 </li>
 </ol>
-<h3 id="关注的特别问题"><a href="#关注的特别问题" class="headerlink" title="关注的特别问题"></a>关注的特别问题</h3><ul>
-<li>安装Node.js。我安装的时候，是从 node.js 网站上直接下载 OSX 版本的二进制文件直接安装的。在网上还有另外两种办法，一种是通过 homebrew，一种是通过 crul，这两种办法我没有试过，也不知道通过多种渠道安装不同版本的 node.js 会有什么后果。</li>
+<h4 id="增加文章"><a href="#增加文章" class="headerlink" title="增加文章"></a>增加文章</h4><p>增加一篇新的文章在博客的主目录下输入指令<code>hexo n &quot;文章名&quot;</code>就可以了。新的 Markdown 文件会产生在<code>source/_posts</code>目录下。</p>
+<h4 id="发布文章"><a href="#发布文章" class="headerlink" title="发布文章"></a>发布文章</h4><p>发布写好后的文章需要两条指令。<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo gen</span></pre></td></tr><tr><td class="code"><pre><span class="line">$ hexo dep</span></pre></td></tr></table></figure></p>
+<h4 id="访问文章"><a href="#访问文章" class="headerlink" title="访问文章"></a>访问文章</h4><h4 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h4><p>有的时候，想在发布到网上之前，先在本地看看文章的内容。可以输入如下指令。<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo s &lt;-p port number&gt;</span></pre></td></tr><tr><td class="code"><pre><span class="line">在浏览器中输入：http://localhost:4000</span></pre></td></tr></table></figure></p>
+<h4 id="Hexo-插件"><a href="#Hexo-插件" class="headerlink" title="Hexo 插件"></a>Hexo 插件</h4><ul>
+<li>查看已安装的 Hexo 插件<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ npm ls --depth 0</span></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="配置-Next"><a href="#配置-Next" class="headerlink" title="配置 Next"></a>配置 Next</h3><p>我选用的 Next 主题的版本是 7.6.0，也可以在 github 上下载，<a href="https://github.com/theme-next/hexo-theme-next/tags" target="_blank" rel="noopener">下载 Next 指定版本</a>。下载的 zip 文件解压后，复制到<code>theme</code>下就可以。注意要把目录名改为<code>next</code>。</p>
+<h4 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h4><p>主要的 Next 配置文件如下：</p>
+<ol>
+<li><code>themes/next</code>目录下的<code>_config.yml</code>；</li>
+<li><code>themes/next/languages</code>目录下的语言文件；</li>
+</ol>
+<h4 id="更改语言"><a href="#更改语言" class="headerlink" title="更改语言"></a>更改语言</h4><p>将 <code>themes/next/languages</code> 目录下的<code>zh-CN.yml</code> 更名为 <code>zh-Hans.yml</code></p>
+<h4 id="更改风格"><a href="#更改风格" class="headerlink" title="更改风格"></a>更改风格</h4><p>Next 提供了四种不同的风格，我个人比较喜欢 Gemini 风格。需要修改 Next 的<code>_config.yml</code>。找到<code>Schemes</code>这个 Section，修改如下，启用 Gemini 风格。<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Schemes</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment">#scheme: Muse  //默认主题</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment">#scheme: Mist</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment">#scheme: Pisces</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">scheme: Gemini</span></pre></td></tr></table></figure></p>
+<h4 id="标签和类别页面"><a href="#标签和类别页面" class="headerlink" title="标签和类别页面"></a>标签和类别页面</h4><p>增加标签和类别页面。默认情况下这两个是没有页面链接的，所以需要按照资源3的建议增加。<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># hexo new page tags</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">---</span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment"># 编辑tags/index.md</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">title: 标签</span></pre></td></tr><tr><td class="code"><pre><span class="line">date: 2019-06-29 11:35:42 <span class="comment">#时间随意</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="built_in">type</span>: <span class="string">"tags"</span> <span class="comment">#类型一定要为tags</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">comments: <span class="literal">false</span> <span class="comment">#提示找个页面不需要评论,后续评论插件那里会详细介绍</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">---</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment"># hexo new page categories</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment"># 编辑categories/index.md</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">---</span></pre></td></tr><tr><td class="code"><pre><span class="line">title: 文章分类</span></pre></td></tr><tr><td class="code"><pre><span class="line">date: 2018-10-15 00:03:57</span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="built_in">type</span>: <span class="string">"categories"</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">comments: <span class="literal">false</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">---</span></pre></td></tr></table></figure></p>
+<h4 id="MathJax"><a href="#MathJax" class="headerlink" title="MathJax"></a>MathJax</h4><p>将 mathjax 下的 enable 设定为 true 即可。 cdn 用于指定 MathJax 的脚本地址，默认是 MathJax 官方提供的 CDN 地址。<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># MathJax Support</span></pre></td></tr><tr><td class="code"><pre><span class="line">mathjax:</span></pre></td></tr><tr><td class="code"><pre><span class="line">  enable: true</span></pre></td></tr><tr><td class="code"><pre><span class="line">  cdn: &#x2F;&#x2F;cdn.mathjax.org&#x2F;mathjax&#x2F;latest&#x2F;MathJax.js?config&#x3D;TeX-AMS-MML_HTMLorMML</span></pre></td></tr></table></figure><br>$ \alpha\beta $<br>$\sum<em>{i=0}^N\int</em>{a}^{b}g(t,i)\text{d}t$</p>
+<h3 id="其他操作"><a href="#其他操作" class="headerlink" title="其他操作"></a>其他操作</h3><h3 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h3><ul>
+<li>安装Node.js。目前我是从 node.js 网站上直接下载 OSX 版本的二进制文件直接安装的。在网上还有另外两种办法，一种是通过 homebrew，一种是通过 crul，这两种办法现在我没有试过，也不知道通过多种渠道安装不同版本的 node.js 会有什么后果。</li>
 <li>目录结构，安装完 Hexo 后，会在安装目录下有若干子目录或者文件，比较重要的有：<ul>
-<li>_config.yml：Hexo 的整体配置，比如语言，采用的主题、git 的仓库等内容。</li>
-<li><code>themes</code>：可以安装各种主题。</li>
+<li>_config.yml：Hexo 的整体配置，比如语言，采用的主题、git 的仓库等内容；</li>
+<li><code>themes</code>：可以安装各种主题；</li>
 <li>主目录下的 <code>source/_posts</code>：我们准备发布到网络上的各种 Markdown 文章。</li>
 </ul>
 </li>
@@ -499,60 +533,88 @@
       </tags>
   </entry>
   <entry>
+    <title>第三只脚</title>
+    <url>/2019/12/12/misc-notes001-00017/</url>
+    <content><![CDATA[<p>两只腿的凳子是不稳定的，甚至站不起来的。但是在市场竞争中，一般最大的就只有两家。快餐最出名的是麦当劳和肯德基，手机最出名的是 iOS 和 Android，服务端操作系统最强的是 Windows 和 Linux，电脑芯片最棒的是 Intel 和 AMD，国内最大的购物平台好像是京东和淘宝。虽然也有一些其他的厂商有很强的市场影响能力，但一般是两家瓜分了相当的市场资源，并引领市场前进的方向。</p>
+<p>今天主要想谈谈技术的事情。很多年前，我曾经关注过开源软件。当然由于我自身的缺点，后来焦点慢慢离开了技术的范畴，所以没有太多能力谈论其中的技术细节，而是从一个外行人来看未来技术发展的期望。</p>
+<a id="more"></a>
+<ol>
+<li><p>开源软件在管制的世界中开辟了一个自由的空间；<br>现今整个世界我个人感觉是朝着控制力加强的方向前进。我是一个技术爱好者，不是一个政治方面的爱好者，所以不想讨论这个方向的对和错，但总是感觉需要一个技术上的自由世界。开源软件的出现，当年应该是有很强的<strong>反大企业控制</strong>的市场背景。也就是只要你有能力、有技术，你总是能够找到足够的工具来实现你的设想（虽然不够精致）。</p>
+</li>
+<li><p>开源软件需要真正自由的土壤，把开源当作一个手段是很难有美好的结果；<br>在这里我想先举两个例子，就是 Java 和 MySQL。从技术上来说 Java 是 Sun 推出的，后来被 Oracle 收购。迄今为止，Java 依然是开发语言热度排行榜上的第一位，但是只要看看最近这几年的排名的趋势，我认为 Java 被 Python 超过是迟早的事情。当然被 Python 超过本身并不重要，或者说有多方面的因素，但是这几年 Java 的发展不能说不受到新东家的影响。另外一个是 MySQL，这是一个纯粹意义上的开源软件，被 Oracle 收购之后，MySQL 的开发者一怒之下，发展了一个新的数据库软件 MariaDB。我认为其根本原因在于对大软件开发商控制的明确的不信任。<br>这两个例子充分说明，如果你想拥抱开源，首先需要的是你真正拥抱自由，而不是把自由当作一个美丽的外衣，或者是实现目的的手段。如果只是把开源当作实现目的的快捷方式，恐怕项目持久生命力是无法得到保证的。</p>
+</li>
+<li><p>开源软件是自由的，所以需要对人性的充分理解；</p>
+</li>
+<li><p>开源软件是自由的，所以需要真正的学习意志；</p>
+</li>
+<li><p>开源软件是自由的，所以需要工匠精神。</p>
+</li>
+</ol>
+]]></content>
+      <tags>
+        <tag>随笔</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>如何建立一个类似这样的网站（一）</title>
     <url>/2019/12/10/web-howtobuildthisblog01-00002/</url>
     <content><![CDATA[<h2 id="源起"><a href="#源起" class="headerlink" title="源起"></a>源起</h2><p>很多年以前，我就想建立一个类似这样的博客网站。大致有如下的要求：</p>
 <ul>
-<li>管理方便，能够让人从 Internet 访问，最好对手机的支持友好。</li>
-<li>费用低廉，我愿意付一定的费用来满足我这个小小的心愿。</li>
-<li>内容迁移容易，因为这些内容再糟糕，也是自己一个个字码起来的，如果要主机不得不搬家的话，内容也比较容易迁移。我最希望是可以在本地进行内容的编写，然后上传到网站上。这个以前大部分博客网站支持的都不好，都要在网站上进行内容的编辑。</li>
-<li>界面美观，不用花哨，但是要显得专业。之前新浪这些博客最大的问题是过于花哨，太没有美感。</li>
-<li>要能够方便的支持丰富的文本格式，最好可以支持数学公式和代码引入。</li>
-<li>最好可以支持留言板功能，方便讨论问题。</li>
+<li>管理方便，能够从 Internet 访问，对手机的支持友好；</li>
+<li>费用低廉，我愿意付一定的费用来满足拥有自己博客网站的小心心愿；</li>
+<li>内容迁移容易，即使内容再糟糕，也是自己一个个字码起来的。如果主机不得不搬家的话，内容也需要比较容易迁移。最好的形式是可以在本地进行内容的编写，然后上传到博客网站。这个需求以前大部分博客网站支持的都不好，主流是在网站上进行内容的编辑；</li>
+<li>界面美观，不用花哨，但要显得专业。之前新浪这些博客的问题是过于花哨，没有美感；</li>
+<li>能够方便的支持丰富的文本格式需求，可以支持数学公式和代码格式化；</li>
+<li>能够支持留言板功能，方便讨论问题。</li>
 </ul>
-<p>回想一下，以前要找到这样一个博客网站，实在是不太容易。直到 Github + Hexo + Markdown + 云服务的出现，实现了上面所有的想法，而且还支持文章目录跳转的功能。而这些功能还都是免费的。真是太棒了！</p>
+<p>回想一下，以前要找到这样一个博客网站，实在是不太容易。直到 Github + Hexo + Markdown + 云服务的出现，实现了上面所有的想法，而且还支持文章目录跳转的功能。现在这些功能都是免费的。真是太棒了！</p>
 <a id="more"></a>
-<h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>当我搭建这个博客网站的时候，相关的知识我大约知道如下内容：</p>
+<h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>当我搭建这个博客网站的时候，我大约知道如下的相关知识：</p>
 <ul>
-<li>有一个自己的 email 地址。</li>
-<li>知道 Github 是一个代码共享库，自己在电脑上安装了 Github，但是具体的安装过程和指令早已经不记得了。自己曾经在 Github 上建立过库，但是几乎没有使用过。</li>
-<li>Node.js 听说过，只知道名字，从来不知道是干什么用的。从来不知道 npm 是干什么用的。但是我在使用 Linux 的时候，用过 yum 安装过软件包，但是也没太搞明白背后的原理，基本上是按照网上的指令在敲。</li>
-<li>Hexo 从来没有听说过。</li>
-<li>ssh 用过，也是敲指令的水平。背后的机理只是感觉好像和公、私钥相关，其他细节一概不知。</li>
+<li>有一个自己的 email 地址；</li>
+<li>知道 Github 是一个代码共享库，自己在电脑上安装了 Github，但是具体的安装过程和指令早已忘记。曾经在 Github 上建立过库，但是几乎没有使用过；</li>
+<li>Node.js 听说过，只知道名字，从来不知道是干什么用的，也不知道 npm。对于软件包的概念，在使用 Linux 的时候，用过 yum 安装过 Linux 软件包，没太搞明白背后的原理，基本上是按照网上的指令在敲；</li>
+<li>Hexo 从来没有听说过；</li>
+<li>ssh 用过，也是敲指令的水平。背后的机理只是知道和公、私钥相关，其他细节一概不知；</li>
 <li>会用 Bilibili 看视频。</li>
 </ul>
-<h2 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h2><p>包括我在内，很多人在学习一个新东西的时候，最怕别人给了一大堆资料，然后我们开始依葫芦画瓢。做到一半的时候发现面对的情况和资料中的内容对不上号了，没人告诉我该怎么做下去，然后开始网上查资料。先是用百度，后是用 Bing，摸索、困惑、愤怒，最后放弃。所以我打算把这个任务分成几个不同的步骤，既方便自己的理解和记忆，也希望可以帮助其他人。这个也是我之后其他博客内容写作的主要思路。整个网站的实现包括以下几个步骤：</p>
+<h2 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h2><p>我在学习一个新东西的时候，最怕别人给了一大堆资料，然后开始依葫芦画瓢。做到一半的时候发现面对的情况和资料中的内容对不上号，没人询问，也不知道该怎么做下去。开始网上查资料，先是用百度，后是用 Bing，摸索、困惑、愤怒，最后放弃。这个博客是对自己学习知识的一个总结。我计划把不同的任务分成若干步骤，既方便自己的理解和记忆，也希望可以帮助其他人。这个博客网站的实现包括以下几个步骤：</p>
 <ul>
-<li>建议一个属于自己的 Github 账号，并在 Github 上建立一个特殊的库。在自己的电脑上配置一些关于 git 的参数。</li>
-<li>安装 Node.js、Hexo 和 Next 主题。这样我们就拥有了一个阶段性成果。</li>
-<li>根据自己的需要，配置 Next 主题的基本内容</li>
-<li>根据我们的需求配置一些其他的高阶属性。比如进行在主页上进行缩略显示、增加搜索功能和支持留言板等等。</li>
-<li>如何更改主题，如何在多个网站上同步内容</li>
+<li>建议一个属于自己的 Github 账号，并在 Github 上建立一个特殊的库。在自己的电脑上配置一些关于 git 的参数；</li>
+<li>安装 Node.js、Hexo 和 Next 主题。这样我们就拥有了一个阶段性成果；</li>
+<li>根据自己的需要，配置 Next 主题的基本内容；</li>
+<li>根据需求配置一些其他的高阶属性。比如进行在主页上进行缩略显示、增加搜索功能和支持留言板等等；</li>
 </ul>
-<h2 id="资源"><a href="#资源" class="headerlink" title="资源"></a>资源</h2><p>网络上有大把使用 Github 和 Hexo 设置一个博客站点的介绍，我这里就不打算再花时间重新再写一遍。所以关于大致的安装步骤，请点击以下的链接。这些链接都是我在设置这个站点的时候使用的，或者后来看过的。我觉得我可以理解的话，大家比我聪明，一定也可以理解的。我也会尽量说明说明这些资料大家要特别注意的地方。</p>
+<h2 id="资源"><a href="#资源" class="headerlink" title="资源"></a>资源</h2><p>网络上有大把使用 Github 和 Hexo 设置一个博客站点的介绍，我不打算花时间重新再写一遍。所以关于大致的安装步骤，请点击以下的链接。这些链接都是我在设置这个站点的时候使用过，或者后来浏览过，基本上我都可以理解。</p>
 <ul>
 <li><a href="https://blog.csdn.net/The_lastest/article/details/70001156" target="_blank" rel="noopener">1. 注册Github账号</a></li>
-<li><a href="https://www.ezlippi.com/blog/2015/03/github-pages-blog.html" target="_blank" rel="noopener">2. 利用github-pages建立个人博客</a><br>  这个博客的内容还是比较完整的，但是从建立博客网站的目的来说，有部分内容在开始的时候可以不用看，这样我们可以快速的完成建立博客的目标。另外在建立仓库的部分，有一个重点是现在 github 要求的，这个资源没有提及，需要我们特别注意。</li>
+<li><a href="https://www.ezlippi.com/blog/2015/03/github-pages-blog.html" target="_blank" rel="noopener">2. 利用github-pages建立个人博客</a><br>  这个博客的内容比较完整。有部分内容在开始的时候可以不用看，这样我们可以快速的完成建立博客的目标。另外在建立仓库的部分，有一个现在 github 配置要求，这个资源没有提及，需要特别注意。</li>
 <li><a href="https://michael728.github.io/2019/05/19/hexo-blog-full-note/" target="_blank" rel="noopener">利用 Hexo + Github Pages 搭建博客并优化 Next 主题教程</a><br>  这个网站之前我没有看到过，人家2015年就建站了。发现想要做的事情和我一样，但是比我做的更优秀，是我努力的标杆。放在这里一边学习，一边参考。</li>
 </ul>
 <h2 id="操作"><a href="#操作" class="headerlink" title="操作"></a>操作</h2><h3 id="重点步骤"><a href="#重点步骤" class="headerlink" title="重点步骤"></a>重点步骤</h3><ol>
-<li>利用自己的 email 地址，在 github 申请开通一个免费的账号。这个在资源1上有足够的描述信息，按照它的步骤完成就可以了。</li>
-<li>进行本机的参数配置，包括 git 和 ssh。</li>
-<li>添加 ssh 公钥到 github 中。</li>
+<li>利用自己的 email 地址，在 github 申请开通一个免费的账号。这个在资源 1 上有足够的描述信息，按照它的步骤完成就可以了；</li>
+<li>进行本机的参数配置，包括 git 和 ssh；</li>
+<li>添加 ssh 公钥到 github 中；</li>
 <li>添加一个 github 仓库。</li>
 </ol>
 <h3 id="关注的内容"><a href="#关注的内容" class="headerlink" title="关注的内容"></a>关注的内容</h3><p>为了快速建立博客网站，只需要关注<a href="#资源">1号资源、2号资源的第1部分，第3部分、4.1和4.2</a>。</p>
 <h3 id="关注的特别问题"><a href="#关注的特别问题" class="headerlink" title="关注的特别问题"></a>关注的特别问题</h3><ul>
-<li>在本机上安装 git。相关的安装过程，可以根据资源2中的内容，我之后在学习 git 的时候会再说明。</li>
-<li>git 安装完成后要在命令行进行配置。指令如下：  <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ git config --global user.name <span class="string">"Your Name"</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">$ git config --global user.email <span class="string">"email@example.com"</span>   //这个 email 地址与申请 git 账号时的一样</span></pre></td></tr><tr><td class="code"><pre><span class="line">$ git config --global user.name    //检查配置</span></pre></td></tr><tr><td class="code"><pre><span class="line">$ git config --global user.email   //检查配置</span></pre></td></tr></table></figure></li>
-<li>在本机产生 ssh 密钥。由于我们的博客是放在外网上，一般在上传资料的时候都需要输入用户名和密码。但是由于资料更新频繁，每次输入这些用户名和密码会觉得非常麻烦，所以我们就可以使用 ssh 验证的办法。大致原理是在本机产生一对密钥（公钥和私钥），将公钥上传到网站上，私钥自己保留。这样每次上传的时候就可以省略了输入密码的麻烦。但是一定要注意保护好自己的私钥。如果私钥在设置时没有密码保护的话，私钥一旦泄露，别人也可以完全控制你的网站。另外，也需要注意要周期性的更换自己的公、私钥对。指令如下：  <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ ssh-keygen -t rsa -C <span class="string">"邮件地址@youremail.com"</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">Generating public/private rsa key pair.</span></pre></td></tr><tr><td class="code"><pre><span class="line">Enter file <span class="keyword">in</span> <span class="built_in">which</span> to save the key (/Users/your_user_directory/.ssh/id_rsa):&lt;回车就好&gt;</span></pre></td></tr></table></figure>
-  然后系统会要求你输入加密串（passphrase)，这个加密串是会让你每次使用该私钥的时候输入密码。因为我现在还在学习这个系统的使用，所以我没有设置。从安全的角度，最好在日后实际使用的时候，设置密钥保护，防止私钥遗失。  <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">Enter passphrase (empty <span class="keyword">for</span> no passphrase):&lt;输入加密串&gt;</span></pre></td></tr><tr><td class="code"><pre><span class="line">Enter same passphrase again:&lt;再次输入加密串&gt;</span></pre></td></tr></table></figure>
-  在这步操作中还会有一个问题，就是系统原来有私钥怎么办？在资源2中，他把这个私钥移除。这不是一个好的解决方案，以后在 ssh 的学习中我会学习该怎么办。现在先麻烦一些，按照网络资源的办法操作。</li>
-<li>在 github 中添加一个仓库有一个关键的设置，就是仓库名必须是 userlonginname.github.io。我之前在设置的时候，没有注意 userloginname 的要求，结果花了很多时间。在资源 2 的描述中，这个关键点是不清晰的。</li>
+<li>在本机上安装 git。相关的安装过程，可以根据资源2中的内容，我之后在学习 git 的时候会再说明；</li>
+<li>git 安装完成后要在命令行进行配置。指令如下：<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ git config --global user.name <span class="string">"Your Name"</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">$ git config --global user.email <span class="string">"email@example.com"</span>   //这个 email 地址与申请 git 账号时的一样</span></pre></td></tr><tr><td class="code"><pre><span class="line">$ git config --global user.name    //检查配置</span></pre></td></tr><tr><td class="code"><pre><span class="line">$ git config --global user.email   //检查配置</span></pre></td></tr></table></figure></li>
+<li><p>在本机产生 ssh 密钥。由于我们的博客是放在外网上，一般在上传资料的时候都需要输入用户名和密码。但是由于资料更新频繁，每次输入这些用户名和密码会觉得非常麻烦，所以我们就可以使用 ssh 验证的办法。大致原理是在本机产生一对密钥（公钥和私钥），将公钥上传到网站上，私钥保留在自己的计算机上。这样每次上传的时候就可以省略了输入密码的麻烦。但是一定要注意保护好自己的私钥。如果私钥在设置时没有密码保护的话，私钥一旦泄露，别人也可以完全控制你的网站。另外，也需要注意要周期性的更换自己的公、私钥对。指令如下：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ ssh-keygen -t rsa -C <span class="string">"邮件地址@youremail.com"</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">Generating public/private rsa key pair.</span></pre></td></tr><tr><td class="code"><pre><span class="line">Enter file <span class="keyword">in</span> <span class="built_in">which</span> to save the key (/Users/your_user_directory/.ssh/id_rsa):&lt;回车就好&gt;</span></pre></td></tr></table></figure>
+<p>然后系统会要求你输入加密串（passphrase)，这个加密串会让你每次使用该私钥的时候输入密码。因为现在还在学习这个系统的使用，所以没有设置。从安全的角度，最好在日后实际使用的时候，设置密钥保护，防止私钥遗失。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">Enter passphrase (empty <span class="keyword">for</span> no passphrase):&lt;输入加密串&gt;</span></pre></td></tr><tr><td class="code"><pre><span class="line">Enter same passphrase again:&lt;再次输入加密串&gt;</span></pre></td></tr></table></figure>
+<p>在这步操作中还会有一个问题，就是系统原来有私钥怎么办？在资源2中，他把这个私钥移除。这不是一个好的解决方案，以后在 ssh 的学习中我会学习该怎么办。现在先麻烦一些，按照网络资源的办法操作。</p>
+</li>
+<li><p>在 github 中添加一个仓库有一个关键的设置，就是 github 包含的仓库名必须是 <code>&lt;longinname&gt;.github.io</code>。之前在设置的时候，没有注意 loginname 的要求，结果花了很多时间。在资源 2 的描述中，这个关键点好像没有涉及。</p>
+</li>
 </ul>
-<p>到此为止，github 的设置已经基本完成了，也就是我们为自己的博客站点找到了一个家，但是所有的基本设置才刚刚完成一半，剩下的路更艰辛。</p>
-<p>欲知后事如何，且听下回分说。</p>
+<p>到此为止，github 的设置已经基本完成了，也就是我们为自己的博客站点找到了一个家，但是所有的基本设置才刚刚完成一半，目前还没有办法使用，欲知后事如何，且听下回分说。</p>
 ]]></content>
+      <categories>
+        <category>应用程序</category>
+      </categories>
       <tags>
         <tag>云服务</tag>
         <tag>github</tag>
@@ -577,16 +639,6 @@
       <tags>
         <tag>女儿</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>web_css_01_00015</title>
-    <url>/2019/12/07/web-css-01-00015/</url>
-    <content><![CDATA[]]></content>
-  </entry>
-  <entry>
-    <title>web_html_01_00014</title>
-    <url>/2019/12/07/web-html-01-00014/</url>
-    <content><![CDATA[]]></content>
   </entry>
   <entry>
     <title>我的时间安排</title>
@@ -642,6 +694,7 @@
 <h2 id="下阶段的计划"><a href="#下阶段的计划" class="headerlink" title="下阶段的计划"></a>下阶段的计划</h2><ul>
 <li>[x] 实现部分文章的加密功能</li>
 <li>[x] 博客增加我的读书的内容</li>
+<li>[ ] 将部分类别移到左侧菜单栏</li>
 <li>[ ] 博客增加数学表达式的支持</li>
 <li>[ ] 博客增加留言板的功能</li>
 <li>[x] 修订本博客的建站指南</li>

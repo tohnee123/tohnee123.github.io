@@ -45,15 +45,15 @@
   };
 </script>
 
-  <meta name="description" content="源起很多年以前，我就想建立一个类似这样的博客网站。大致有如下的要求：  管理方便，能够让人从 Internet 访问，最好对手机的支持友好。 费用低廉，我愿意付一定的费用来满足我这个小小的心愿。 内容迁移容易，因为这些内容再糟糕，也是自己一个个字码起来的，如果要主机不得不搬家的话，内容也比较容易迁移。我最希望是可以在本地进行内容的编写，然后上传到网站上。这个以前大部分博客网站支持的都不好，都要在网">
+  <meta name="description" content="源起很多年以前，我就想建立一个类似这样的博客网站。大致有如下的要求：  管理方便，能够从 Internet 访问，对手机的支持友好； 费用低廉，我愿意付一定的费用来满足拥有自己博客网站的小心心愿； 内容迁移容易，即使内容再糟糕，也是自己一个个字码起来的。如果主机不得不搬家的话，内容也需要比较容易迁移。最好的形式是可以在本地进行内容的编写，然后上传到博客网站。这个需求以前大部分博客网站支持的都不好，">
 <meta name="keywords" content="云服务,github,hexo">
 <meta property="og:type" content="article">
 <meta property="og:title" content="如何建立一个类似这样的网站（一）">
 <meta property="og:url" content="http:&#x2F;&#x2F;tohnee123.github.io&#x2F;2019&#x2F;12&#x2F;10&#x2F;web-howtobuildthisblog01-00002&#x2F;index.html">
 <meta property="og:site_name" content="不积硅步&lt;br&gt;无以至千里">
-<meta property="og:description" content="源起很多年以前，我就想建立一个类似这样的博客网站。大致有如下的要求：  管理方便，能够让人从 Internet 访问，最好对手机的支持友好。 费用低廉，我愿意付一定的费用来满足我这个小小的心愿。 内容迁移容易，因为这些内容再糟糕，也是自己一个个字码起来的，如果要主机不得不搬家的话，内容也比较容易迁移。我最希望是可以在本地进行内容的编写，然后上传到网站上。这个以前大部分博客网站支持的都不好，都要在网">
+<meta property="og:description" content="源起很多年以前，我就想建立一个类似这样的博客网站。大致有如下的要求：  管理方便，能够从 Internet 访问，对手机的支持友好； 费用低廉，我愿意付一定的费用来满足拥有自己博客网站的小心心愿； 内容迁移容易，即使内容再糟糕，也是自己一个个字码起来的。如果主机不得不搬家的话，内容也需要比较容易迁移。最好的形式是可以在本地进行内容的编写，然后上传到博客网站。这个需求以前大部分博客网站支持的都不好，">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-12-05T15:15:25.241Z">
+<meta property="og:updated_time" content="2019-12-09T22:38:09.903Z">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="http://tohnee123.github.io/2019/12/10/web-howtobuildthisblog01-00002/">
@@ -227,16 +227,21 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
+              
 
-              <time title="创建时间：2019-12-10 21:18:08" itemprop="dateCreated datePublished" datetime="2019-12-10T21:18:08+08:00">2019-12-10</time>
+              <time title="创建时间：2019-12-10 21:18:08 / 修改时间：06:38:09" itemprop="dateCreated datePublished" datetime="2019-12-10T21:18:08+08:00">2019-12-10</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-12-05 23:15:25" itemprop="dateModified" datetime="2019-12-05T23:15:25+08:00">2019-12-05</time>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
               </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F/" itemprop="url" rel="index">
+                    <span itemprop="name">应用程序</span>
+                  </a>
+                </span>
+            </span>
 
           <br>
             <span class="post-meta-item" title="本文字数">
@@ -244,7 +249,7 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>2.8k</span>
+              <span>2.7k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -265,55 +270,57 @@
       
         <h2 id="源起"><a href="#源起" class="headerlink" title="源起"></a>源起</h2><p>很多年以前，我就想建立一个类似这样的博客网站。大致有如下的要求：</p>
 <ul>
-<li>管理方便，能够让人从 Internet 访问，最好对手机的支持友好。</li>
-<li>费用低廉，我愿意付一定的费用来满足我这个小小的心愿。</li>
-<li>内容迁移容易，因为这些内容再糟糕，也是自己一个个字码起来的，如果要主机不得不搬家的话，内容也比较容易迁移。我最希望是可以在本地进行内容的编写，然后上传到网站上。这个以前大部分博客网站支持的都不好，都要在网站上进行内容的编辑。</li>
-<li>界面美观，不用花哨，但是要显得专业。之前新浪这些博客最大的问题是过于花哨，太没有美感。</li>
-<li>要能够方便的支持丰富的文本格式，最好可以支持数学公式和代码引入。</li>
-<li>最好可以支持留言板功能，方便讨论问题。</li>
+<li>管理方便，能够从 Internet 访问，对手机的支持友好；</li>
+<li>费用低廉，我愿意付一定的费用来满足拥有自己博客网站的小心心愿；</li>
+<li>内容迁移容易，即使内容再糟糕，也是自己一个个字码起来的。如果主机不得不搬家的话，内容也需要比较容易迁移。最好的形式是可以在本地进行内容的编写，然后上传到博客网站。这个需求以前大部分博客网站支持的都不好，主流是在网站上进行内容的编辑；</li>
+<li>界面美观，不用花哨，但要显得专业。之前新浪这些博客的问题是过于花哨，没有美感；</li>
+<li>能够方便的支持丰富的文本格式需求，可以支持数学公式和代码格式化；</li>
+<li>能够支持留言板功能，方便讨论问题。</li>
 </ul>
-<p>回想一下，以前要找到这样一个博客网站，实在是不太容易。直到 Github + Hexo + Markdown + 云服务的出现，实现了上面所有的想法，而且还支持文章目录跳转的功能。而这些功能还都是免费的。真是太棒了！</p>
+<p>回想一下，以前要找到这样一个博客网站，实在是不太容易。直到 Github + Hexo + Markdown + 云服务的出现，实现了上面所有的想法，而且还支持文章目录跳转的功能。现在这些功能都是免费的。真是太棒了！</p>
 <a id="more"></a>
-<h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>当我搭建这个博客网站的时候，相关的知识我大约知道如下内容：</p>
+<h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>当我搭建这个博客网站的时候，我大约知道如下的相关知识：</p>
 <ul>
-<li>有一个自己的 email 地址。</li>
-<li>知道 Github 是一个代码共享库，自己在电脑上安装了 Github，但是具体的安装过程和指令早已经不记得了。自己曾经在 Github 上建立过库，但是几乎没有使用过。</li>
-<li>Node.js 听说过，只知道名字，从来不知道是干什么用的。从来不知道 npm 是干什么用的。但是我在使用 Linux 的时候，用过 yum 安装过软件包，但是也没太搞明白背后的原理，基本上是按照网上的指令在敲。</li>
-<li>Hexo 从来没有听说过。</li>
-<li>ssh 用过，也是敲指令的水平。背后的机理只是感觉好像和公、私钥相关，其他细节一概不知。</li>
+<li>有一个自己的 email 地址；</li>
+<li>知道 Github 是一个代码共享库，自己在电脑上安装了 Github，但是具体的安装过程和指令早已忘记。曾经在 Github 上建立过库，但是几乎没有使用过；</li>
+<li>Node.js 听说过，只知道名字，从来不知道是干什么用的，也不知道 npm。对于软件包的概念，在使用 Linux 的时候，用过 yum 安装过 Linux 软件包，没太搞明白背后的原理，基本上是按照网上的指令在敲；</li>
+<li>Hexo 从来没有听说过；</li>
+<li>ssh 用过，也是敲指令的水平。背后的机理只是知道和公、私钥相关，其他细节一概不知；</li>
 <li>会用 Bilibili 看视频。</li>
 </ul>
-<h2 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h2><p>包括我在内，很多人在学习一个新东西的时候，最怕别人给了一大堆资料，然后我们开始依葫芦画瓢。做到一半的时候发现面对的情况和资料中的内容对不上号了，没人告诉我该怎么做下去，然后开始网上查资料。先是用百度，后是用 Bing，摸索、困惑、愤怒，最后放弃。所以我打算把这个任务分成几个不同的步骤，既方便自己的理解和记忆，也希望可以帮助其他人。这个也是我之后其他博客内容写作的主要思路。整个网站的实现包括以下几个步骤：</p>
+<h2 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h2><p>我在学习一个新东西的时候，最怕别人给了一大堆资料，然后开始依葫芦画瓢。做到一半的时候发现面对的情况和资料中的内容对不上号，没人询问，也不知道该怎么做下去。开始网上查资料，先是用百度，后是用 Bing，摸索、困惑、愤怒，最后放弃。这个博客是对自己学习知识的一个总结。我计划把不同的任务分成若干步骤，既方便自己的理解和记忆，也希望可以帮助其他人。这个博客网站的实现包括以下几个步骤：</p>
 <ul>
-<li>建议一个属于自己的 Github 账号，并在 Github 上建立一个特殊的库。在自己的电脑上配置一些关于 git 的参数。</li>
-<li>安装 Node.js、Hexo 和 Next 主题。这样我们就拥有了一个阶段性成果。</li>
-<li>根据自己的需要，配置 Next 主题的基本内容</li>
-<li>根据我们的需求配置一些其他的高阶属性。比如进行在主页上进行缩略显示、增加搜索功能和支持留言板等等。</li>
-<li>如何更改主题，如何在多个网站上同步内容</li>
+<li>建议一个属于自己的 Github 账号，并在 Github 上建立一个特殊的库。在自己的电脑上配置一些关于 git 的参数；</li>
+<li>安装 Node.js、Hexo 和 Next 主题。这样我们就拥有了一个阶段性成果；</li>
+<li>根据自己的需要，配置 Next 主题的基本内容；</li>
+<li>根据需求配置一些其他的高阶属性。比如进行在主页上进行缩略显示、增加搜索功能和支持留言板等等；</li>
 </ul>
-<h2 id="资源"><a href="#资源" class="headerlink" title="资源"></a>资源</h2><p>网络上有大把使用 Github 和 Hexo 设置一个博客站点的介绍，我这里就不打算再花时间重新再写一遍。所以关于大致的安装步骤，请点击以下的链接。这些链接都是我在设置这个站点的时候使用的，或者后来看过的。我觉得我可以理解的话，大家比我聪明，一定也可以理解的。我也会尽量说明说明这些资料大家要特别注意的地方。</p>
+<h2 id="资源"><a href="#资源" class="headerlink" title="资源"></a>资源</h2><p>网络上有大把使用 Github 和 Hexo 设置一个博客站点的介绍，我不打算花时间重新再写一遍。所以关于大致的安装步骤，请点击以下的链接。这些链接都是我在设置这个站点的时候使用过，或者后来浏览过，基本上我都可以理解。</p>
 <ul>
 <li><a href="https://blog.csdn.net/The_lastest/article/details/70001156" target="_blank" rel="noopener">1. 注册Github账号</a></li>
-<li><a href="https://www.ezlippi.com/blog/2015/03/github-pages-blog.html" target="_blank" rel="noopener">2. 利用github-pages建立个人博客</a><br>  这个博客的内容还是比较完整的，但是从建立博客网站的目的来说，有部分内容在开始的时候可以不用看，这样我们可以快速的完成建立博客的目标。另外在建立仓库的部分，有一个重点是现在 github 要求的，这个资源没有提及，需要我们特别注意。</li>
+<li><a href="https://www.ezlippi.com/blog/2015/03/github-pages-blog.html" target="_blank" rel="noopener">2. 利用github-pages建立个人博客</a><br>  这个博客的内容比较完整。有部分内容在开始的时候可以不用看，这样我们可以快速的完成建立博客的目标。另外在建立仓库的部分，有一个现在 github 配置要求，这个资源没有提及，需要特别注意。</li>
 <li><a href="https://michael728.github.io/2019/05/19/hexo-blog-full-note/" target="_blank" rel="noopener">利用 Hexo + Github Pages 搭建博客并优化 Next 主题教程</a><br>  这个网站之前我没有看到过，人家2015年就建站了。发现想要做的事情和我一样，但是比我做的更优秀，是我努力的标杆。放在这里一边学习，一边参考。</li>
 </ul>
 <h2 id="操作"><a href="#操作" class="headerlink" title="操作"></a>操作</h2><h3 id="重点步骤"><a href="#重点步骤" class="headerlink" title="重点步骤"></a>重点步骤</h3><ol>
-<li>利用自己的 email 地址，在 github 申请开通一个免费的账号。这个在资源1上有足够的描述信息，按照它的步骤完成就可以了。</li>
-<li>进行本机的参数配置，包括 git 和 ssh。</li>
-<li>添加 ssh 公钥到 github 中。</li>
+<li>利用自己的 email 地址，在 github 申请开通一个免费的账号。这个在资源 1 上有足够的描述信息，按照它的步骤完成就可以了；</li>
+<li>进行本机的参数配置，包括 git 和 ssh；</li>
+<li>添加 ssh 公钥到 github 中；</li>
 <li>添加一个 github 仓库。</li>
 </ol>
 <h3 id="关注的内容"><a href="#关注的内容" class="headerlink" title="关注的内容"></a>关注的内容</h3><p>为了快速建立博客网站，只需要关注<a href="#资源">1号资源、2号资源的第1部分，第3部分、4.1和4.2</a>。</p>
 <h3 id="关注的特别问题"><a href="#关注的特别问题" class="headerlink" title="关注的特别问题"></a>关注的特别问题</h3><ul>
-<li>在本机上安装 git。相关的安装过程，可以根据资源2中的内容，我之后在学习 git 的时候会再说明。</li>
-<li>git 安装完成后要在命令行进行配置。指令如下：  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">$ git config --global user.name <span class="string">"Your Name"</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">$ git config --global user.email <span class="string">"email@example.com"</span>   //这个 email 地址与申请 git 账号时的一样</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">$ git config --global user.name    //检查配置</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">$ git config --global user.email   //检查配置</span></pre></td></tr></table></figure></li>
-<li>在本机产生 ssh 密钥。由于我们的博客是放在外网上，一般在上传资料的时候都需要输入用户名和密码。但是由于资料更新频繁，每次输入这些用户名和密码会觉得非常麻烦，所以我们就可以使用 ssh 验证的办法。大致原理是在本机产生一对密钥（公钥和私钥），将公钥上传到网站上，私钥自己保留。这样每次上传的时候就可以省略了输入密码的麻烦。但是一定要注意保护好自己的私钥。如果私钥在设置时没有密码保护的话，私钥一旦泄露，别人也可以完全控制你的网站。另外，也需要注意要周期性的更换自己的公、私钥对。指令如下：  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">$ ssh-keygen -t rsa -C <span class="string">"邮件地址@youremail.com"</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">Generating public/private rsa key pair.</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">Enter file <span class="keyword">in</span> <span class="built_in">which</span> to save the key (/Users/your_user_directory/.ssh/id_rsa):&lt;回车就好&gt;</span></pre></td></tr></table></figure>
-  然后系统会要求你输入加密串（passphrase)，这个加密串是会让你每次使用该私钥的时候输入密码。因为我现在还在学习这个系统的使用，所以我没有设置。从安全的角度，最好在日后实际使用的时候，设置密钥保护，防止私钥遗失。  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">Enter passphrase (empty <span class="keyword">for</span> no passphrase):&lt;输入加密串&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">Enter same passphrase again:&lt;再次输入加密串&gt;</span></pre></td></tr></table></figure>
-  在这步操作中还会有一个问题，就是系统原来有私钥怎么办？在资源2中，他把这个私钥移除。这不是一个好的解决方案，以后在 ssh 的学习中我会学习该怎么办。现在先麻烦一些，按照网络资源的办法操作。</li>
-<li>在 github 中添加一个仓库有一个关键的设置，就是仓库名必须是 userlonginname.github.io。我之前在设置的时候，没有注意 userloginname 的要求，结果花了很多时间。在资源 2 的描述中，这个关键点是不清晰的。</li>
+<li>在本机上安装 git。相关的安装过程，可以根据资源2中的内容，我之后在学习 git 的时候会再说明；</li>
+<li>git 安装完成后要在命令行进行配置。指令如下：<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">$ git config --global user.name <span class="string">"Your Name"</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">$ git config --global user.email <span class="string">"email@example.com"</span>   //这个 email 地址与申请 git 账号时的一样</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">$ git config --global user.name    //检查配置</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">$ git config --global user.email   //检查配置</span></pre></td></tr></table></figure></li>
+<li><p>在本机产生 ssh 密钥。由于我们的博客是放在外网上，一般在上传资料的时候都需要输入用户名和密码。但是由于资料更新频繁，每次输入这些用户名和密码会觉得非常麻烦，所以我们就可以使用 ssh 验证的办法。大致原理是在本机产生一对密钥（公钥和私钥），将公钥上传到网站上，私钥保留在自己的计算机上。这样每次上传的时候就可以省略了输入密码的麻烦。但是一定要注意保护好自己的私钥。如果私钥在设置时没有密码保护的话，私钥一旦泄露，别人也可以完全控制你的网站。另外，也需要注意要周期性的更换自己的公、私钥对。指令如下：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">$ ssh-keygen -t rsa -C <span class="string">"邮件地址@youremail.com"</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">Generating public/private rsa key pair.</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">Enter file <span class="keyword">in</span> <span class="built_in">which</span> to save the key (/Users/your_user_directory/.ssh/id_rsa):&lt;回车就好&gt;</span></pre></td></tr></table></figure>
+<p>然后系统会要求你输入加密串（passphrase)，这个加密串会让你每次使用该私钥的时候输入密码。因为现在还在学习这个系统的使用，所以没有设置。从安全的角度，最好在日后实际使用的时候，设置密钥保护，防止私钥遗失。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">Enter passphrase (empty <span class="keyword">for</span> no passphrase):&lt;输入加密串&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">Enter same passphrase again:&lt;再次输入加密串&gt;</span></pre></td></tr></table></figure>
+<p>在这步操作中还会有一个问题，就是系统原来有私钥怎么办？在资源2中，他把这个私钥移除。这不是一个好的解决方案，以后在 ssh 的学习中我会学习该怎么办。现在先麻烦一些，按照网络资源的办法操作。</p>
+</li>
+<li><p>在 github 中添加一个仓库有一个关键的设置，就是 github 包含的仓库名必须是 <code>&lt;longinname&gt;.github.io</code>。之前在设置的时候，没有注意 loginname 的要求，结果花了很多时间。在资源 2 的描述中，这个关键点好像没有涉及。</p>
+</li>
 </ul>
-<p>到此为止，github 的设置已经基本完成了，也就是我们为自己的博客站点找到了一个家，但是所有的基本设置才刚刚完成一半，剩下的路更艰辛。</p>
-<p>欲知后事如何，且听下回分说。</p>
+<p>到此为止，github 的设置已经基本完成了，也就是我们为自己的博客站点找到了一个家，但是所有的基本设置才刚刚完成一半，目前还没有办法使用，欲知后事如何，且听下回分说。</p>
 
     </div>
 
@@ -338,8 +345,8 @@
       <i class="fa fa-chevron-left"></i> 每周和女儿交流的提纲（2019.12.14）
     </a></div>
       <div class="post-nav-item">
-    <a href="/2019/12/15/web-howtobuildthisblog02-00003/" rel="next" title="如何建立一个类似这样的网站（二）">
-      如何建立一个类似这样的网站（二） <i class="fa fa-chevron-right"></i>
+    <a href="/2019/12/12/misc-notes001-00017/" rel="next" title="第三只脚">
+      第三只脚 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -392,7 +399,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">16</span>
+          <span class="site-state-item-count">17</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -438,13 +445,13 @@
       <i class="fa fa-area-chart"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">23k</span>
+    <span title="站点总字数">25k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">1:15</span>
+    <span title="站点阅读时长">1:22</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v4.0.0
   </div>
@@ -496,6 +503,8 @@
 
 
 
+
+  
 
   
 
