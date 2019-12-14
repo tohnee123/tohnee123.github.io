@@ -137,6 +137,10 @@
 <h4 id="身份运算符"><a href="#身份运算符" class="headerlink" title="身份运算符"></a>身份运算符</h4><ol>
 <li><code>is, not is</code></li>
 </ol>
+<h4 id="三目运算符"><a href="#三目运算符" class="headerlink" title="三目运算符"></a>三目运算符</h4><ol>
+<li>在 Python 中没有和 C/C++ 对应的三目运算符，可以采用如下的变通方式<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">print(b, a) <span class="keyword">if</span> a &gt; b <span class="keyword">else</span> print(a, b)    <span class="comment"># 按照大小排列</span></span></pre></td></tr></table></figure>
+</li>
+</ol>
 <h4 id="运算符优先级"><a href="#运算符优先级" class="headerlink" title="运算符优先级"></a>运算符优先级</h4><ol>
 <li>算数运算符，位运算符，比较运算符，身份运算符，成员运算符，逻辑运算符</li>
 </ol>
@@ -155,7 +159,9 @@
 <ul>
 <li>continue 语句会中断当前循环，进行下一次循环；</li>
 <li>break 语句会终止当前循环；</li>
+<li>如果需要对称循环（例如打印一个菱形），可以考虑利用正负号来产生对称；</li>
 </ul>
+<h3 id="字符串-1"><a href="#字符串-1" class="headerlink" title="字符串"></a>字符串</h3><h4 id="格式化字符串"><a href="#格式化字符串" class="headerlink" title="格式化字符串"></a>格式化字符串</h4><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">line += <span class="string">"&#123;0&#125; * &#123;1&#125; = &#123;2&#125;"</span>.format(i, j, i*j)		<span class="comment"># i, j, i*j 分别对应 &#123;0&#125;, &#123;1&#125;, &#123;2&#125;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">line += <span class="string">"&#123;0&#125; * &#123;1&#125; = &#123;2:&lt;3&#125;.format(i, j, i*j)"</span>		<span class="comment"># i, j, i*j 分别对应&#123;0&#125;, &#123;1&#125;, &#123;2&#125;，其中 i*j 占据 3 个宽度，&lt; 表示左对齐</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">line += <span class="string">"&#123;&#125; * &#123;&#125; = &#123;:&lt;3&#125;.format(i, j, i*j)"</span>		<span class="comment"># 默认一一对应</span></span></pre></td></tr></table></figure>
 <h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><ul>
 <li><code>#</code>之后的为注释</li>
 <li>Python 是动态的强类型语言，不需要事先声明类型，随时可以赋值为其他类型。不同类型之间操作必须强制转换（不像 Javascript 有隐式类型转换）</li>
@@ -825,6 +831,51 @@
       </tags>
   </entry>
   <entry>
+    <title>在 Windows 平台配置 Node.js</title>
+    <url>/2019/12/23/misc-nodejsonwin-00023/</url>
+    <content><![CDATA[<h2 id="NVMW"><a href="#NVMW" class="headerlink" title="NVMW"></a>NVMW</h2><h3 id="检查当前安装的版本"><a href="#检查当前安装的版本" class="headerlink" title="检查当前安装的版本"></a>检查当前安装的版本</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">c:&gt; nvm ls</span></pre></td></tr></table></figure>
+<h3 id="列出可安装的-Node-js-版本"><a href="#列出可安装的-Node-js-版本" class="headerlink" title="列出可安装的 Node.js 版本"></a>列出可安装的 Node.js 版本</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">c:&gt; nvm list available</span></pre></td></tr></table></figure>
+<h3 id="安装-Node-js-版本"><a href="#安装-Node-js-版本" class="headerlink" title="安装 Node.js 版本"></a>安装 Node.js 版本</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">c:&gt; nvm install latest			&#x2F;&#x2F; 安装最新的 Node.js 版本</span></pre></td></tr><tr><td class="code"><pre><span class="line">c:&gt; nvm install 10.16.3			&#x2F;&#x2F; 安装最新的 Node.js LTS 版本</span></pre></td></tr></table></figure>
+<h3 id="切换不同的-Node-js-版本"><a href="#切换不同的-Node-js-版本" class="headerlink" title="切换不同的 Node.js 版本"></a>切换不同的 Node.js 版本</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">c:&gt; cd MyProject</span></pre></td></tr><tr><td class="code"><pre><span class="line">c:\MyProject&gt; nvm use 10.16.3</span></pre></td></tr><tr><td class="code"><pre><span class="line">c:\MyProject&gt; node --verison</span></pre></td></tr><tr><td class="code"><pre><span class="line">c:\MyProject&gt; npm --version</span></pre></td></tr></table></figure>]]></content>
+      <tags>
+        <tag>node.js</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>如何配置一个稳定的开发环境</title>
+    <url>/2019/12/22/misc-howtoconfigdev-00022/</url>
+    <content><![CDATA[<h1 id="如何配置一个稳定的开发环境"><a href="#如何配置一个稳定的开发环境" class="headerlink" title="如何配置一个稳定的开发环境"></a>如何配置一个稳定的开发环境</h1><h2 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h2><p>我使用 OSX 已经很长一段时间了，OSX 算是比较稳定的操作系统，折腾了几年都没有重装过。但是随着这么多年的使用，以及最近在折腾的各种学习和开发工具，也发现给我的系统带来了一些问题。最近正在考虑重装系统，但是如果继续折腾这些新东西，难免会给新系统带来不稳定的因素。我这次重装完系统后，实在不想再重装系统了。于是我把解决方法放在了虚拟机上。</p>
+<p>传统我使用虚拟机主要是解决在 OSX 上运行 Windows 的程序。但是我现在购买的电脑，都是 4 核 8 线程，16G RAM，512G SSD 以上的配置，通过虚拟机的方案，实际上也可以实现开发环境和宿主机的分离。这样我可以在开发环境中尝试新的软件而不至于影响到宿主操作系统的稳定性。</p>
+<p>我现在采用的是 VMWare 的虚拟机方案，通过在 VMWare Fusion 上建立 Windows 10 和 OSX 的虚拟机来减少对宿主操作系统的干扰。采用 VMWare 的一个主要原因是 VMWare 的跨平台的支持能力，而我的电脑有 OSX 和 Windows 两个系统。</p>
+<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><h3 id="Windows-平台"><a href="#Windows-平台" class="headerlink" title="Windows 平台"></a>Windows 平台</h3><ol>
+<li>建立了一个基础的 Windows 安装系统 CELL94（只安装了 Chrome）</li>
+<li>在 CELL194 的基础上建立了一个链接克隆 CELL194_DEV。目前配置了如下软件：</li>
+</ol>
+<ul>
+<li>Microsoft Visual Studio Code</li>
+<li>Node Verion Manager for Windows 1.1.7</li>
+<li>两个版本的 Node.js</li>
+</ul>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><h3 id="Windows-平台-1"><a href="#Windows-平台-1" class="headerlink" title="Windows 平台"></a>Windows 平台</h3><h4 id="安装-NVMW"><a href="#安装-NVMW" class="headerlink" title="安装 NVMW"></a>安装 NVMW</h4><ol>
+<li>删除所有的 Node.js 和 npm</li>
+<li>删除 <code>C:\Program Files\nodejs</code></li>
+<li>下载<a href="https://github.com/coreybutler/nvm-windows#node-version-manager-nvm-for-windows" target="_blank" rel="noopener">NVMW 1.1.7</a></li>
+<li>这是一个 msi 文件，双击安装</li>
+</ol>
+<h2 id="备份"><a href="#备份" class="headerlink" title="备份"></a>备份</h2><ol>
+<li>目前主要采用手工备份的方式，在掌握好<code>powershell</code>和<code>Linux shello</code>之后，慢慢过渡到自动备份的方式；</li>
+</ol>
+<h3 id="备份设备和目录"><a href="#备份设备和目录" class="headerlink" title="备份设备和目录"></a>备份设备和目录</h3><ol>
+<li>CELL94DEV:blog：c:\blog\</li>
+</ol>
+<h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><p>需要注意的是，由于重装系统/回退变得比较容易，那么日常的开发文件的备份需要特别注意。回退之后，开发文件/文档如果没有备份/备份失败，这个影响是沉重的。</p>
+]]></content>
+      <tags>
+        <tag>development</tag>
+        <tag>虚拟机</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>如何建立一个类似这样的网站（三）</title>
     <url>/2019/12/19/web-howtobuildthisblog03-00004/</url>
     <content><![CDATA[<h2 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h2><p>这一部分，我们的主要目标如下：</p>
@@ -895,7 +946,7 @@
   </entry>
   <entry>
     <title>每周和女儿交流的提纲（2019.12.21）</title>
-    <url>/2019/12/16/family-daughterweekly-002-00012/</url>
+    <url>/2019/12/18/family-daughterweekly-002-00012/</url>
     <content><![CDATA[<div id="hexo-blog-encrypt" data-wpm="Oh, this is an invalid password. Check and try again, please." data-whm="OOPS, these decrypted content may changed, but you can still have a look.">
   <div class="hbe-input-container">
   <input type="password" id="hbePass" placeholder="" />
