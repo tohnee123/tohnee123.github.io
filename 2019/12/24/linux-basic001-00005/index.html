@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 4.0.0">
+<meta name="generator" content="Hexo 4.1.0">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
@@ -46,14 +46,15 @@
 </script>
 
   <meta name="description" content="Linux 我应该是努力过多次，始终只是皮毛。这次还是打算全面的了解 Linux 的运维技术和最新的技术趋势。采用的 os 版本是 centos 7.x。 目录结构和分区如果一个硬盘采用 MBR 分区，这个硬盘最多只能有四个主分区或者扩展分区（扩展分区最多一个），一个扩展分区上可以有若干个逻辑分区  对于 Linux 来说，一个 SATA 硬盘，前面四个分区是供主分区和扩展分区使用，分别为 &#x2F;de">
-<meta name="keywords" content="Linux">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Linux 学习笔记（一）">
 <meta property="og:url" content="http:&#x2F;&#x2F;tohnee123.github.io&#x2F;2019&#x2F;12&#x2F;24&#x2F;linux-basic001-00005&#x2F;index.html">
 <meta property="og:site_name" content="不积硅步&lt;br&gt;无以至千里">
 <meta property="og:description" content="Linux 我应该是努力过多次，始终只是皮毛。这次还是打算全面的了解 Linux 的运维技术和最新的技术趋势。采用的 os 版本是 centos 7.x。 目录结构和分区如果一个硬盘采用 MBR 分区，这个硬盘最多只能有四个主分区或者扩展分区（扩展分区最多一个），一个扩展分区上可以有若干个逻辑分区  对于 Linux 来说，一个 SATA 硬盘，前面四个分区是供主分区和扩展分区使用，分别为 &#x2F;de">
-<meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-12-06T02:45:01.932Z">
+<meta property="article:published_time" content="2019-12-25T02:31:43.000Z">
+<meta property="article:modified_time" content="2019-12-12T00:25:29.002Z">
+<meta property="article:author" content="James Liu">
+<meta property="article:tag" content="Linux">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="http://tohnee123.github.io/2019/12/24/linux-basic001-00005/">
@@ -235,7 +236,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-12-06 10:45:01" itemprop="dateModified" datetime="2019-12-06T10:45:01+08:00">2019-12-06</time>
+                <time title="修改时间：2019-12-12 08:25:29" itemprop="dateModified" datetime="2019-12-12T08:25:29+08:00">2019-12-12</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -305,11 +306,14 @@
 <li>centos 7.x 更改了网卡缺省的名字，如果修改网卡名称符合以前的命名规则，需要修改<code>grub.cfg</code>这个文件的设置。<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="comment"># vim /boot/grub2/grub.cfg</span></span></pre></td></tr></table></figure>
 寻找 menuentry 下的 linux16，增加<code>net.ifnames=0</code>，重新启动。</li>
 </ol>
-<h2 id="用户管理"><a href="#用户管理" class="headerlink" title="用户管理"></a>用户管理</h2><h2 id="目录权限"><a href="#目录权限" class="headerlink" title="目录权限"></a>目录权限</h2><h2 id="软件包安装"><a href="#软件包安装" class="headerlink" title="软件包安装"></a>软件包安装</h2><h2 id="Linux-常用简单命令集"><a href="#Linux-常用简单命令集" class="headerlink" title="Linux 常用简单命令集"></a>Linux 常用简单命令集</h2><h3 id="查看系统状态"><a href="#查看系统状态" class="headerlink" title="查看系统状态"></a>查看系统状态</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">// 查看硬件状态</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="comment"># free -h				// 以 M 为单位看系统内存</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"><span class="comment"># lsblk					// 系统的分区情况和外置设备的挂载状况</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"><span class="comment"># lscpu					// 看 CPU 的情况</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line"><span class="comment"># cat /proc/meminfo			// 获得和内存相关的信息</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">// 查看操作系统</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line"><span class="comment"># cat /etc/centos-release   		// 安装的 centos 版本</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line"><span class="comment"># lsb_relase -a    			// 安装的 centos 版本</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line"><span class="comment"># uname -r        			// 内核的版本</span></span></pre></td></tr></table></figure>
+<h2 id="用户管理"><a href="#用户管理" class="headerlink" title="用户管理"></a>用户管理</h2><h2 id="目录权限"><a href="#目录权限" class="headerlink" title="目录权限"></a>目录权限</h2><h2 id="软件包安装"><a href="#软件包安装" class="headerlink" title="软件包安装"></a>软件包安装</h2><h3 id="常用的软件包"><a href="#常用的软件包" class="headerlink" title="常用的软件包"></a>常用的软件包</h3><ul>
+<li>net-tools：包括 ifconfig<h3 id=""><a href="#" class="headerlink" title=" "></a> </h3></li>
+</ul>
+<h2 id="Linux-常用简单命令集"><a href="#Linux-常用简单命令集" class="headerlink" title="Linux 常用简单命令集"></a>Linux 常用简单命令集</h2><h3 id="查看系统状态"><a href="#查看系统状态" class="headerlink" title="查看系统状态"></a>查看系统状态</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">// 查看硬件状态</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="comment"># free -h				// 以 M 为单位看系统内存</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"><span class="comment"># lsblk					// 系统的分区情况和外置设备的挂载状况</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"><span class="comment"># lscpu					// 看 CPU 的情况</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line"><span class="comment"># cat /proc/meminfo			// 获得和内存相关的信息</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">// 查看操作系统</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line"><span class="comment"># cat /etc/centos-release   		// 安装的 centos 版本</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line"><span class="comment"># lsb_relase -a    			// 安装的 centos 版本</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line"><span class="comment"># uname -r        			// 内核的版本</span></span></pre></td></tr></table></figure>
 <h3 id="与-shell-相关"><a href="#与-shell-相关" class="headerlink" title="与 shell 相关"></a>与 shell 相关</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="comment"># tty      				// 当前终端名</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="comment"># who     				// 当前登陆本服务器所有的终端名</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"><span class="comment"># whoami   			 	// 我是谁，简略信息</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"><span class="comment"># who am i   				// 我是谁更详细的信息，包括登陆的终端名和 IP 地址</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line"><span class="comment"># echo $SHELL 		 		// 当前运行的 Shell</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line"><span class="comment"># cat /etc/shells 			// 当前系统支持的所有 Shell，对于/usr/sbin/nologin shell，主要是给应用程序使用。不可以登陆</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line"><span class="comment"># echo $PS1				// 命令提示符设置</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line"><span class="comment"># PS1="[\u@\h]$"    			//去掉 working directory</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line"><span class="comment"># PS1="\[\e[1;5;41;33m\][\u@\h \w]\\$\[\e[0m\]"    	// 对于生产环境建议用特别的提示标识，5表示闪烁</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line"><span class="comment"># which &lt;command&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line"><span class="comment"># whereis &lt;command&gt;     		// 和该命令相关的一些文档信息</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">14</span></pre></td><td class="code"><pre><span class="line"><span class="comment"># hash          			//当前被缓存的命令路径</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">15</span></pre></td><td class="code"><pre><span class="line"><span class="comment"># alias cdnet = "cd /etc/sysconfig/network-scripts/"   // 别名一般保存在用户家目录中的 .bashrc 中</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">16</span></pre></td><td class="code"><pre><span class="line"><span class="comment"># unalias &lt;别名&gt;     		 	// 取消别名</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">17</span></pre></td><td class="code"><pre><span class="line"><span class="comment"># . .bashrc    				// 使修改后的 .bashrc 立即生效，等同于 source .bashrc</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">18</span></pre></td><td class="code"><pre><span class="line"><span class="comment"># enable       				// 显示当前 shell 的内部命令列表</span></span></pre></td></tr></table></figure>
 <h3 id="系统配置"><a href="#系统配置" class="headerlink" title="系统配置"></a>系统配置</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">// 时区、时间语言和地区有关指令</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="comment"># clock -w				// copy 操作系统的时间</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"><span class="comment"># clock -s				// write 时间到操作系统</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"><span class="comment"># date mmddhhmmyyyy.ss			// 设置操作系统的时间</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line"><span class="comment"># ntpdate &lt;ip&gt;				// 同步时间</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line"><span class="comment"># localectl list-locales		// 列出支持的所有地区设置</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line"><span class="comment"># localectl status			// 语言设置</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line"><span class="comment"># timedatectl list-timezones		// 支持的时区</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line"><span class="comment"># timedatectl status			// 当前时区</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line"><span class="comment"># timedatectl set-timezone &lt;时区名&gt;	// 设置时区</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line"><span class="comment"># cal					// 本月日历</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line"><span class="comment"># cal -y				// 本年日历</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">14</span></pre></td><td class="code"><pre><span class="line">// 查看网卡信息</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">15</span></pre></td><td class="code"><pre><span class="line"><span class="comment"># ifconfig    				// 看网卡地址</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">16</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">17</span></pre></td><td class="code"><pre><span class="line">// 关机</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">18</span></pre></td><td class="code"><pre><span class="line"><span class="comment"># poweroff				// 关机</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">19</span></pre></td><td class="code"><pre><span class="line"><span class="comment"># halt					// 关机</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">20</span></pre></td><td class="code"><pre><span class="line"><span class="comment"># shutdown -r +3			// 关机或者重启，可以指定时间。本例中，3 分钟后重启</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">21</span></pre></td><td class="code"><pre><span class="line"><span class="comment"># shutdown -c				// 取消指定时间的关机</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">22</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">23</span></pre></td><td class="code"><pre><span class="line">// 安装下载软件</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">24</span></pre></td><td class="code"><pre><span class="line"><span class="comment"># rpm -ivh &lt;package name&gt;		// 安装已下载的 rpm 包</span></span></pre></td></tr></table></figure>
 <h3 id="用户管理-1"><a href="#用户管理-1" class="headerlink" title="用户管理"></a>用户管理</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="comment"># w 					// 查看当前有哪些用户登陆到本机，以及正在执行的操作</span></span></pre></td></tr></table></figure>
-<h3 id=""><a href="#" class="headerlink" title=" "></a> </h3>
+<h3 id="-1"><a href="#-1" class="headerlink" title=" "></a> </h3>
     </div>
 
     
@@ -371,7 +375,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#目录结构和分区"><span class="nav-number">1.</span> <span class="nav-text">目录结构和分区</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Linux-的硬件设置"><span class="nav-number">2.</span> <span class="nav-text">Linux 的硬件设置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#时间设置"><span class="nav-number">2.1.</span> <span class="nav-text">时间设置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#网卡设置"><span class="nav-number">2.2.</span> <span class="nav-text">网卡设置</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#用户管理"><span class="nav-number">3.</span> <span class="nav-text">用户管理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#目录权限"><span class="nav-number">4.</span> <span class="nav-text">目录权限</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#软件包安装"><span class="nav-number">5.</span> <span class="nav-text">软件包安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Linux-常用简单命令集"><span class="nav-number">6.</span> <span class="nav-text">Linux 常用简单命令集</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#查看系统状态"><span class="nav-number">6.1.</span> <span class="nav-text">查看系统状态</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#与-shell-相关"><span class="nav-number">6.2.</span> <span class="nav-text">与 shell 相关</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#系统配置"><span class="nav-number">6.3.</span> <span class="nav-text">系统配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#用户管理-1"><span class="nav-number">6.4.</span> <span class="nav-text">用户管理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#null"><span class="nav-number">6.5.</span> <span class="nav-text"> </span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#目录结构和分区"><span class="nav-number">1.</span> <span class="nav-text">目录结构和分区</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Linux-的硬件设置"><span class="nav-number">2.</span> <span class="nav-text">Linux 的硬件设置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#时间设置"><span class="nav-number">2.1.</span> <span class="nav-text">时间设置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#网卡设置"><span class="nav-number">2.2.</span> <span class="nav-text">网卡设置</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#用户管理"><span class="nav-number">3.</span> <span class="nav-text">用户管理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#目录权限"><span class="nav-number">4.</span> <span class="nav-text">目录权限</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#软件包安装"><span class="nav-number">5.</span> <span class="nav-text">软件包安装</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#常用的软件包"><span class="nav-number">5.1.</span> <span class="nav-text">常用的软件包</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#null"><span class="nav-number">5.2.</span> <span class="nav-text"> </span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Linux-常用简单命令集"><span class="nav-number">6.</span> <span class="nav-text">Linux 常用简单命令集</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#查看系统状态"><span class="nav-number">6.1.</span> <span class="nav-text">查看系统状态</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#与-shell-相关"><span class="nav-number">6.2.</span> <span class="nav-text">与 shell 相关</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#系统配置"><span class="nav-number">6.3.</span> <span class="nav-text">系统配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#用户管理-1"><span class="nav-number">6.4.</span> <span class="nav-text">用户管理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#-1"><span class="nav-number">6.5.</span> <span class="nav-text"> </span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -385,7 +389,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">17</span>
+          <span class="site-state-item-count">21</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -396,7 +400,7 @@
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
-        <span class="site-state-item-count">10</span>
+        <span class="site-state-item-count">14</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -431,15 +435,15 @@
       <i class="fa fa-area-chart"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">25k</span>
+    <span title="站点总字数">36k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">1:22</span>
+    <span title="站点阅读时长">2:01</span>
 </div>
-  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v4.0.0
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v4.1.0
   </div>
   <span class="post-meta-divider">|</span>
   <div class="theme-info">主题 – <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.6.0
@@ -465,9 +469,17 @@
   <script src="/lib/anime.min.js"></script>
   <script src="/lib/velocity/velocity.min.js"></script>
   <script src="/lib/velocity/velocity.ui.min.js"></script>
-<script src="/js/utils.js"></script><script src="/js/motion.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
 <script src="/js/schemes/pisces.js"></script>
+
+
 <script src="/js/next-boot.js"></script>
+
 
 
 
@@ -476,7 +488,9 @@
 
 
 
-  <script src="/js/local-search.js"></script>
+  
+<script src="/js/local-search.js"></script>
+
 
 
 

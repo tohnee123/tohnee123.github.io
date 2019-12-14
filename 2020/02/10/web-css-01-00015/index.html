@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 4.0.0">
+<meta name="generator" content="Hexo 4.1.0">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
@@ -45,12 +45,16 @@
   };
 </script>
 
-  <meta property="og:type" content="article">
-<meta property="og:title" content="web_css_01_00015">
+  <meta name="description" content="CSS工具tilt Firefox 下的 tilt 可以看到 css 的结构层次；">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CSS 学习笔记（一）">
 <meta property="og:url" content="http:&#x2F;&#x2F;tohnee123.github.io&#x2F;2020&#x2F;02&#x2F;10&#x2F;web-css-01-00015&#x2F;index.html">
 <meta property="og:site_name" content="不积硅步&lt;br&gt;无以至千里">
-<meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-12-08T16:25:04.965Z">
+<meta property="og:description" content="CSS工具tilt Firefox 下的 tilt 可以看到 css 的结构层次；">
+<meta property="article:published_time" content="2020-02-10T09:22:59.000Z">
+<meta property="article:modified_time" content="2019-12-13T15:25:44.984Z">
+<meta property="article:author" content="James Liu">
+<meta property="article:tag" content="css">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="http://tohnee123.github.io/2020/02/10/web-css-01-00015/">
@@ -67,7 +71,7 @@
   };
 </script>
 
-  <title>web_css_01_00015 | 不积硅步<br>无以至千里</title>
+  <title>CSS 学习笔记（一） | 不积硅步<br>无以至千里</title>
   
 
 
@@ -215,7 +219,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          web_css_01_00015
+          CSS 学习笔记（一）
         </h1>
 
         <div class="post-meta">
@@ -232,8 +236,19 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-12-09 00:25:04" itemprop="dateModified" datetime="2019-12-09T00:25:04+08:00">2019-12-09</time>
+                <time title="修改时间：2019-12-13 23:25:44" itemprop="dateModified" datetime="2019-12-13T23:25:44+08:00">2019-12-13</time>
               </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/" itemprop="url" rel="index">
+                    <span itemprop="name">开发语言</span>
+                  </a>
+                </span>
+            </span>
 
           <br>
             <span class="post-meta-item" title="本文字数">
@@ -241,14 +256,14 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>0</span>
+              <span>2k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="fa fa-clock-o"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
+              <span>7 分钟</span>
             </span>
 
         </div>
@@ -260,7 +275,65 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        
+        <h2 id="CSS"><a href="#CSS" class="headerlink" title="CSS"></a>CSS</h2><h3 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h3><h4 id="tilt"><a href="#tilt" class="headerlink" title="tilt"></a>tilt</h4><ul>
+<li>Firefox 下的 tilt 可以看到 css 的结构层次；<a id="more"></a>
+</li>
+</ul>
+<h2 id="CSS-语法"><a href="#CSS-语法" class="headerlink" title="CSS 语法"></a>CSS 语法</h2><h3 id="內联-CSS"><a href="#內联-CSS" class="headerlink" title="內联 CSS"></a>內联 CSS</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">style</span>=<span class="string">"color:red; font-size:12px;"</span>&gt;</span>一段文字<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span></pre></td></tr></table></figure>
+<ul>
+<li>內联样式只对当前标签起作用；</li>
+<li>內联样式不方便重复使用。</li>
+</ul>
+<h3 id="内部-CSS"><a href="#内部-CSS" class="headerlink" title="内部 CSS"></a>内部 CSS</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">	<span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">"text/css"</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">	// CSS 选择器</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"><span class="css">	<span class="selector-tag">p</span>&#123;<span class="attribute">color</span>:red; <span class="attribute">font-size</span>:<span class="number">12px</span>&#125;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">	<span class="tag">&lt;/<span class="name">style</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span></pre></td></tr></table></figure>
+<ul>
+<li>方便修改和管理；</li>
+<li>不方便多个页面共享，也不能充分应用浏览器的缓存机制。</li>
+</ul>
+<h3 id="外联-CSS"><a href="#外联-CSS" class="headerlink" title="外联 CSS"></a>外联 CSS</h3><ul>
+<li>将 css 描述放入外部文件（*.css）中；<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">p&#123;color:red; font-size:12px&#125;</span></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">	<span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">type</span>=<span class="string">"text/css"</span> <span class="attr">href</span>=<span class="string">"文件名.css"</span> /&gt;</span> </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span></pre></td></tr></table></figure></li>
+<li>将 css 统一放入外部样式表，使前端结构和形式的完全分离。实现样式表在不同的页面中使用；</li>
+<li>可以加快访问速度（通过浏览器的文件缓存机制），提高用户体验。</li>
+</ul>
+<h3 id="块元素和內联元素"><a href="#块元素和內联元素" class="headerlink" title="块元素和內联元素"></a>块元素和內联元素</h3><ul>
+<li>块元素和內联元素也称为块标签和內联标签，两者等价；<ul>
+<li>块标签：<code>&lt;div&gt;, &lt;p&gt;</code></li>
+<li>內联标签：<code>&lt;a&gt;, &lt;span&gt;</code></li>
+</ul>
+</li>
+<li>HTML5 已经不用块元素和內联元素的概念，但是用块元素和內联元素比较好理解；</li>
+<li>块元素主要用来做页面中的布局，內联元素主要用于选中文本，方便设置样式；</li>
+<li>一般情况下用块元素包含內联元素，不太会用內联元素包含块元素；</li>
+<li>a 标签可以包含任意的元素，除了 a 标签自身；</li>
+<li>div 标签可以包括任意标签；</li>
+<li>p 标签虽然是一个块元素标签，但是不能包括任何块标签；</li>
+</ul>
+<h3 id="选择器"><a href="#选择器" class="headerlink" title="选择器"></a>选择器</h3><ul>
+<li>通过选择器，我们可以选中页面中的某一部分，从而利用 css 进行格式化；</li>
+<li>标签选择器（元素选择器）：通过标签可以选中页面中的所有指定标签；</li>
+<li>id 选择器：通过元素的 id 属性值来选择唯一的一个元素；</li>
+<li>class 选择器：拥有相同 class 的为一组元素。可以为同一个元素设置多个 class 属性值，多个值之间用空格隔开；</li>
+<li>选择器分组：可以同时选中多个选择器对应的元素；</li>
+<li>交集选择器：同时满足多个条件的选择器（一般不用于 id 选择器）；</li>
+<li>通配选择器：选中所有元素；</li>
+<li>元素之间的关系：<ul>
+<li>父元素：直接包含子元素的元素；</li>
+<li>子元素：直接被父元素包含的元素；</li>
+<li>祖先元素：直接或间接包含后代元素的元素，父元素也是祖先元素；</li>
+<li>后代元素：直接或间接被祖先元素包含的元素，子元素也是后代元素；</li>
+<li>兄弟元素：拥有相同父元素的元素；</li>
+</ul>
+</li>
+<li>后代选择器：<ul>
+<li>选择指定元素的指定后代元素； </li>
+</ul>
+</li>
+<li>子元素选择器：<ul>
+<li>选择指定父元素的指定子元素； <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 标签选择器--&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">p&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">	color: red;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">	font-size: 12px;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- id 选择器--&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">#p1&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">	font-size: 20px;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- class 选择器 --&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">.c1&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line">	color: green;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">14</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">15</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">16</span></pre></td><td class="code"><pre><span class="line">.c2&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">17</span></pre></td><td class="code"><pre><span class="line">	font-size: 20px;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">18</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">19</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">20</span></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 选择器分组 --&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">21</span></pre></td><td class="code"><pre><span class="line">p, #p1, .c1&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">22</span></pre></td><td class="code"><pre><span class="line">	background-color: yellow;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">23</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">24</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">25</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">26</span></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 交集选择器  --&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">27</span></pre></td><td class="code"><pre><span class="line">span.c3<span class="tag">&lt;<span class="name">多个选择器</span>&gt;</span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">28</span></pre></td><td class="code"><pre><span class="line">	background-color: green;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">29</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">30</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">31</span></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 通配选择器 --&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">32</span></pre></td><td class="code"><pre><span class="line">.*&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">33</span></pre></td><td class="code"><pre><span class="line">	color: green;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">34</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">35</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">36</span></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 后代元素选择器 --&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">37</span></pre></td><td class="code"><pre><span class="line">	div span&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">38</span></pre></td><td class="code"><pre><span class="line">		color: red;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">39</span></pre></td><td class="code"><pre><span class="line">	&#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">40</span></pre></td><td class="code"><pre><span class="line">	</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">41</span></pre></td><td class="code"><pre><span class="line">	#d1 span&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">42</span></pre></td><td class="code"><pre><span class="line">		color: red;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">43</span></pre></td><td class="code"><pre><span class="line">	&#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">44</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">45</span></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 子元素选择器 --&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">46</span></pre></td><td class="code"><pre><span class="line">	div &gt; span&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">47</span></pre></td><td class="code"><pre><span class="line">		color: red;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">48</span></pre></td><td class="code"><pre><span class="line">	&#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">49</span></pre></td><td class="code"><pre><span class="line">	</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">50</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">51</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">52</span></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>锄禾日当午<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">53</span></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">id</span>=<span class="string">"p1"</span>&gt;</span>汗滴禾下土<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">54</span></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">"c1"</span>&gt;</span>谁知盘中餐<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">55</span></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">"c1 c2"</span>&gt;</span>粒粒皆辛苦<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">56</span></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">"c3"</span>&gt;</span>春眠不觉晓<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">57</span></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>处处闻啼鸟<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">58</span></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"c3"</span>&gt;</span>我是span<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ul>
+
     </div>
 
     
@@ -268,6 +341,9 @@
     
 
       <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/css/" rel="tag"># css</a>
+          </div>
 
         
 
@@ -275,10 +351,13 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2020/02/02/web-html-01-00014/" rel="prev" title="web_html_01_00014">
-      <i class="fa fa-chevron-left"></i> web_html_01_00014
+    <a href="/2020/02/02/web-html-01-00014/" rel="prev" title="HTML 5 简介">
+      <i class="fa fa-chevron-left"></i> HTML 5 简介
     </a></div>
-      <div class="post-nav-item"></div>
+      <div class="post-nav-item">
+    <a href="/2020/02/11/languages-python-01-00018/" rel="next" title="Python 学习笔记（一）">
+      Python 学习笔记（一） <i class="fa fa-chevron-right"></i>
+    </a></div>
     </div>
       </footer>
     
@@ -316,6 +395,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS"><span class="nav-number">1.</span> <span class="nav-text">CSS</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#工具"><span class="nav-number">1.1.</span> <span class="nav-text">工具</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#tilt"><span class="nav-number">1.1.1.</span> <span class="nav-text">tilt</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS-语法"><span class="nav-number">2.</span> <span class="nav-text">CSS 语法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#內联-CSS"><span class="nav-number">2.1.</span> <span class="nav-text">內联 CSS</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#内部-CSS"><span class="nav-number">2.2.</span> <span class="nav-text">内部 CSS</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#外联-CSS"><span class="nav-number">2.3.</span> <span class="nav-text">外联 CSS</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#块元素和內联元素"><span class="nav-number">2.4.</span> <span class="nav-text">块元素和內联元素</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#选择器"><span class="nav-number">2.5.</span> <span class="nav-text">选择器</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -329,7 +409,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">17</span>
+          <span class="site-state-item-count">21</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -340,7 +420,7 @@
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
-        <span class="site-state-item-count">10</span>
+        <span class="site-state-item-count">14</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -375,15 +455,15 @@
       <i class="fa fa-area-chart"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">25k</span>
+    <span title="站点总字数">36k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">1:22</span>
+    <span title="站点阅读时长">2:01</span>
 </div>
-  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v4.0.0
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v4.1.0
   </div>
   <span class="post-meta-divider">|</span>
   <div class="theme-info">主题 – <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.6.0
@@ -409,9 +489,17 @@
   <script src="/lib/anime.min.js"></script>
   <script src="/lib/velocity/velocity.min.js"></script>
   <script src="/lib/velocity/velocity.ui.min.js"></script>
-<script src="/js/utils.js"></script><script src="/js/motion.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
 <script src="/js/schemes/pisces.js"></script>
+
+
 <script src="/js/next-boot.js"></script>
+
 
 
 
@@ -420,7 +508,9 @@
 
 
 
-  <script src="/js/local-search.js"></script>
+  
+<script src="/js/local-search.js"></script>
+
 
 
 
