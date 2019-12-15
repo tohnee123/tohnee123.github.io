@@ -48,18 +48,18 @@
   <meta name="description" content="目标这一部分，我们的主要目标如下：  安装 Node.js、Hexo 和 Next 主题。这样我们就拥有了一个阶段性成果。 配置 Next 的重点参数。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="如何建立一个类似这样的网站（二）">
-<meta property="og:url" content="http:&#x2F;&#x2F;tohnee123.github.io&#x2F;2020&#x2F;12&#x2F;15&#x2F;web-howtobuildthisblog02-00003&#x2F;index.html">
+<meta property="og:url" content="http:&#x2F;&#x2F;tohnee123.github.io&#x2F;2019&#x2F;12&#x2F;15&#x2F;web-howtobuildthisblog02-00003&#x2F;index.html">
 <meta property="og:site_name" content="不积硅步&lt;br&gt;无以至千里">
 <meta property="og:description" content="目标这一部分，我们的主要目标如下：  安装 Node.js、Hexo 和 Next 主题。这样我们就拥有了一个阶段性成果。 配置 Next 的重点参数。">
-<meta property="article:published_time" content="2020-12-15T15:20:32.000Z">
-<meta property="article:modified_time" content="2019-12-15T16:28:36.481Z">
+<meta property="article:published_time" content="2019-12-15T15:20:32.000Z">
+<meta property="article:modified_time" content="2019-12-15T16:58:08.420Z">
 <meta property="article:author" content="James Liu">
 <meta property="article:tag" content="云服务">
 <meta property="article:tag" content="github">
 <meta property="article:tag" content="hexo">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://tohnee123.github.io/2020/12/15/web-howtobuildthisblog02-00003/">
+<link rel="canonical" href="http://tohnee123.github.io/2019/12/15/web-howtobuildthisblog02-00003/">
 
 
 <script id="page-configurations">
@@ -208,7 +208,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="http://tohnee123.github.io/2020/12/15/web-howtobuildthisblog02-00003/">
+    <link itemprop="mainEntityOfPage" href="http://tohnee123.github.io/2019/12/15/web-howtobuildthisblog02-00003/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -231,14 +231,14 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2020-12-15 23:20:32" itemprop="dateCreated datePublished" datetime="2020-12-15T23:20:32+08:00">2020-12-15</time>
+              <time title="创建时间：2019-12-15 23:20:32" itemprop="dateCreated datePublished" datetime="2019-12-15T23:20:32+08:00">2019-12-15</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-12-16 00:28:36" itemprop="dateModified" datetime="2019-12-16T00:28:36+08:00">2019-12-16</time>
+                <time title="修改时间：2019-12-16 00:58:08" itemprop="dateModified" datetime="2019-12-16T00:58:08+08:00">2019-12-16</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -258,14 +258,14 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>2.5k</span>
+              <span>2.2k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="fa fa-clock-o"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>8 分钟</span>
+              <span>7 分钟</span>
             </span>
 
         </div>
@@ -296,38 +296,39 @@
 <h3 id="安装-Hexo"><a href="#安装-Hexo" class="headerlink" title="安装 Hexo"></a>安装 Hexo</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="comment"># npm install -g hexo-cli</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="comment"># hexo init MyBlog			// 在 MyBlog 目录下安装 hexo 的组件</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"><span class="comment"># cd MyBlog</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"><span class="comment"># npm install</span></span></pre></td></tr></table></figure>
 <h3 id="配置-Hexo"><a href="#配置-Hexo" class="headerlink" title="配置 Hexo"></a>配置 Hexo</h3><ol>
 <li>更改 Hexo 的默认主题。我不喜欢 Hexo 自带的主题，选择了现在比较流行的 Next 主题，版本是 Next 7.6.0。这个版本配置文件有一些更改，但是大部分前面提供的资源内容还是可以用在这个版本上；</li>
-<li>可以直接从 Github 上安装 Next 7.6.0。安装命令如下：<code>git clone --branch v6.0.0 https://github.com/theme-next/hexo-theme-next themes/next</code>。指令要在主目录下键入；</li>
+<li>可以直接从 Github 上安装 Next 7.6.0。安装命令如下：<code>git clone --branch v7.6.0 https://github.com/theme-next/hexo-theme-next themes/next</code>。指令要在主目录下键入；</li>
 <li>修改博客主目录下的 <code>_config.yml</code> 文件内容。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">language: zh-Hans</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">timezone: Asia&#x2F;Shanghai</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">url: http:&#x2F;&#x2F;tohnee123.github.io</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">theme: next</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">deploy:</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">  type: &#39;git&#39;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">  repo: git@github.com:tohnee123&#x2F;tohnee123.github.io.git</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">  branch: master</span></pre></td></tr></table></figure>
 </li>
 </ol>
-<h4 id="发布流程"><a href="#发布流程" class="headerlink" title="发布流程"></a>发布流程</h4><p>一般我们都会使用 hexo new <title> 来建立文章，这种建立方法会将新文章建立在 source/_posts 目录下，当使用 hexo generate 编译 markdown 文件时，会将其 HTML 结果编译在 public 目录下，之后 hexo deploy 将会把 public 目录下所有文章部署到 GitHub，这是我们熟悉的 Hexo 流程。</p>
-<h4 id="增加文章"><a href="#增加文章" class="headerlink" title="增加文章"></a>增加文章</h4><p>增加一篇新的文章在博客的主目录下输入指令<code>hexo n &quot;文章名&quot;</code>就可以了。新的 Markdown 文件会产生在<code>source/_posts</code>目录下。</p>
-<h4 id="发布文章"><a href="#发布文章" class="headerlink" title="发布文章"></a>发布文章</h4><p>发布写好后的文章需要两条指令。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">$ hexo gen</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">$ hexo dep</span></pre></td></tr></table></figure></p>
-<h4 id="访问文章"><a href="#访问文章" class="headerlink" title="访问文章"></a>访问文章</h4><h4 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h4><p>有的时候，想在发布到网上之前，先在本地看看文章的内容。可以输入如下指令。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">$ hexo s &lt;-p port number&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">在浏览器中输入：http://localhost:4000</span></pre></td></tr></table></figure></p>
+<h4 id="发布流程"><a href="#发布流程" class="headerlink" title="发布流程"></a>发布流程</h4><p>一般我们都会使用 <code>hexo new &lt;title&gt;</code> 来建立文章，这条指令会将新文章建立在 <code>source/_posts</code> 目录下，当使用 <code>hexo generate</code> 编译 markdown 文件时，会将其 HTML 结果编译在 <code>public</code> 目录下，之后 <code>hexo deploy</code> 将会把 <code>public</code> 目录下所有文章部署到 GitHub，这是我们熟悉的 Hexo 流程。</p>
+<h4 id="增加文章"><a href="#增加文章" class="headerlink" title="增加文章"></a>增加文章</h4><p>增加一篇新的文章在博客的主目录下输入指令<code>hexo n &quot;文章名&quot;</code>就可以了。新的 Markdown 文件会产生在<code>source/_posts</code>目录下。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">$ hexo n &lt;title&gt;</span></pre></td></tr></table></figure></p>
+<h4 id="发布文章"><a href="#发布文章" class="headerlink" title="发布文章"></a>发布文章</h4><p> 发布写好后的文章需要两条指令。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">$ hexo gen</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">$ hexo dep</span></pre></td></tr></table></figure>
+<h4 id="访问文章"><a href="#访问文章" class="headerlink" title="访问文章"></a>访问文章</h4><p>发布好之后，大概还需要 5～10分钟的时间，就可以通过浏览器访问你建立的博客站点了。我的博客站点是 <a href="https://tohnee123.github.io/">http://tohnee123.github.io/</a></p>
+<h4 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h4><p>有的时候，想在发布到网上之前，先在本地看看文章的内容。可以输入如下指令。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">$ hexo s &lt;-p port number&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">在浏览器中输入：http://localhost:4000</span></pre></td></tr></table></figure>
 <h4 id="Hexo-插件"><a href="#Hexo-插件" class="headerlink" title="Hexo 插件"></a>Hexo 插件</h4><ul>
-<li>查看已安装的 Hexo 插件<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">$ npm ls --depth 0</span></pre></td></tr></table></figure>
-</li>
+<li>查看已安装的 Hexo 插件</li>
 </ul>
-<h3 id="配置-Next"><a href="#配置-Next" class="headerlink" title="配置 Next"></a>配置 Next</h3><p>我选用的 Next 主题的版本是 7.6.0，也可以在 github 上下载，<a href="https://github.com/theme-next/hexo-theme-next/tags" target="_blank" rel="noopener">下载 Next 指定版本</a>。下载的 zip 文件解压后，复制到<code>theme</code>下就可以。注意要把目录名改为<code>next</code>。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">$ npm ls --depth 0</span></pre></td></tr></table></figure>
+<h3 id="配置-Next"><a href="#配置-Next" class="headerlink" title="配置 Next"></a>配置 Next</h3><p>我选用的 Next 主题的版本是 7.6.0，也可以在 github 上下载<a href="https://github.com/theme-next/hexo-theme-next/tags" target="_blank" rel="noopener">下载 Next 指定版本</a>。下载的 zip 文件解压后，复制到 <code>theme</code> 下就可以。注意要把目录名改为 <code>next</code>。</p>
 <h4 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h4><p>主要的 Next 配置文件如下：</p>
 <ol>
-<li><code>themes/next</code>目录下的<code>_config.yml</code>；</li>
-<li><code>themes/next/languages</code>目录下的语言文件；</li>
+<li><code>themes/next</code> 目录下的 <code>_config.yml</code>；</li>
+<li><code>themes/next/languages</code> 目录下的语言文件；</li>
 </ol>
-<h4 id="更改语言"><a href="#更改语言" class="headerlink" title="更改语言"></a>更改语言</h4><p>将 <code>themes/next/languages</code> 目录下的<code>zh-CN.yml</code> 更名为 <code>zh-Hans.yml</code></p>
-<h4 id="更改风格"><a href="#更改风格" class="headerlink" title="更改风格"></a>更改风格</h4><p>Next 提供了四种不同的风格，我个人比较喜欢 Gemini 风格。需要修改 Next 的<code>_config.yml</code>。找到<code>Schemes</code>这个 Section，修改如下，启用 Gemini 风格。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="comment"># Schemes</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="comment">#scheme: Muse  //默认主题</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"><span class="comment">#scheme: Mist</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"><span class="comment">#scheme: Pisces</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">scheme: Gemini</span></pre></td></tr></table></figure></p>
-<h4 id="标签和类别页面"><a href="#标签和类别页面" class="headerlink" title="标签和类别页面"></a>标签和类别页面</h4><p>增加标签和类别页面。默认情况下这两个是没有页面链接的，所以需要按照资源3的建议增加。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="comment"># hexo new page tags</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">---</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"><span class="comment"># 编辑tags/index.md</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">title: 标签</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">date: 2019-06-29 11:35:42 <span class="comment">#时间随意</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line"><span class="built_in">type</span>: <span class="string">"tags"</span> <span class="comment">#类型一定要为tags</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">comments: <span class="literal">false</span> <span class="comment">#提示找个页面不需要评论,后续评论插件那里会详细介绍</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">---</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line"><span class="comment"># hexo new page categories</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line"><span class="comment"># 编辑categories/index.md</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line">---</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">14</span></pre></td><td class="code"><pre><span class="line">title: 文章分类</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">15</span></pre></td><td class="code"><pre><span class="line">date: 2018-10-15 00:03:57</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">16</span></pre></td><td class="code"><pre><span class="line"><span class="built_in">type</span>: <span class="string">"categories"</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">17</span></pre></td><td class="code"><pre><span class="line">comments: <span class="literal">false</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">18</span></pre></td><td class="code"><pre><span class="line">---</span></pre></td></tr></table></figure></p>
-<h4 id="MathJax"><a href="#MathJax" class="headerlink" title="MathJax"></a>MathJax</h4><p>将 mathjax 下的 enable 设定为 true 即可。 cdn 用于指定 MathJax 的脚本地址，默认是 MathJax 官方提供的 CDN 地址。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"># MathJax Support</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">mathjax:</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">  enable: true</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">  cdn: &#x2F;&#x2F;cdn.mathjax.org&#x2F;mathjax&#x2F;latest&#x2F;MathJax.js?config&#x3D;TeX-AMS-MML_HTMLorMML</span></pre></td></tr></table></figure></p>
-<p>$360^{\circ} ～ 2\pi$，$180^{\circ} ～ \pi$，$90^{\circ} ～ \frac{\pi}{2}$，$45^{\circ} ～ \frac{\pi}{4}$，$60^{\circ} ～ \frac{\pi}{3}$</p>
-<script type="math/tex; mode=display">\begin{equation}
-e=mc^2
-\end{equation}\label{eq1}</script><p>the famous matter-energy equation $\eqref{eq1}$ proposed by Einstein ..</p>
-<h3 id="其他操作"><a href="#其他操作" class="headerlink" title="其他操作"></a>其他操作</h3><h3 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h3><ul>
+<h4 id="更改语言"><a href="#更改语言" class="headerlink" title="更改语言"></a>更改语言</h4><p>将 <code>themes/next/languages</code> 目录下的 <code>zh-CN.yml</code> 更名为 <code>zh-Hans.yml</code></p>
+<h4 id="更改风格"><a href="#更改风格" class="headerlink" title="更改风格"></a>更改风格</h4><p>Next 提供了四种不同的风格，我个人比较喜欢 Gemini 风格。需要修改 Next 的 <code>_config.yml</code>。找到 <code>Schemes</code> 这个 Section，修改如下，启用 Gemini 风格。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="comment"># Schemes</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="comment">#scheme: Muse  //默认主题</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"><span class="comment">#scheme: Mist</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"><span class="comment">#scheme: Pisces</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">scheme: Gemini</span></pre></td></tr></table></figure>
+<h4 id="标签和类别页面"><a href="#标签和类别页面" class="headerlink" title="标签和类别页面"></a>标签和类别页面</h4><p>增加标签和类别页面。默认情况下这两个是没有页面链接的，所以需要按照资源3的建议增加。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="comment"># hexo new page tags</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">---</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"><span class="comment"># 编辑tags/index.md</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">title: 标签</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">date: 2019-06-29 11:35:42 <span class="comment">#时间随意</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line"><span class="built_in">type</span>: <span class="string">"tags"</span> <span class="comment">#类型一定要为 tags</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">comments: <span class="literal">false</span> <span class="comment"># 这个页面不需要评论，后续评论插件那里会详细介绍如何在博客中设置评论</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">---</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line"><span class="comment"># hexo new page categories</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line"><span class="comment"># 编辑categories/index.md</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line">---</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">14</span></pre></td><td class="code"><pre><span class="line">title: 文章分类</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">15</span></pre></td><td class="code"><pre><span class="line">date: 2018-10-15 00:03:57</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">16</span></pre></td><td class="code"><pre><span class="line"><span class="built_in">type</span>: <span class="string">"categories"</span> <span class="comment">#类型一定要为 categories</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">17</span></pre></td><td class="code"><pre><span class="line">comments: <span class="literal">false</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">18</span></pre></td><td class="code"><pre><span class="line">---</span></pre></td></tr></table></figure>
+<h3 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h3><ul>
 <li>安装Node.js。目前我是从 node.js 网站上直接下载 OSX 版本的二进制文件直接安装的。在网上还有另外两种办法，一种是通过 homebrew，一种是通过 crul，这两种办法现在我没有试过，也不知道通过多种渠道安装不同版本的 node.js 会有什么后果。</li>
 <li>目录结构，安装完 Hexo 后，会在安装目录下有若干子目录或者文件，比较重要的有：<ul>
 <li>_config.yml：Hexo 的整体配置，比如语言，采用的主题、git 的仓库等内容；</li>
 <li><code>themes</code>：可以安装各种主题；</li>
-<li>主目录下的 <code>source/_posts</code>：我们准备发布到网络上的各种 Markdown 文章。</li>
+<li>主目录下的 <code>source/_posts</code>：我们准备发布到网络上的各种 Markdown 文章；</li>
+<li>主目录下的 <code>source/_drafts</code>：这个目录下的文件不会被发布到网络上。</li>
 </ul>
 </li>
 </ul>
@@ -351,10 +352,13 @@ e=mc^2
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2020/03/02/languages-python-03-00020/" rel="prev" title="Python 学习笔记（三）">
-      <i class="fa fa-chevron-left"></i> Python 学习笔记（三）
+    <a href="/2019/12/10/web-howtobuildthisblog01-00002/" rel="prev" title="如何建立一个类似这样的网站（一）">
+      <i class="fa fa-chevron-left"></i> 如何建立一个类似这样的网站（一）
     </a></div>
-      <div class="post-nav-item"></div>
+      <div class="post-nav-item">
+    <a href="/2019/12/18/family-daughterweekly-002-00012/" rel="next" title="每周和女儿交流的提纲（2019.12.21）">
+      每周和女儿交流的提纲（2019.12.21） <i class="fa fa-chevron-right"></i>
+    </a></div>
     </div>
       </footer>
     
@@ -392,7 +396,7 @@ e=mc^2
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#目标"><span class="nav-number">1.</span> <span class="nav-text">目标</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#资源"><span class="nav-number">2.</span> <span class="nav-text">资源</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#操作"><span class="nav-number">3.</span> <span class="nav-text">操作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#重点步骤"><span class="nav-number">3.1.</span> <span class="nav-text">重点步骤</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装-Hexo"><span class="nav-number">3.2.</span> <span class="nav-text">安装 Hexo</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置-Hexo"><span class="nav-number">3.3.</span> <span class="nav-text">配置 Hexo</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#发布流程"><span class="nav-number">3.3.1.</span> <span class="nav-text">发布流程</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#增加文章"><span class="nav-number">3.3.2.</span> <span class="nav-text">增加文章</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#发布文章"><span class="nav-number">3.3.3.</span> <span class="nav-text">发布文章</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#访问文章"><span class="nav-number">3.3.4.</span> <span class="nav-text">访问文章</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#其他"><span class="nav-number">3.3.5.</span> <span class="nav-text">其他</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Hexo-插件"><span class="nav-number">3.3.6.</span> <span class="nav-text">Hexo 插件</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置-Next"><span class="nav-number">3.4.</span> <span class="nav-text">配置 Next</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#配置文件"><span class="nav-number">3.4.1.</span> <span class="nav-text">配置文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#更改语言"><span class="nav-number">3.4.2.</span> <span class="nav-text">更改语言</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#更改风格"><span class="nav-number">3.4.3.</span> <span class="nav-text">更改风格</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#标签和类别页面"><span class="nav-number">3.4.4.</span> <span class="nav-text">标签和类别页面</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#MathJax"><span class="nav-number">3.4.5.</span> <span class="nav-text">MathJax</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#其他操作"><span class="nav-number">3.5.</span> <span class="nav-text">其他操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#注意事项"><span class="nav-number">3.6.</span> <span class="nav-text">注意事项</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#目标"><span class="nav-number">1.</span> <span class="nav-text">目标</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#资源"><span class="nav-number">2.</span> <span class="nav-text">资源</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#操作"><span class="nav-number">3.</span> <span class="nav-text">操作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#重点步骤"><span class="nav-number">3.1.</span> <span class="nav-text">重点步骤</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装-Hexo"><span class="nav-number">3.2.</span> <span class="nav-text">安装 Hexo</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置-Hexo"><span class="nav-number">3.3.</span> <span class="nav-text">配置 Hexo</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#发布流程"><span class="nav-number">3.3.1.</span> <span class="nav-text">发布流程</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#增加文章"><span class="nav-number">3.3.2.</span> <span class="nav-text">增加文章</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#发布文章"><span class="nav-number">3.3.3.</span> <span class="nav-text">发布文章</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#访问文章"><span class="nav-number">3.3.4.</span> <span class="nav-text">访问文章</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#其他"><span class="nav-number">3.3.5.</span> <span class="nav-text">其他</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Hexo-插件"><span class="nav-number">3.3.6.</span> <span class="nav-text">Hexo 插件</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置-Next"><span class="nav-number">3.4.</span> <span class="nav-text">配置 Next</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#配置文件"><span class="nav-number">3.4.1.</span> <span class="nav-text">配置文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#更改语言"><span class="nav-number">3.4.2.</span> <span class="nav-text">更改语言</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#更改风格"><span class="nav-number">3.4.3.</span> <span class="nav-text">更改风格</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#标签和类别页面"><span class="nav-number">3.4.4.</span> <span class="nav-text">标签和类别页面</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#注意事项"><span class="nav-number">3.5.</span> <span class="nav-text">注意事项</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -452,13 +456,13 @@ e=mc^2
       <i class="fa fa-area-chart"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">40k</span>
+    <span title="站点总字数">39k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">2:12</span>
+    <span title="站点阅读时长">2:11</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v4.1.0
   </div>

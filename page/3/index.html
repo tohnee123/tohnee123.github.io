@@ -201,128 +201,6 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="http://tohnee123.github.io/2019/12/22/misc-howtoconfigdev-00022/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="James Liu">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="不积硅步<br>无以至千里">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/12/22/misc-howtoconfigdev-00022/" class="post-title-link" itemprop="url">如何配置一个稳定的开发环境（2020）</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2019-12-22 17:04:10" itemprop="dateCreated datePublished" datetime="2019-12-22T17:04:10+08:00">2019-12-22</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-12-15 21:36:48" itemprop="dateModified" datetime="2019-12-15T21:36:48+08:00">2019-12-15</time>
-              </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>1.1k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-clock-o"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>4 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="如何配置一个稳定的开发环境"><a href="#如何配置一个稳定的开发环境" class="headerlink" title="如何配置一个稳定的开发环境"></a>如何配置一个稳定的开发环境</h1><h2 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h2><p>我使用 OSX 已经很长一段时间了，OSX 算是比较稳定的操作系统，折腾了几年都没有重装过。但是随着这么多年的使用，以及最近在折腾的各种学习和开发工具，也发现给我的系统带来了一些问题。最近正在考虑重装系统，但是如果继续折腾这些新东西，难免会给新系统带来不稳定的因素。我这次重装完系统后，实在不想再重装系统了。于是我把解决方法放在了虚拟机上。</p>
-<p>传统我使用虚拟机主要是解决在 OSX 上运行 Windows 的程序。但是我现在购买的电脑，都是 4 核 8 线程，16G RAM，512G SSD 以上的配置，通过虚拟机的方案，实际上也可以实现开发环境和宿主机的分离。这样我可以在开发环境中尝试新的软件而不至于影响到宿主操作系统的稳定性。</p>
-<p>我现在采用的是 VMWare 的虚拟机方案，通过在 VMWare Fusion 上建立 Windows 10、Linux 和 OSX 的虚拟机来减少对宿主操作系统的干扰。采用 VMWare 的一个主要原因是 VMWare 的跨平台的支持能力，而我的电脑有 OSX 和 Windows 两个系统。</p>
-<h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><p>我未来相当长一段时间使用如下开发环境。</p>
-<h3 id="前端"><a href="#前端" class="headerlink" title="前端"></a>前端</h3><ol>
-<li>开发工具：xcode、HBuilderX 和 Microsoft Azure Notebooks</li>
-<li>开发语言：python、Javascript</li>
-</ol>
-<h3 id="后端"><a href="#后端" class="headerlink" title="后端"></a>后端</h3><ol>
-<li>服务主要主要部署在 Linux 上，测试机 CELL181DEV，服务器 CELL603</li>
-<li>服务<ul>
-<li>Hexo + Next：博客工具</li>
-</ul>
-</li>
-</ol>
-<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><h3 id="Windows-平台"><a href="#Windows-平台" class="headerlink" title="Windows 平台"></a>Windows 平台</h3><ol>
-<li>建立了一个基础的 Windows 安装系统 CELL94（只安装了 Chrome）</li>
-<li>在 CELL194 的基础上建立了一个链接克隆 CELL194_DEV。目前配置了如下软件：</li>
-</ol>
-<ul>
-<li>Microsoft Visual Studio Code</li>
-<li>Node Verion Manager for Windows 1.1.7</li>
-<li>两个版本的 Node.js</li>
-</ul>
-<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><h3 id="Windows-平台-1"><a href="#Windows-平台-1" class="headerlink" title="Windows 平台"></a>Windows 平台</h3><h4 id="安装-NVMW"><a href="#安装-NVMW" class="headerlink" title="安装 NVMW"></a>安装 NVMW</h4><ol>
-<li>删除所有的 Node.js 和 npm</li>
-<li>删除 <code>C:\Program Files\nodejs</code></li>
-<li>下载<a href="https://github.com/coreybutler/nvm-windows#node-version-manager-nvm-for-windows" target="_blank" rel="noopener">NVMW 1.1.7</a></li>
-<li>这是一个 msi 文件，双击安装</li>
-</ol>
-<h2 id="备份"><a href="#备份" class="headerlink" title="备份"></a>备份</h2><ol>
-<li>目前主要采用手工备份的方式，在掌握好<code>powershell</code>和<code>Linux shell</code>之后，慢慢过渡到自动备份的方式；</li>
-</ol>
-<h3 id="备份设备和目录"><a href="#备份设备和目录" class="headerlink" title="备份设备和目录"></a>备份设备和目录</h3><ol>
-<li>CELL004:~/blog//Users/bbgg/celltrix/github/blog/source/*<ul>
-<li>备份周期：每月备份，每月最后一个周末</li>
-<li>备份格式：zip</li>
-<li>云端服务：百度云盘</li>
-<li>文件名：blogsource_yyyydd</li>
-<li>每半年检查一次（检查方法待定）</li>
-</ul>
-</li>
-</ol>
-<h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><p>需要注意的是，由于重装系统/回退变得比较容易，那么日常的开发文件的备份需要特别注意。回退之后，开发文件/文档如果没有备份/备份失败，这个影响是沉重的。</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-Hans">
     <link itemprop="mainEntityOfPage" href="http://tohnee123.github.io/2019/12/19/web-howtobuildthisblog03-00004/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -502,6 +380,107 @@
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2019/12/18/family-daughterweekly-002-00012/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://tohnee123.github.io/2019/12/15/web-howtobuildthisblog02-00003/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="James Liu">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="不积硅步<br>无以至千里">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/12/15/web-howtobuildthisblog02-00003/" class="post-title-link" itemprop="url">如何建立一个类似这样的网站（二）</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-12-15 23:20:32" itemprop="dateCreated datePublished" datetime="2019-12-15T23:20:32+08:00">2019-12-15</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-12-16 00:58:08" itemprop="dateModified" datetime="2019-12-16T00:58:08+08:00">2019-12-16</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F/" itemprop="url" rel="index">
+                    <span itemprop="name">应用程序</span>
+                  </a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>2.2k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>7 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h2><p>这一部分，我们的主要目标如下：</p>
+<ul>
+<li>安装 Node.js、Hexo 和 Next 主题。这样我们就拥有了一个阶段性成果。</li>
+<li>配置 Next 的重点参数。</li>
+</ul>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2019/12/15/web-howtobuildthisblog02-00003/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -1001,13 +980,13 @@
       <i class="fa fa-area-chart"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">40k</span>
+    <span title="站点总字数">39k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">2:12</span>
+    <span title="站点阅读时长">2:11</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v4.1.0
   </div>
